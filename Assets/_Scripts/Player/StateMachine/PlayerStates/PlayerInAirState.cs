@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Security.Cryptography;
 using UnityEngine;
 
 public class PlayerInAirState : PlayerState
@@ -10,6 +11,9 @@ public class PlayerInAirState : PlayerState
     private bool CoyoteTime;
     private bool IsJumping;
     private bool JumpInputStop;
+    private bool IsTouchingWall;
+    private bool IsTouchingLedge;
+
     public PlayerInAirState(PlayerStateMachine stateMachine, Player player, string animName, PlayerData playerData) : base(stateMachine, player, animName, playerData)
     {
     }
@@ -19,6 +23,13 @@ public class PlayerInAirState : PlayerState
         base.DoChecks();
 
         IsGrounded = Player.IsGrounded();
+        IsTouchingWall = Player.IsTouchingWall();
+        IsTouchingLedge = Player.IsTouchingLedge();
+
+        if(IsTouchingWall && !IsTouchingLedge)
+        {
+            Player.LedgeClimbState.SetDetectedPos(Player.transform.position);
+        }
     }
 
     public override void LogicUpdate()
@@ -35,12 +46,15 @@ public class PlayerInAirState : PlayerState
 
         if (IsGrounded && Player.CurrentVelocity.y < 0.01f)
         {
-            Player.StateMachine.ChangeState(Player.LandState);
+            StateMachine.ChangeState(Player.LandState);
         }
-
-        if(JumpInput && Player.JumpState.CanJump())
+        else if(JumpInput && Player.JumpState.CanJump())
         {
-            Player.StateMachine.ChangeState(Player.JumpState);
+            StateMachine.ChangeState(Player.JumpState);
+        }
+        else if (IsTouchingWall && !IsTouchingLedge && !IsGrounded)
+        {
+            StateMachine.ChangeState(Player.LedgeClimbState);
         }
         else
         {

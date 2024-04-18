@@ -37,8 +37,9 @@ public class PlayerGroundedState : PlayerState
 
         xInput = Player.InputHandler.NormalInputX;
         JumpInput = Player.InputHandler.JumpInput;
+        IsGrounded = Player.IsGrounded();
 
-        if(JumpInput && Player.JumpState.CanJump())
+        if (JumpInput && Player.JumpState.CanJump())
         {
             Player.InputHandler.UseJumpInput();
             Player.StateMachine.ChangeState(Player.JumpState);

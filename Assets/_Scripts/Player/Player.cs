@@ -1,5 +1,7 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor;
 using UnityEngine;
 
 public class Player : MonoBehaviour
@@ -25,11 +27,14 @@ public class Player : MonoBehaviour
     public PlayerJumpState JumpState { get; private set; }
     public PlayerInAirState InAirState { get; private set; }
     public PlayerLandState LandState { get; private set; }
+    public PlayerLedgeClimbState LedgeClimbState { get; private set ; }
 
     #endregion
 
     #region Collision Check
-    [SerializeField] private Transform GroundCheck;
+    public Transform GroundCheck;
+    public Transform WallCheck;
+    public Transform LedgeCheck;
     #endregion
 
     private Vector2 Workspace;
@@ -44,6 +49,7 @@ public class Player : MonoBehaviour
         JumpState = new PlayerJumpState(StateMachine, this, "InAir", PlayerData);
         InAirState = new PlayerInAirState(StateMachine, this, "InAir", PlayerData);
         LandState = new PlayerLandState(StateMachine, this, "Land", PlayerData);
+        LedgeClimbState = new PlayerLedgeClimbState(StateMachine, this, "LedgeClimb", PlayerData);
     }
 
     private void Start()
@@ -66,6 +72,12 @@ public class Player : MonoBehaviour
     private void FixedUpdate()
     {
         StateMachine.CurrentState.PhysicUpdate();
+    }
+
+    public void SetVelocityZero()
+    {
+        Rb.velocity = Vector2.zero;
+        CurrentVelocity = Vector2.zero;
     }
 
     public void SetVelocityX(float velocity)
@@ -97,6 +109,25 @@ public class Player : MonoBehaviour
     }
 
     public bool IsGrounded() => Physics2D.OverlapCircle(GroundCheck.position, PlayerData.GroundCheckRadius, PlayerData.WhatIsGround);
+    public bool IsTouchingWall() => Physics2D.Raycast(WallCheck.position, Vector2.right * FacingDirection, PlayerData.WallCheckRadius, PlayerData.WhatIsGround);
+    public bool IsTouchingLedge() => Physics2D.Raycast(LedgeCheck.position, Vector2.right * FacingDirection, PlayerData.LedgeCheckRadius, PlayerData.WhatIsGround);
 
     public void AnimationFinishTrigger() => StateMachine.CurrentState.AnimationFinishTrigger();
+
+    public Vector2 DetermineCornerPostion()
+    {
+        RaycastHit2D xHit = Physics2D.Raycast(WallCheck.position, Vector2.right * FacingDirection, PlayerData.WallCheckRadius, PlayerData.WhatIsGround);
+        float xDist = xHit.distance;
+        Workspace.Set(xDist * FacingDirection, 0);
+        RaycastHit2D yHit = Physics2D.Raycast(LedgeCheck.position + (Vector3)Workspace, Vector2.down, LedgeCheck.position.y - WallCheck.position.y, PlayerData.WhatIsGround);
+        float yDist = yHit.distance;
+
+        Workspace.Set(WallCheck.position.x + xDist * FacingDirection, LedgeCheck.position.y - yDist);
+        return Workspace;
+    }
+
+    private void OnDrawGizmos()
+    {
+        Gizmos.DrawSphere(DetermineCornerPostion(), 0.1f);
+    }
 }
