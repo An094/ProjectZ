@@ -7,6 +7,7 @@ public class PlayerInAirState : PlayerState
 {
     private int xInput;
     private bool JumpInput;
+    private bool RollInput;
     private bool IsGrounded;
     private bool CoyoteTime;
     private bool IsJumping;
@@ -40,6 +41,7 @@ public class PlayerInAirState : PlayerState
 
         xInput = Player.InputHandler.NormalInputX;
         JumpInput = Player.InputHandler.JumpInput;
+        RollInput = Player.InputHandler.RollInput;
         JumpInputStop = Player.InputHandler.JumpInputStop;
 
         CheckJumpMultiplier();
@@ -51,6 +53,10 @@ public class PlayerInAirState : PlayerState
         else if(JumpInput && Player.JumpState.CanJump())
         {
             StateMachine.ChangeState(Player.JumpState);
+        }
+        else if(RollInput && Player.DodgeRollState.CanRoll())
+        {
+            StateMachine.ChangeState(Player.DodgeRollState);
         }
         else if (IsTouchingWall && !IsTouchingLedge && !IsGrounded)
         {

@@ -5,6 +5,8 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "New Player Data", menuName = "Data/Player Data")]
 public class PlayerData : ScriptableObject
 {
+    public float StandColliderHeight = 1.19f;
+
     [Header("Move State")]
     public float MovementSpeed = 10f;
 
@@ -22,6 +24,12 @@ public class PlayerData : ScriptableObject
     [Header("Ledge Climb State")]
     public Vector2 StartOffset;
     public Vector2 StopOffset;
+
+    [Header("Roll State")]
+    public float RollVelocity = 15;
+    public float RollVelocityY = 1;
+    public float RollingCooldown = 1f;
+    public float RollingColliderHeight = 0.7f;
 
     [Header("Check Variables")]
     public float GroundCheckRadius = 0.2f;

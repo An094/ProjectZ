@@ -8,6 +8,7 @@ public class PlayerGroundedState : PlayerState
 
     private bool JumpInput;
     private bool IsGrounded;
+    private bool RollInput;
     public PlayerGroundedState(PlayerStateMachine stateMachine, Player player, string animName, PlayerData playerData) : base(stateMachine, player, animName, playerData)
     {
     }
@@ -37,12 +38,17 @@ public class PlayerGroundedState : PlayerState
 
         xInput = Player.InputHandler.NormalInputX;
         JumpInput = Player.InputHandler.JumpInput;
+        RollInput = Player.InputHandler.RollInput;
         IsGrounded = Player.IsGrounded();
 
         if (JumpInput && Player.JumpState.CanJump())
         {
             Player.InputHandler.UseJumpInput();
             Player.StateMachine.ChangeState(Player.JumpState);
+        }
+        else if(RollInput && Player.DodgeRollState.CanRoll())
+        {
+            Player.StateMachine.ChangeState(Player.DodgeRollState);
         }
         else if(!IsGrounded)
         {

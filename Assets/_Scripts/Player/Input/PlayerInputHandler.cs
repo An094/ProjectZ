@@ -5,19 +5,22 @@ using UnityEngine.InputSystem;
 
 public class PlayerInputHandler : MonoBehaviour
 {
-    public Vector2 RawMovementInput {  get; private set; }
-    public int NormalInputX {  get; private set; }
-    public int NormalInputY {  get; private set; }
+    public Vector2 RawMovementInput { get; private set; }
+    public int NormalInputX { get; private set; }
+    public int NormalInputY { get; private set; }
     public bool JumpInput { get; private set; }
     public bool GrabInput { get; private set; }
+    public bool RollInput { get; private set; }
     public bool JumpInputStop { get; private set; }
     [SerializeField] private float InputHoldTime = 0.2f;
 
     private float JumpInputStartTime;
+    private float RollInputStartTime;
 
     private void Update()
     {
         CheckJumpInputHoldTime();
+        CheckRollInputHoldTime();
     }
 
     public void OnMoveInput(InputAction.CallbackContext context)
@@ -37,7 +40,7 @@ public class PlayerInputHandler : MonoBehaviour
             JumpInputStop = false;
         }
 
-        if(context.canceled)
+        if (context.canceled)
         {
             JumpInputStop = true;
         }
@@ -45,18 +48,28 @@ public class PlayerInputHandler : MonoBehaviour
 
     public void OnGrabInput(InputAction.CallbackContext context)
     {
-        if(context.started)
+        if (context.started)
         {
             GrabInput = true;
         }
-        
+
         if (context.canceled)
         {
             GrabInput = false;
         }
     }
 
+    public void OnRollInput(InputAction.CallbackContext context)
+    {
+        if(context.started)
+        {
+            RollInput = true;
+            RollInputStartTime = Time.time;
+        }
+    }
+
     public void UseJumpInput() => JumpInput = false;
+    public void UseRollInput() => RollInput = false;
 
     private void CheckJumpInputHoldTime()
     {
@@ -65,4 +78,13 @@ public class PlayerInputHandler : MonoBehaviour
             JumpInput = false;
         }
     }
+
+    private void CheckRollInputHoldTime()
+    {
+        if(Time.time >= RollInputStartTime + InputHoldTime)
+        {
+            RollInput = false;
+        }
+    }
+
 }

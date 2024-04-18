@@ -14,6 +14,7 @@ public class Player : MonoBehaviour
     public Rigidbody2D Rb { get; private set; }
     public Animator Animator { get; private set; }
 
+    public BoxCollider2D Collider { get; private set; }
     public PlayerInputHandler InputHandler { get; private set; }
 
     #endregion
@@ -28,6 +29,7 @@ public class Player : MonoBehaviour
     public PlayerInAirState InAirState { get; private set; }
     public PlayerLandState LandState { get; private set; }
     public PlayerLedgeClimbState LedgeClimbState { get; private set ; }
+    public PlayerDodgeRollState DodgeRollState { get; private set; }
 
     #endregion
 
@@ -50,12 +52,14 @@ public class Player : MonoBehaviour
         InAirState = new PlayerInAirState(StateMachine, this, "InAir", PlayerData);
         LandState = new PlayerLandState(StateMachine, this, "Land", PlayerData);
         LedgeClimbState = new PlayerLedgeClimbState(StateMachine, this, "LedgeClimb", PlayerData);
+        DodgeRollState = new PlayerDodgeRollState(StateMachine, this, "Roll", PlayerData);
     }
 
     private void Start()
     {
         Rb = GetComponent<Rigidbody2D>();
         Animator = GetComponent<Animator>();
+        Collider = GetComponent<BoxCollider2D>();
         InputHandler = GetComponent<PlayerInputHandler>();
 
         StateMachine.Initialize(IdleState);
@@ -92,6 +96,17 @@ public class Player : MonoBehaviour
         Workspace.Set(CurrentVelocity.x, velocity);
         Rb.velocity = Workspace;
         CurrentVelocity = Workspace;
+    }
+
+    public void SetColliderHeight(float height)
+    {
+        Vector2 center = Collider.offset;
+        Workspace.Set(Collider.size.x, height);
+
+        center.y += (height - Collider.size.y) / 2;
+
+        Collider.size = Workspace;
+        Collider.offset = center;
     }
 
     public void CheckIfShouldFlip(int xInput)

@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1d55541f5bdfaf641b66c5fb2598fc63, type: 3}
   m_Name: Base
   m_EditorClassIdentifier: 
+  StandColliderHeight: 1.19
   MovementSpeed: 5
   JumpSpeed: 13
   AmountOfJumps: 2
@@ -20,6 +21,10 @@ MonoBehaviour:
   WallSlideVelocity: 1
   StartOffset: {x: 0.2, y: 0.2}
   StopOffset: {x: 0.4, y: 0.8}
+  RollVelocity: 10
+  RollVelocityY: 2
+  RollingCooldown: 1
+  RollingColliderHeight: 0.6
   GroundCheckRadius: 0.2
   WallCheckRadius: 0.5
   LedgeCheckRadius: 0.5
