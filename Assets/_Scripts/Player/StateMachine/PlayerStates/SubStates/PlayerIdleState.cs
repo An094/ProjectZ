@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class PlayerIdleState : PlayerGroundedState
 {
+    public float yInput;
     public PlayerIdleState(PlayerStateMachine stateMachine, Player player, string animName, PlayerData playerData) : base(stateMachine, player, animName, playerData)
     {
     }
@@ -28,9 +29,15 @@ public class PlayerIdleState : PlayerGroundedState
     {
         base.LogicUpdate();
 
+        yInput = Player.InputHandler.NormalInputY;
+
         if(xInput != 0)
         {
-            Player.StateMachine.ChangeState(Player.MoveState);
+            StateMachine.ChangeState(Player.MoveState);
+        }
+        else if(xInput == 0 && yInput == -1)
+        {
+            StateMachine.ChangeState(Player.CrouchIdleState);
         }
     }
 

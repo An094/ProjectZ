@@ -30,6 +30,7 @@ public class Player : MonoBehaviour
     public PlayerLandState LandState { get; private set; }
     public PlayerLedgeClimbState LedgeClimbState { get; private set ; }
     public PlayerDodgeRollState DodgeRollState { get; private set; }
+    public PlayerCrouchIdleState CrouchIdleState { get; private set; }
 
     #endregion
 
@@ -53,6 +54,7 @@ public class Player : MonoBehaviour
         LandState = new PlayerLandState(StateMachine, this, "Land", PlayerData);
         LedgeClimbState = new PlayerLedgeClimbState(StateMachine, this, "LedgeClimb", PlayerData);
         DodgeRollState = new PlayerDodgeRollState(StateMachine, this, "Roll", PlayerData);
+        CrouchIdleState = new PlayerCrouchIdleState(StateMachine, this, "Crouch", PlayerData);
     }
 
     private void Start()

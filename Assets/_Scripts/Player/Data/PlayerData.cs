@@ -26,10 +26,14 @@ public class PlayerData : ScriptableObject
     public Vector2 StopOffset;
 
     [Header("Roll State")]
-    public float RollVelocity = 15;
+    public float GroundRollVelocity = 15;
+    public float InAirRollVelocity = 7;
     public float RollVelocityY = 1;
     public float RollingCooldown = 1f;
     public float RollingColliderHeight = 0.7f;
+
+    [Header("Crouch State")]
+    public float CrouchColliderHeight = 0.7f;
 
     [Header("Check Variables")]
     public float GroundCheckRadius = 0.2f;

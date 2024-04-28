@@ -5,6 +5,7 @@ using UnityEngine;
 public class PlayerDodgeRollState : PlayerAbilityState
 {
     private int xInput;
+    private bool IsGrounded;
     public PlayerDodgeRollState(PlayerStateMachine stateMachine, Player player, string animName, PlayerData playerData) : base(stateMachine, player, animName, playerData)
     {
     }
@@ -19,6 +20,8 @@ public class PlayerDodgeRollState : PlayerAbilityState
     public override void DoChecks()
     {
         base.DoChecks();
+
+        IsGrounded = Player.IsGrounded();
     }
 
     public override void Enter()
@@ -46,8 +49,16 @@ public class PlayerDodgeRollState : PlayerAbilityState
         if(!IsExitingState)
         {
             int RollingDirection = xInput != 0 ? xInput : Player.FacingDirection;
-            Player.SetVelocityX(RollingDirection * PlayerData.RollVelocity);
-            Player.SetVelocityY(-PlayerData.RollVelocityY);
+            if(IsGrounded)
+            {
+                Player.SetVelocityX(RollingDirection * PlayerData.GroundRollVelocity);
+                Player.SetVelocityY(-PlayerData.RollVelocityY);
+            }
+            else
+            {
+                Player.SetVelocityX(RollingDirection * PlayerData.InAirRollVelocity);
+                Player.SetVelocityY(0.0f);
+            }
         }
     }
 
