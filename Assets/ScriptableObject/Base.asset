@@ -23,13 +23,17 @@ MonoBehaviour:
   StopOffset: {x: 0.4, y: 0.8}
   GroundRollVelocity: 10
   InAirRollVelocity: 7
-  RollVelocityY: 2
+  RollVelocityY: 6
   RollingCooldown: 1
   RollingColliderHeight: 0.6
   CrouchColliderHeight: 0.7
   GroundCheckRadius: 0.2
   WallCheckRadius: 0.5
   LedgeCheckRadius: 0.5
+  CeilingRadius: 0.2
   WhatIsGround:
     serializedVersion: 2
     m_Bits: 64
+  WhatIsPlatformer:
+    serializedVersion: 2
+    m_Bits: 128

@@ -31,6 +31,7 @@ public class Player : MonoBehaviour
     public PlayerLedgeClimbState LedgeClimbState { get; private set ; }
     public PlayerDodgeRollState DodgeRollState { get; private set; }
     public PlayerCrouchIdleState CrouchIdleState { get; private set; }
+    public PlayerDropDownFloor DropDownFloor { get; private set; }
 
     #endregion
 
@@ -38,6 +39,7 @@ public class Player : MonoBehaviour
     public Transform GroundCheck;
     public Transform WallCheck;
     public Transform LedgeCheck;
+    public Transform CeilingCheck;
     #endregion
 
     private Vector2 Workspace;
@@ -55,6 +57,7 @@ public class Player : MonoBehaviour
         LedgeClimbState = new PlayerLedgeClimbState(StateMachine, this, "LedgeClimb", PlayerData);
         DodgeRollState = new PlayerDodgeRollState(StateMachine, this, "Roll", PlayerData);
         CrouchIdleState = new PlayerCrouchIdleState(StateMachine, this, "Crouch", PlayerData);
+        DropDownFloor = new PlayerDropDownFloor(StateMachine, this, "InAir", PlayerData);
     }
 
     private void Start()
@@ -125,9 +128,11 @@ public class Player : MonoBehaviour
         transform.Rotate(0f, 180f, 0f);
     }
 
-    public bool IsGrounded() => Physics2D.OverlapCircle(GroundCheck.position, PlayerData.GroundCheckRadius, PlayerData.WhatIsGround);
+    public bool IsGrounded() => Physics2D.OverlapCircle(GroundCheck.position, PlayerData.GroundCheckRadius, PlayerData.WhatIsGround) || IsOverPlatformer();
     public bool IsTouchingWall() => Physics2D.Raycast(WallCheck.position, Vector2.right * FacingDirection, PlayerData.WallCheckRadius, PlayerData.WhatIsGround);
     public bool IsTouchingLedge() => Physics2D.Raycast(LedgeCheck.position, Vector2.right * FacingDirection, PlayerData.LedgeCheckRadius, PlayerData.WhatIsGround);
+    public bool IsCeiling() => Physics2D.OverlapCircle(CeilingCheck.position, PlayerData.CeilingRadius, PlayerData.WhatIsGround);
+    public bool IsOverPlatformer() => Physics2D.OverlapCircle(GroundCheck.position, PlayerData.GroundCheckRadius, PlayerData.WhatIsPlatformer);
 
     public void AnimationFinishTrigger() => StateMachine.CurrentState.AnimationFinishTrigger();
 

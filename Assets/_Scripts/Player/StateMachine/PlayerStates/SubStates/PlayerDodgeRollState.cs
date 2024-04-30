@@ -52,12 +52,12 @@ public class PlayerDodgeRollState : PlayerAbilityState
             if(IsGrounded)
             {
                 Player.SetVelocityX(RollingDirection * PlayerData.GroundRollVelocity);
-                Player.SetVelocityY(-PlayerData.RollVelocityY);
+                Player.SetVelocityY(0.0f);
             }
             else
             {
                 Player.SetVelocityX(RollingDirection * PlayerData.InAirRollVelocity);
-                Player.SetVelocityY(0.0f);
+                Player.SetVelocityY(-PlayerData.RollVelocityY);
             }
         }
     }

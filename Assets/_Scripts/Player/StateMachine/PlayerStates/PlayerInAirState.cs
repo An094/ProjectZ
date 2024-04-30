@@ -14,6 +14,7 @@ public class PlayerInAirState : PlayerState
     private bool JumpInputStop;
     private bool IsTouchingWall;
     private bool IsTouchingLedge;
+    private bool IsOverPlatformer;
 
     public PlayerInAirState(PlayerStateMachine stateMachine, Player player, string animName, PlayerData playerData) : base(stateMachine, player, animName, playerData)
     {
@@ -26,6 +27,7 @@ public class PlayerInAirState : PlayerState
         IsGrounded = Player.IsGrounded();
         IsTouchingWall = Player.IsTouchingWall();
         IsTouchingLedge = Player.IsTouchingLedge();
+        IsOverPlatformer = Player.IsOverPlatformer();
 
         if(IsTouchingWall && !IsTouchingLedge)
         {

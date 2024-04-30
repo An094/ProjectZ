@@ -39,5 +39,7 @@ public class PlayerData : ScriptableObject
     public float GroundCheckRadius = 0.2f;
     public float WallCheckRadius = 0.5f;
     public float LedgeCheckRadius = 0.5f;
+    public float CeilingRadius = 0.2f;
     public LayerMask WhatIsGround;
+    public LayerMask WhatIsPlatformer;
 }
