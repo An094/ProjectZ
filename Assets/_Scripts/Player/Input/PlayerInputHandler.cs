@@ -69,6 +69,7 @@ public class PlayerInputHandler : MonoBehaviour
     }
 
     public void UseJumpInput() => JumpInput = false;
+    public void UseGrabInput() => GrabInput = false;
     public void UseRollInput() => RollInput = false;
 
     private void CheckJumpInputHoldTime()

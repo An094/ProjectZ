@@ -64,6 +64,10 @@ public class PlayerInAirState : PlayerState
         {
             StateMachine.ChangeState(Player.LedgeClimbState);
         }
+        else if(IsTouchingWall && (xInput == Player.FacingDirection || xInput == 0) && Player.CurrentVelocity.y < 0.0f)
+        {
+            StateMachine.ChangeState(Player.WallSlideState);
+        }
         else
         {
             Player.SetVelocityX(xInput * PlayerData.MovementSpeed);

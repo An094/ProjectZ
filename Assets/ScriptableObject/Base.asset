@@ -18,7 +18,8 @@ MonoBehaviour:
   AmountOfJumps: 2
   CoyoteTime: 0.2
   VariableJumpHeightMultiplier: 0.5
-  WallSlideVelocity: 1
+  WallSlideVelocity: 0.5
+  WallClimbVelocity: 2
   StartOffset: {x: 0.2, y: 0.2}
   StopOffset: {x: 0.4, y: 0.8}
   GroundRollVelocity: 10
@@ -28,9 +29,9 @@ MonoBehaviour:
   RollingColliderHeight: 0.6
   CrouchColliderHeight: 0.7
   GroundCheckRadius: 0.2
-  WallCheckRadius: 0.5
-  LedgeCheckRadius: 0.5
-  CeilingRadius: 0.2
+  WallCheckRadius: 0.35
+  LedgeCheckRadius: 0.35
+  CeilingRadius: 0.3
   WhatIsGround:
     serializedVersion: 2
     m_Bits: 64

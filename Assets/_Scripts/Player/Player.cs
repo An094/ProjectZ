@@ -32,6 +32,9 @@ public class Player : MonoBehaviour
     public PlayerDodgeRollState DodgeRollState { get; private set; }
     public PlayerCrouchIdleState CrouchIdleState { get; private set; }
     public PlayerDropDownFloor DropDownFloor { get; private set; }
+    public PlayerWallSlideState WallSlideState { get; private set; }
+    public PlayerWallGrabState WallGrabState { get; private set; }
+    public PlayerWallClimbState WallClimbState { get; private set; }
 
     #endregion
 
@@ -58,6 +61,9 @@ public class Player : MonoBehaviour
         DodgeRollState = new PlayerDodgeRollState(StateMachine, this, "Roll", PlayerData);
         CrouchIdleState = new PlayerCrouchIdleState(StateMachine, this, "Crouch", PlayerData);
         DropDownFloor = new PlayerDropDownFloor(StateMachine, this, "InAir", PlayerData);
+        WallSlideState = new PlayerWallSlideState(StateMachine, this, "WallSlide", PlayerData);
+        WallGrabState = new PlayerWallGrabState(StateMachine, this, "WallGrab", PlayerData);
+        WallClimbState = new PlayerWallClimbState(StateMachine, this, "WallClimb", PlayerData);
     }
 
     private void Start()

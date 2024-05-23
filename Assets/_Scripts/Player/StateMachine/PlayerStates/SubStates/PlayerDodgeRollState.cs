@@ -6,6 +6,7 @@ public class PlayerDodgeRollState : PlayerAbilityState
 {
     private int xInput;
     private bool IsGrounded;
+    private bool CeilingCheck;
     public PlayerDodgeRollState(PlayerStateMachine stateMachine, Player player, string animName, PlayerData playerData) : base(stateMachine, player, animName, playerData)
     {
     }
@@ -14,7 +15,18 @@ public class PlayerDodgeRollState : PlayerAbilityState
     {
         base.AnimationFinishTrigger();
 
-        IsAbilityDone = true;
+        Player.SetColliderHeight(PlayerData.StandColliderHeight);
+        CeilingCheck = Player.IsCeiling();
+
+        if (CeilingCheck)
+        {
+            Enter();
+        }
+        else
+        {
+            IsAbilityDone = true;
+        }
+
     }
 
     public override void DoChecks()
@@ -22,6 +34,7 @@ public class PlayerDodgeRollState : PlayerAbilityState
         base.DoChecks();
 
         IsGrounded = Player.IsGrounded();
+        CeilingCheck = Player.IsCeiling();
     }
 
     public override void Enter()

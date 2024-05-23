@@ -19,7 +19,10 @@ public class PlayerData : ScriptableObject
     public float VariableJumpHeightMultiplier = 0.5f;
 
     [Header("Wall Slide State")]
-    public float WallSlideVelocity = 2f;
+    public float WallSlideVelocity = 0.5f;
+
+    [Header("Wall Climb State")]
+    public float WallClimbVelocity = 0.5f;
 
     [Header("Ledge Climb State")]
     public Vector2 StartOffset;
