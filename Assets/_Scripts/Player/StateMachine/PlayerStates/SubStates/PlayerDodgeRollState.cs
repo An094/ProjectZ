@@ -20,7 +20,9 @@ public class PlayerDodgeRollState : PlayerAbilityState
 
         if (CeilingCheck)
         {
-            Enter();
+            base.Enter();
+            Player.SetColliderHeight(PlayerData.RollingColliderHeight);
+            IsAbilityDone = false;
         }
         else
         {

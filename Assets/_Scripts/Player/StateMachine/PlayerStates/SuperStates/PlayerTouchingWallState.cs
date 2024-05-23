@@ -46,7 +46,7 @@ public class PlayerTouchingWallState : PlayerState
                 Player.Flip();
                 StateMachine.ChangeState(Player.IdleState);
             }
-            else if (!IsTouchingLedge)
+            else if (!IsTouchingLedge && IsTouchingWall)
             {
                 StateMachine.ChangeState(Player.LedgeClimbState);
             }

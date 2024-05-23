@@ -29,8 +29,8 @@ MonoBehaviour:
   RollingColliderHeight: 0.6
   CrouchColliderHeight: 0.7
   GroundCheckRadius: 0.2
-  WallCheckRadius: 0.35
-  LedgeCheckRadius: 0.35
+  WallCheckRadius: 0.3
+  LedgeCheckRadius: 0.3
   CeilingRadius: 0.3
   WhatIsGround:
     serializedVersion: 2

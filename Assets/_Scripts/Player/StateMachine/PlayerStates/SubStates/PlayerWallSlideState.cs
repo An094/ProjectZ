@@ -35,6 +35,7 @@ public class PlayerWallSlideState : PlayerTouchingWallState
         }
         else if(xInput != 0 && xInput != Player.FacingDirection)
         {
+            Player.Flip();
             StateMachine.ChangeState(Player.InAirState);
         }
         else
