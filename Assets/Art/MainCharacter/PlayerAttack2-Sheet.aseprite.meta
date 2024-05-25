@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 0f0ada7c7aa6c484d91b122407cba559
+guid: e68b81e7063dd024b8117658f4935ee3
 ScriptedImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -119,58 +119,18 @@ ScriptedImporter:
     tessellationDetail: 0
     uvTransform: {x: 0, y: 0}
   animatedSpriteImportData:
-  - name: PlayerAttack2_Frame_0
+  - name: PlayerAttack2-Sheet
     originalName: 
-    pivot: {x: 0.47368425, y: 0}
-    alignment: 9
-    border: {x: 0, y: 0, z: 0, w: 0}
-    rect:
-      serializedVersion: 2
-      x: 82
-      y: 4
-      width: 38
-      height: 37
-    spriteID: e83265d167e33834b904a0e077bdf3c2
-    spriteBone: []
-    spriteOutline: []
-    vertices: []
-    spritePhysicsOutline: []
-    indices: 
-    edges: []
-    tessellationDetail: 0
-    uvTransform: {x: 82, y: 4}
-  - name: PlayerAttack2_Frame_1
-    originalName: 
-    pivot: {x: 0.25581396, y: 0}
-    alignment: 9
-    border: {x: 0, y: 0, z: 0, w: 0}
-    rect:
-      serializedVersion: 2
-      x: 75
-      y: 61
-      width: 43
-      height: 36
-    spriteID: db4d04360128c1c4bb296572fda4ae3d
-    spriteBone: []
-    spriteOutline: []
-    vertices: []
-    spritePhysicsOutline: []
-    indices: 
-    edges: []
-    tessellationDetail: 0
-    uvTransform: {x: 75, y: 61}
-  - name: PlayerAttack2_Frame_2
-    originalName: 
-    pivot: {x: 0.5857143, y: 0}
+    pivot: {x: 0.49710986, y: 0}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
       x: 4
       y: 4
-      width: 70
+      width: 519
       height: 49
-    spriteID: d0442d7e5fe8aab41a35072ba785a82c
+    spriteID: b8572daa289577f4b82495a1db108371
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -179,98 +139,26 @@ ScriptedImporter:
     edges: []
     tessellationDetail: 0
     uvTransform: {x: 4, y: 4}
-  - name: PlayerAttack2_Frame_3
-    originalName: 
-    pivot: {x: 0.6666667, y: 0}
-    alignment: 9
-    border: {x: 0, y: 0, z: 0, w: 0}
-    rect:
-      serializedVersion: 2
-      x: 4
-      y: 61
-      width: 63
-      height: 49
-    spriteID: e76479a625102a44ab6c4be0929be07b
-    spriteBone: []
-    spriteOutline: []
-    vertices: []
-    spritePhysicsOutline: []
-    indices: 
-    edges: []
-    tessellationDetail: 0
-    uvTransform: {x: 4, y: 61}
-  - name: PlayerAttack2_Frame_4
-    originalName: 
-    pivot: {x: 0.6181818, y: 0}
-    alignment: 9
-    border: {x: 0, y: 0, z: 0, w: 0}
-    rect:
-      serializedVersion: 2
-      x: 4
-      y: 118
-      width: 55
-      height: 48
-    spriteID: a652823c062b8914aaaee68e0959c63d
-    spriteBone: []
-    spriteOutline: []
-    vertices: []
-    spritePhysicsOutline: []
-    indices: 
-    edges: []
-    tessellationDetail: 0
-    uvTransform: {x: 4, y: 118}
   spriteSheetImportData: []
   asepriteLayers:
   - layerIndex: 0
-    guid: 331951277
-    name: PlayerAttack2
+    guid: 2091050855
+    name: PlayerAttack2-Sheet
     layerFlags: 0
     layerType: 0
     blendMode: 0
     cells:
-    - name: PlayerAttack2_Frame_0
+    - name: PlayerAttack2-Sheet
       frameIndex: 0
       cellRect:
         x: 42
         y: 0
-        width: 38
-        height: 37
-      spriteId: e83265d167e33834b904a0e077bdf3c2
-    - name: PlayerAttack2_Frame_1
-      frameIndex: 1
-      cellRect:
-        x: 49
-        y: 0
-        width: 43
-        height: 36
-      spriteId: db4d04360128c1c4bb296572fda4ae3d
-    - name: PlayerAttack2_Frame_2
-      frameIndex: 2
-      cellRect:
-        x: 19
-        y: 0
-        width: 70
+        width: 519
         height: 49
-      spriteId: d0442d7e5fe8aab41a35072ba785a82c
-    - name: PlayerAttack2_Frame_3
-      frameIndex: 3
-      cellRect:
-        x: 18
-        y: 0
-        width: 63
-        height: 49
-      spriteId: e76479a625102a44ab6c4be0929be07b
-    - name: PlayerAttack2_Frame_4
-      frameIndex: 4
-      cellRect:
-        x: 26
-        y: 0
-        width: 55
-        height: 48
-      spriteId: a652823c062b8914aaaee68e0959c63d
+      spriteId: b8572daa289577f4b82495a1db108371
     linkedCells: []
     parentIndex: -1
   platformSettings: []
   secondarySpriteTextures: []
   spritePackingTag: 
-  canvasSize: {x: 120, y: 80}
+  canvasSize: {x: 600, y: 80}

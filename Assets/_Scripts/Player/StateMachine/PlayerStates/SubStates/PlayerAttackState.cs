@@ -11,7 +11,7 @@ public class PlayerAttackState : PlayerAbilityState
 
     public PlayerAttackState(PlayerStateMachine stateMachine, Player player, string animName, PlayerData playerData) : base(stateMachine, player, animName, playerData)
     {
-        AttackCounter = 0;
+        AttackCounter = - 1;
     }
 
     public override void AnimationFinishTrigger()
@@ -31,9 +31,14 @@ public class PlayerAttackState : PlayerAbilityState
     {
         base.Enter();
 
+        if (Time.time < LastAttackedTime + 0.2f)
+        {
+            return;
+        }
+
         IsAbilityDone = false;// use this for only attack state.
 
-        if (Time.time > LastAttackedTime + 1f) 
+        if (Time.time > LastAttackedTime + 1.5f) 
         {
             AttackCounter = 0;
         }
@@ -42,12 +47,17 @@ public class PlayerAttackState : PlayerAbilityState
             AttackCounter = AttackCounter < 2 ? AttackCounter + 1 : 0;
         }
 
+        Player.SetVelocityZero();
+
         Player.Animator.SetInteger("AttackCounter", AttackCounter);
+        int attackDir = xInput != 0 ? xInput : Player.FacingDirection;
+        Player.SetVelocityX(attackDir * 0.2f);
     }
 
     public override void Exit()
     {
         base.Exit();
+       // Player.SetVelocityZero();
     }
 
     public override void LogicUpdate()
@@ -56,8 +66,8 @@ public class PlayerAttackState : PlayerAbilityState
 
         xInput = Player.InputHandler.NormalInputX;
 
-        Player.CheckIfShouldFlip(xInput);
-
+        //Player.CheckIfShouldFlip(xInput);
+        
     }
 
     public override void PhysicUpdate()
