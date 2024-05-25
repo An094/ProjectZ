@@ -9,6 +9,7 @@ public class PlayerGroundedState : PlayerState
     private bool JumpInput;
     private bool IsGrounded;
     private bool RollInput;
+    private bool PrimaryAttack;
     public PlayerGroundedState(PlayerStateMachine stateMachine, Player player, string animName, PlayerData playerData) : base(stateMachine, player, animName, playerData)
     {
     }
@@ -39,6 +40,8 @@ public class PlayerGroundedState : PlayerState
         xInput = Player.InputHandler.NormalInputX;
         JumpInput = Player.InputHandler.JumpInput;
         RollInput = Player.InputHandler.RollInput;
+        PrimaryAttack = Player.InputHandler.PrimaryAttack;
+
         IsGrounded = Player.IsGrounded();
 
         if (JumpInput && Player.JumpState.CanJump())
@@ -54,6 +57,11 @@ public class PlayerGroundedState : PlayerState
         {
             Player.InAirState.StartCoyoteTime();
             Player.StateMachine.ChangeState(Player.InAirState);
+        }
+        else if(PrimaryAttack)
+        {
+            Player.InputHandler.UsePrimaryAttackInput();
+            StateMachine.ChangeState(Player.PrimaryAttackState);
         }
         
     }

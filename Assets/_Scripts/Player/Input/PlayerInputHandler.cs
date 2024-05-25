@@ -12,6 +12,8 @@ public class PlayerInputHandler : MonoBehaviour
     public bool GrabInput { get; private set; }
     public bool RollInput { get; private set; }
     public bool JumpInputStop { get; private set; }
+    public bool PrimaryAttack {  get; private set; }
+
     [SerializeField] private float InputHoldTime = 0.2f;
 
     private float JumpInputStartTime;
@@ -68,9 +70,23 @@ public class PlayerInputHandler : MonoBehaviour
         }
     }
 
+    public void OnAttackInput(InputAction.CallbackContext context)
+    {
+        if (context.started)
+        {
+            PrimaryAttack = true;
+        }
+
+        if (context.canceled)
+        {
+            PrimaryAttack = false;
+        }
+    }
+
     public void UseJumpInput() => JumpInput = false;
     public void UseGrabInput() => GrabInput = false;
     public void UseRollInput() => RollInput = false;
+    public void UsePrimaryAttackInput() => PrimaryAttack = false;
 
     private void CheckJumpInputHoldTime()
     {
