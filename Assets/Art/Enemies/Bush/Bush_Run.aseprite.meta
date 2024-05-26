@@ -1,0 +1,500 @@
+fileFormatVersion: 2
+guid: 133677b18c44a374daf6301267db12eb
+ScriptedImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 2
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+  script: {fileID: 11500000, guid: 62a9f0aa5b59740cfbadc7e5f9823bb0, type: 3}
+  textureImporterSettings:
+    alphaSource: 1
+    mipMapMode: 0
+    enableMipMap: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+    convertToNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+    swizzle: 50462976
+    isReadable: 0
+    streamingMipmaps: 0
+    streamingMipmapsPriority: 0
+    vTOnly: 0
+    ignoreMipmapLimit: 0
+    nPOTScale: 1
+    sRGBTexture: 1
+    spriteMode: 2
+    spriteExtrude: 1
+    spriteMeshType: 1
+    alignment: 0
+    spritePivot: {x: 0.5, y: 0.5}
+    spritePixelsToUnits: 100
+    spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+    spriteGenerateFallbackPhysicsShape: 0
+    generateCubemap: 6
+    cubemapConvolution: 0
+    seamlessCubemap: 0
+    alphaIsTransparency: 1
+    spriteTessellationDetail: -1
+    textureType: 8
+    textureShape: 1
+    singleChannelComponent: 0
+    flipbookRows: 0
+    flipbookColumns: 0
+    ignorePngGamma: 0
+    cookieMode: 0
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+    normalMap: 0
+    textureFormat: 0
+    maxTextureSize: 0
+    lightmap: 0
+    compressionQuality: 0
+    linearTexture: 0
+    grayScaleToAlpha: 0
+    rGBM: 0
+    cubemapConvolutionSteps: 0
+    cubemapConvolutionExponent: 0
+    maxTextureSizeSet: 0
+    compressionQualitySet: 0
+    textureFormatSet: 0
+    applyGammaDecoding: 0
+  previousAsepriteImporterSettings:
+    fileImportMode: 1
+    importHiddenLayers: 0
+    layerImportMode: 1
+    defaultPivotSpace: 0
+    defaultPivotAlignment: 7
+    customPivotPosition: {x: 0.5, y: 0.5}
+    spritePadding: 0
+    generateModelPrefab: 1
+    generateAnimationClips: 1
+    addSortingGroup: 1
+    addShadowCasters: 0
+  asepriteImporterSettings:
+    fileImportMode: 1
+    importHiddenLayers: 0
+    layerImportMode: 1
+    defaultPivotSpace: 0
+    defaultPivotAlignment: 7
+    customPivotPosition: {x: 0.5, y: 0.5}
+    spritePadding: 0
+    generateModelPrefab: 1
+    generateAnimationClips: 1
+    addSortingGroup: 1
+    addShadowCasters: 0
+  importFileNodeState: 1
+  platformSettingsDirtyTick: 0
+  textureAssetName: 
+  singleSpriteImportData:
+  - name: 
+    originalName: 
+    pivot: {x: 0, y: 0}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 0
+      height: 0
+    spriteID: 
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 0, y: 0}
+  animatedSpriteImportData:
+  - name: Bush_Run_Frame_0
+    originalName: 
+    pivot: {x: 0.45999998, y: -0.2916667}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 224
+      y: 4
+      width: 200
+      height: 96
+    spriteID: 9c367bac465461d45bb17007342fe255
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 224, y: 4}
+  - name: Bush_Run_Frame_1
+    originalName: 
+    pivot: {x: 0.4528302, y: -0.2916667}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 220
+      width: 212
+      height: 96
+    spriteID: 7fbe40b72d5a6964d87013ccafe611d9
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 220}
+  - name: Bush_Run_Frame_2
+    originalName: 
+    pivot: {x: 0.41509432, y: -0.2916667}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 324
+      width: 212
+      height: 96
+    spriteID: f1e5f9c014860cd44b2dc693562aec64
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 324}
+  - name: Bush_Run_Frame_3
+    originalName: 
+    pivot: {x: 0.39622644, y: -0.28}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 4
+      width: 212
+      height: 100
+    spriteID: f2226773e1697214dbc1e70dd6901531
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 4}
+  - name: Bush_Run_Frame_4
+    originalName: 
+    pivot: {x: 0.39215684, y: -0.2916667}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 636
+      width: 204
+      height: 96
+    spriteID: 986a806c5ba9c9646acac0c565067d65
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 636}
+  - name: Bush_Run_Frame_5
+    originalName: 
+    pivot: {x: 0.40816325, y: -0.30434784}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 224
+      y: 212
+      width: 196
+      height: 92
+    spriteID: 73f9b31fbb1cdda4aad064c5ed8a0358
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 224, y: 212}
+  - name: Bush_Run_Frame_6
+    originalName: 
+    pivot: {x: 0.44615388, y: -0.28}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 740
+      width: 195
+      height: 100
+    spriteID: 19b12b8888cd9c248acaf97d7b872093
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 740}
+  - name: Bush_Run_Frame_7
+    originalName: 
+    pivot: {x: 0.45999998, y: -0.2916667}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 224
+      y: 108
+      width: 200
+      height: 96
+    spriteID: 52eb29435b200f44db05c103787987ea
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 224, y: 108}
+  - name: Bush_Run_Frame_8
+    originalName: 
+    pivot: {x: 0.4528302, y: -0.2916667}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 428
+      width: 212
+      height: 96
+    spriteID: b47ca4187d080464bb49f16dd496f53e
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 428}
+  - name: Bush_Run_Frame_9
+    originalName: 
+    pivot: {x: 0.41509432, y: -0.2916667}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 532
+      width: 212
+      height: 96
+    spriteID: 454c040d46a6a7446ad0f29d99af9b04
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 532}
+  - name: Bush_Run_Frame_10
+    originalName: 
+    pivot: {x: 0.39810428, y: -0.28}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 112
+      width: 211
+      height: 100
+    spriteID: 87404a176f33a654b823c91af1f9e86c
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 112}
+  - name: Bush_Run_Frame_11
+    originalName: 
+    pivot: {x: 0.38916254, y: -0.2916667}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 848
+      width: 203
+      height: 96
+    spriteID: dc9103ceb28133540b92ca3536606045
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 848}
+  - name: Bush_Run_Frame_12
+    originalName: 
+    pivot: {x: 0.40816325, y: -0.30434784}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 224
+      y: 312
+      width: 196
+      height: 92
+    spriteID: fd7a274b122c18344b365e8bb44d57cf
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 224, y: 312}
+  spriteSheetImportData: []
+  asepriteLayers:
+  - layerIndex: 0
+    guid: -1110114454
+    name: Bush_Run
+    layerFlags: 0
+    layerType: 0
+    blendMode: 0
+    cells:
+    - name: Bush_Run_Frame_0
+      frameIndex: 0
+      cellRect:
+        x: 108
+        y: 28
+        width: 200
+        height: 96
+      spriteId: 9c367bac465461d45bb17007342fe255
+    - name: Bush_Run_Frame_1
+      frameIndex: 1
+      cellRect:
+        x: 104
+        y: 28
+        width: 212
+        height: 96
+      spriteId: 7fbe40b72d5a6964d87013ccafe611d9
+    - name: Bush_Run_Frame_2
+      frameIndex: 2
+      cellRect:
+        x: 112
+        y: 28
+        width: 212
+        height: 96
+      spriteId: f1e5f9c014860cd44b2dc693562aec64
+    - name: Bush_Run_Frame_3
+      frameIndex: 3
+      cellRect:
+        x: 116
+        y: 28
+        width: 212
+        height: 100
+      spriteId: f2226773e1697214dbc1e70dd6901531
+    - name: Bush_Run_Frame_4
+      frameIndex: 4
+      cellRect:
+        x: 120
+        y: 28
+        width: 204
+        height: 96
+      spriteId: 986a806c5ba9c9646acac0c565067d65
+    - name: Bush_Run_Frame_5
+      frameIndex: 5
+      cellRect:
+        x: 120
+        y: 28
+        width: 196
+        height: 92
+      spriteId: 73f9b31fbb1cdda4aad064c5ed8a0358
+    - name: Bush_Run_Frame_6
+      frameIndex: 6
+      cellRect:
+        x: 113
+        y: 28
+        width: 195
+        height: 100
+      spriteId: 19b12b8888cd9c248acaf97d7b872093
+    - name: Bush_Run_Frame_7
+      frameIndex: 7
+      cellRect:
+        x: 108
+        y: 28
+        width: 200
+        height: 96
+      spriteId: 52eb29435b200f44db05c103787987ea
+    - name: Bush_Run_Frame_8
+      frameIndex: 8
+      cellRect:
+        x: 104
+        y: 28
+        width: 212
+        height: 96
+      spriteId: b47ca4187d080464bb49f16dd496f53e
+    - name: Bush_Run_Frame_9
+      frameIndex: 9
+      cellRect:
+        x: 112
+        y: 28
+        width: 212
+        height: 96
+      spriteId: 454c040d46a6a7446ad0f29d99af9b04
+    - name: Bush_Run_Frame_10
+      frameIndex: 10
+      cellRect:
+        x: 116
+        y: 28
+        width: 211
+        height: 100
+      spriteId: 87404a176f33a654b823c91af1f9e86c
+    - name: Bush_Run_Frame_11
+      frameIndex: 11
+      cellRect:
+        x: 121
+        y: 28
+        width: 203
+        height: 96
+      spriteId: dc9103ceb28133540b92ca3536606045
+    - name: Bush_Run_Frame_12
+      frameIndex: 12
+      cellRect:
+        x: 120
+        y: 28
+        width: 196
+        height: 92
+      spriteId: fd7a274b122c18344b365e8bb44d57cf
+    linkedCells: []
+    parentIndex: -1
+  platformSettings: []
+  secondarySpriteTextures: []
+  spritePackingTag: 
+  canvasSize: {x: 400, y: 256}

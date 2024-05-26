@@ -1,0 +1,500 @@
+fileFormatVersion: 2
+guid: a0ee3c83b0179b543b107bc9b0852b34
+ScriptedImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 2
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+  script: {fileID: 11500000, guid: 62a9f0aa5b59740cfbadc7e5f9823bb0, type: 3}
+  textureImporterSettings:
+    alphaSource: 1
+    mipMapMode: 0
+    enableMipMap: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+    convertToNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+    swizzle: 50462976
+    isReadable: 0
+    streamingMipmaps: 0
+    streamingMipmapsPriority: 0
+    vTOnly: 0
+    ignoreMipmapLimit: 0
+    nPOTScale: 1
+    sRGBTexture: 1
+    spriteMode: 2
+    spriteExtrude: 1
+    spriteMeshType: 1
+    alignment: 0
+    spritePivot: {x: 0.5, y: 0.5}
+    spritePixelsToUnits: 100
+    spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+    spriteGenerateFallbackPhysicsShape: 0
+    generateCubemap: 6
+    cubemapConvolution: 0
+    seamlessCubemap: 0
+    alphaIsTransparency: 1
+    spriteTessellationDetail: -1
+    textureType: 8
+    textureShape: 1
+    singleChannelComponent: 0
+    flipbookRows: 0
+    flipbookColumns: 0
+    ignorePngGamma: 0
+    cookieMode: 0
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+    normalMap: 0
+    textureFormat: 0
+    maxTextureSize: 0
+    lightmap: 0
+    compressionQuality: 0
+    linearTexture: 0
+    grayScaleToAlpha: 0
+    rGBM: 0
+    cubemapConvolutionSteps: 0
+    cubemapConvolutionExponent: 0
+    maxTextureSizeSet: 0
+    compressionQualitySet: 0
+    textureFormatSet: 0
+    applyGammaDecoding: 0
+  previousAsepriteImporterSettings:
+    fileImportMode: 1
+    importHiddenLayers: 0
+    layerImportMode: 1
+    defaultPivotSpace: 0
+    defaultPivotAlignment: 7
+    customPivotPosition: {x: 0.5, y: 0.5}
+    spritePadding: 0
+    generateModelPrefab: 1
+    generateAnimationClips: 1
+    addSortingGroup: 1
+    addShadowCasters: 0
+  asepriteImporterSettings:
+    fileImportMode: 1
+    importHiddenLayers: 0
+    layerImportMode: 1
+    defaultPivotSpace: 0
+    defaultPivotAlignment: 7
+    customPivotPosition: {x: 0.5, y: 0.5}
+    spritePadding: 0
+    generateModelPrefab: 1
+    generateAnimationClips: 1
+    addSortingGroup: 1
+    addShadowCasters: 0
+  importFileNodeState: 1
+  platformSettingsDirtyTick: 0
+  textureAssetName: 
+  singleSpriteImportData:
+  - name: 
+    originalName: 
+    pivot: {x: 0, y: 0}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 0
+      height: 0
+    spriteID: 
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 0, y: 0}
+  animatedSpriteImportData:
+  - name: Apple_Attack_Frame_0
+    originalName: 
+    pivot: {x: 0.5113636, y: 0}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 768
+      width: 88
+      height: 92
+    spriteID: 99b9b9844cf458641b20e3501ccbf5b4
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 768}
+  - name: Apple_Attack_Frame_1
+    originalName: 
+    pivot: {x: 0.55, y: 0}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 384
+      width: 140
+      height: 92
+    spriteID: de9a5c12e152be9448d29c2ba453e3b3
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 384}
+  - name: Apple_Attack_Frame_2
+    originalName: 
+    pivot: {x: 0.15441176, y: 0}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 484
+      width: 136
+      height: 88
+    spriteID: 04fd1fd06bc85194ba06c8c40eb592ec
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 484}
+  - name: Apple_Attack_Frame_3
+    originalName: 
+    pivot: {x: 0.12878788, y: 0}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 580
+      width: 132
+      height: 84
+    spriteID: 883e360eed667f84ba7b31a4cb740c22
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 580}
+  - name: Apple_Attack_Frame_4
+    originalName: 
+    pivot: {x: 0.5113636, y: 0}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 412
+      y: 4
+      width: 88
+      height: 128
+    spriteID: 2be751f5558d14941a18ba87dc9c7608
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 412, y: 4}
+  - name: Apple_Attack_Frame_5
+    originalName: 
+    pivot: {x: 0.8707483, y: 0}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 268
+      width: 147
+      height: 108
+    spriteID: 74d294967931be645b62c9d4c70f5761
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 268}
+  - name: Apple_Attack_Frame_6
+    originalName: 
+    pivot: {x: 0.82580644, y: 0}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 159
+      y: 268
+      width: 155
+      height: 84
+    spriteID: ad29f734e3d5b4744adc324c8bf30e79
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 159, y: 268}
+  - name: Apple_Attack_Frame_7
+    originalName: 
+    pivot: {x: 0.8050314, y: 0}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 322
+      y: 268
+      width: 159
+      height: 68
+    spriteID: 9b3c3559cf2ecd940ae22095cdd237e9
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 322, y: 268}
+  - name: Apple_Attack_Frame_8
+    originalName: 
+    pivot: {x: 0.32, y: 0.5}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 4
+      width: 400
+      height: 256
+    spriteID: efc310cb33543af4ea16485df9763b00
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 4}
+  - name: Apple_Attack_Frame_9
+    originalName: 
+    pivot: {x: 0.8050314, y: 0}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 322
+      y: 344
+      width: 159
+      height: 68
+    spriteID: 3f3fd35f2ac423345aed667642c27051
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 322, y: 344}
+  - name: Apple_Attack_Frame_10
+    originalName: 
+    pivot: {x: 0.65, y: 0}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 672
+      width: 100
+      height: 88
+    spriteID: 9ad3ca8375733b447ab77b358b7b4e45
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 672}
+  - name: Apple_Attack_Frame_11
+    originalName: 
+    pivot: {x: 0.5520834, y: 0}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 412
+      y: 140
+      width: 96
+      height: 92
+    spriteID: bc7f3f87e1274f0498d70eaeb465fd64
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 412, y: 140}
+  - name: Apple_Attack_Frame_12
+    originalName: 
+    pivot: {x: 0.5113636, y: 0}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 868
+      width: 88
+      height: 92
+    spriteID: eddad6abf2fef0743b58a1d12933e77c
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 868}
+  spriteSheetImportData: []
+  asepriteLayers:
+  - layerIndex: 0
+    guid: 4265427
+    name: Apple_Attack
+    layerFlags: 0
+    layerType: 0
+    blendMode: 0
+    cells:
+    - name: Apple_Attack_Frame_0
+      frameIndex: 0
+      cellRect:
+        x: 83
+        y: 0
+        width: 88
+        height: 92
+      spriteId: 99b9b9844cf458641b20e3501ccbf5b4
+    - name: Apple_Attack_Frame_1
+      frameIndex: 1
+      cellRect:
+        x: 51
+        y: 0
+        width: 140
+        height: 92
+      spriteId: de9a5c12e152be9448d29c2ba453e3b3
+    - name: Apple_Attack_Frame_2
+      frameIndex: 2
+      cellRect:
+        x: 107
+        y: 0
+        width: 136
+        height: 88
+      spriteId: 04fd1fd06bc85194ba06c8c40eb592ec
+    - name: Apple_Attack_Frame_3
+      frameIndex: 3
+      cellRect:
+        x: 111
+        y: 0
+        width: 132
+        height: 84
+      spriteId: 883e360eed667f84ba7b31a4cb740c22
+    - name: Apple_Attack_Frame_4
+      frameIndex: 4
+      cellRect:
+        x: 83
+        y: 0
+        width: 88
+        height: 128
+      spriteId: 2be751f5558d14941a18ba87dc9c7608
+    - name: Apple_Attack_Frame_5
+      frameIndex: 5
+      cellRect:
+        x: 0
+        y: 0
+        width: 147
+        height: 108
+      spriteId: 74d294967931be645b62c9d4c70f5761
+    - name: Apple_Attack_Frame_6
+      frameIndex: 6
+      cellRect:
+        x: 0
+        y: 0
+        width: 155
+        height: 84
+      spriteId: ad29f734e3d5b4744adc324c8bf30e79
+    - name: Apple_Attack_Frame_7
+      frameIndex: 7
+      cellRect:
+        x: 0
+        y: 0
+        width: 159
+        height: 68
+      spriteId: 9b3c3559cf2ecd940ae22095cdd237e9
+    - name: Apple_Attack_Frame_8
+      frameIndex: 8
+      cellRect:
+        x: 0
+        y: -128
+        width: 400
+        height: 256
+      spriteId: efc310cb33543af4ea16485df9763b00
+    - name: Apple_Attack_Frame_9
+      frameIndex: 9
+      cellRect:
+        x: 0
+        y: 0
+        width: 159
+        height: 68
+      spriteId: 3f3fd35f2ac423345aed667642c27051
+    - name: Apple_Attack_Frame_10
+      frameIndex: 10
+      cellRect:
+        x: 63
+        y: 0
+        width: 100
+        height: 88
+      spriteId: 9ad3ca8375733b447ab77b358b7b4e45
+    - name: Apple_Attack_Frame_11
+      frameIndex: 11
+      cellRect:
+        x: 75
+        y: 0
+        width: 96
+        height: 92
+      spriteId: bc7f3f87e1274f0498d70eaeb465fd64
+    - name: Apple_Attack_Frame_12
+      frameIndex: 12
+      cellRect:
+        x: 83
+        y: 0
+        width: 88
+        height: 92
+      spriteId: eddad6abf2fef0743b58a1d12933e77c
+    linkedCells: []
+    parentIndex: -1
+  platformSettings: []
+  secondarySpriteTextures: []
+  spritePackingTag: 
+  canvasSize: {x: 256, y: 128}

@@ -1,0 +1,528 @@
+fileFormatVersion: 2
+guid: 74b7d8142aa0d904fb534aa8ff51f02e
+ScriptedImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 2
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+  script: {fileID: 11500000, guid: 62a9f0aa5b59740cfbadc7e5f9823bb0, type: 3}
+  textureImporterSettings:
+    alphaSource: 1
+    mipMapMode: 0
+    enableMipMap: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+    convertToNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+    swizzle: 50462976
+    isReadable: 0
+    streamingMipmaps: 0
+    streamingMipmapsPriority: 0
+    vTOnly: 0
+    ignoreMipmapLimit: 0
+    nPOTScale: 1
+    sRGBTexture: 1
+    spriteMode: 2
+    spriteExtrude: 1
+    spriteMeshType: 1
+    alignment: 0
+    spritePivot: {x: 0.5, y: 0.5}
+    spritePixelsToUnits: 100
+    spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+    spriteGenerateFallbackPhysicsShape: 0
+    generateCubemap: 6
+    cubemapConvolution: 0
+    seamlessCubemap: 0
+    alphaIsTransparency: 1
+    spriteTessellationDetail: -1
+    textureType: 8
+    textureShape: 1
+    singleChannelComponent: 0
+    flipbookRows: 0
+    flipbookColumns: 0
+    ignorePngGamma: 0
+    cookieMode: 0
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+    normalMap: 0
+    textureFormat: 0
+    maxTextureSize: 0
+    lightmap: 0
+    compressionQuality: 0
+    linearTexture: 0
+    grayScaleToAlpha: 0
+    rGBM: 0
+    cubemapConvolutionSteps: 0
+    cubemapConvolutionExponent: 0
+    maxTextureSizeSet: 0
+    compressionQualitySet: 0
+    textureFormatSet: 0
+    applyGammaDecoding: 0
+  previousAsepriteImporterSettings:
+    fileImportMode: 1
+    importHiddenLayers: 0
+    layerImportMode: 1
+    defaultPivotSpace: 0
+    defaultPivotAlignment: 7
+    customPivotPosition: {x: 0.5, y: 0.5}
+    spritePadding: 0
+    generateModelPrefab: 1
+    generateAnimationClips: 1
+    addSortingGroup: 1
+    addShadowCasters: 0
+  asepriteImporterSettings:
+    fileImportMode: 1
+    importHiddenLayers: 0
+    layerImportMode: 1
+    defaultPivotSpace: 0
+    defaultPivotAlignment: 7
+    customPivotPosition: {x: 0.5, y: 0.5}
+    spritePadding: 0
+    generateModelPrefab: 1
+    generateAnimationClips: 1
+    addSortingGroup: 1
+    addShadowCasters: 0
+  importFileNodeState: 1
+  platformSettingsDirtyTick: 0
+  textureAssetName: 
+  singleSpriteImportData:
+  - name: 
+    originalName: 
+    pivot: {x: 0, y: 0}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 0
+      height: 0
+    spriteID: 
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 0, y: 0}
+  animatedSpriteImportData:
+  - name: Bush_Die_Frame_0
+    originalName: 
+    pivot: {x: 0.51282054, y: -0.27184466}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 204
+      y: 300
+      width: 195
+      height: 103
+    spriteID: fd2162ad8ac8d4d429907e68e53b2642
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 204, y: 300}
+  - name: Bush_Die_Frame_1
+    originalName: 
+    pivot: {x: 0.5, y: -0.23333335}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 136
+      width: 192
+      height: 120
+    spriteID: 454560c7103a0eb41a40fd0dbddad690
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 136}
+  - name: Bush_Die_Frame_2
+    originalName: 
+    pivot: {x: 0.5, y: -0.22580644}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 4
+      width: 192
+      height: 124
+    spriteID: 298f2c8ac58e8fb4a90be256aabdb629
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 4}
+  - name: Bush_Die_Frame_3
+    originalName: 
+    pivot: {x: 0.49537033, y: -0.30434784}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 204
+      y: 411
+      width: 216
+      height: 92
+    spriteID: 2dbd856f38d250a4fbe95738059b4d5a
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 204, y: 411}
+  - name: Bush_Die_Frame_4
+    originalName: 
+    pivot: {x: 0.5079365, y: -0.4117647}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 204
+      y: 511
+      width: 252
+      height: 68
+    spriteID: b7b2d5c84f30cc34d8a9a254b3bd2a46
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 204, y: 511}
+  - name: Bush_Die_Frame_5
+    originalName: 
+    pivot: {x: 0.5151515, y: -0.4375}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 204
+      y: 587
+      width: 264
+      height: 64
+    spriteID: ff337e239ed40484a946063121079f61
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 204, y: 587}
+  - name: Bush_Die_Frame_6
+    originalName: 
+    pivot: {x: 0.56363636, y: -0.4117647}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 204
+      y: 659
+      width: 220
+      height: 68
+    spriteID: ff94956859081e0438987e356a81d6e5
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 204, y: 659}
+  - name: Bush_Die_Frame_7
+    originalName: 
+    pivot: {x: 0.5555556, y: -0.4666667}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 204
+      y: 955
+      width: 207
+      height: 60
+    spriteID: acd087f451088dc499423a07b7a8a927
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 204, y: 955}
+  - name: Bush_Die_Frame_8
+    originalName: 
+    pivot: {x: 0.55778897, y: -0.4375}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 204
+      y: 883
+      width: 199
+      height: 64
+    spriteID: b3b5be96d73bd7b4fb259e113caa9d7f
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 204, y: 883}
+  - name: Bush_Die_Frame_9
+    originalName: 
+    pivot: {x: 0.49019608, y: -0.4375}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 204
+      y: 811
+      width: 204
+      height: 64
+    spriteID: 163f33f602030ee4fb733f7cbd22271f
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 204, y: 811}
+  - name: Bush_Die_Frame_10
+    originalName: 
+    pivot: {x: 0.49090907, y: -0.4117647}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 204
+      y: 735
+      width: 220
+      height: 68
+    spriteID: 8ed88f7624e5d554998e7e06eb0371d5
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 204, y: 735}
+  - name: Bush_Die_Frame_11
+    originalName: 
+    pivot: {x: 0.51666665, y: -0.33333334}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 204
+      y: 208
+      width: 240
+      height: 84
+    spriteID: 051d9f1eaef932340ae65b7ad838457c
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 204, y: 208}
+  - name: Bush_Die_Frame_12
+    originalName: 
+    pivot: {x: 0.49152547, y: -0.30434784}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 204
+      y: 4
+      width: 236
+      height: 92
+    spriteID: d33942d90532d6a43b1e39dc59553bdc
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 204, y: 4}
+  - name: Bush_Die_Frame_13
+    originalName: 
+    pivot: {x: 0.46296296, y: -0.33333334}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 204
+      y: 104
+      width: 216
+      height: 96
+    spriteID: 05f765c1e9b2fd5478d197a8fad56f38
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 204, y: 104}
+  spriteSheetImportData: []
+  asepriteLayers:
+  - layerIndex: 0
+    guid: -1162558989
+    name: Bush_Die
+    layerFlags: 0
+    layerType: 0
+    blendMode: 0
+    cells:
+    - name: Bush_Die_Frame_0
+      frameIndex: 0
+      cellRect:
+        x: 100
+        y: 28
+        width: 195
+        height: 103
+      spriteId: fd2162ad8ac8d4d429907e68e53b2642
+    - name: Bush_Die_Frame_1
+      frameIndex: 1
+      cellRect:
+        x: 104
+        y: 28
+        width: 192
+        height: 120
+      spriteId: 454560c7103a0eb41a40fd0dbddad690
+    - name: Bush_Die_Frame_2
+      frameIndex: 2
+      cellRect:
+        x: 104
+        y: 28
+        width: 192
+        height: 124
+      spriteId: 298f2c8ac58e8fb4a90be256aabdb629
+    - name: Bush_Die_Frame_3
+      frameIndex: 3
+      cellRect:
+        x: 93
+        y: 28
+        width: 216
+        height: 92
+      spriteId: 2dbd856f38d250a4fbe95738059b4d5a
+    - name: Bush_Die_Frame_4
+      frameIndex: 4
+      cellRect:
+        x: 72
+        y: 28
+        width: 252
+        height: 68
+      spriteId: b7b2d5c84f30cc34d8a9a254b3bd2a46
+    - name: Bush_Die_Frame_5
+      frameIndex: 5
+      cellRect:
+        x: 64
+        y: 28
+        width: 264
+        height: 64
+      spriteId: ff337e239ed40484a946063121079f61
+    - name: Bush_Die_Frame_6
+      frameIndex: 6
+      cellRect:
+        x: 76
+        y: 28
+        width: 220
+        height: 68
+      spriteId: ff94956859081e0438987e356a81d6e5
+    - name: Bush_Die_Frame_7
+      frameIndex: 7
+      cellRect:
+        x: 85
+        y: 28
+        width: 207
+        height: 60
+      spriteId: acd087f451088dc499423a07b7a8a927
+    - name: Bush_Die_Frame_8
+      frameIndex: 8
+      cellRect:
+        x: 89
+        y: 28
+        width: 199
+        height: 64
+      spriteId: b3b5be96d73bd7b4fb259e113caa9d7f
+    - name: Bush_Die_Frame_9
+      frameIndex: 9
+      cellRect:
+        x: 100
+        y: 28
+        width: 204
+        height: 64
+      spriteId: 163f33f602030ee4fb733f7cbd22271f
+    - name: Bush_Die_Frame_10
+      frameIndex: 10
+      cellRect:
+        x: 92
+        y: 28
+        width: 220
+        height: 68
+      spriteId: 8ed88f7624e5d554998e7e06eb0371d5
+    - name: Bush_Die_Frame_11
+      frameIndex: 11
+      cellRect:
+        x: 76
+        y: 28
+        width: 240
+        height: 84
+      spriteId: 051d9f1eaef932340ae65b7ad838457c
+    - name: Bush_Die_Frame_12
+      frameIndex: 12
+      cellRect:
+        x: 84
+        y: 28
+        width: 236
+        height: 92
+      spriteId: d33942d90532d6a43b1e39dc59553bdc
+    - name: Bush_Die_Frame_13
+      frameIndex: 13
+      cellRect:
+        x: 100
+        y: 32
+        width: 216
+        height: 96
+      spriteId: 05f765c1e9b2fd5478d197a8fad56f38
+    linkedCells: []
+    parentIndex: -1
+  platformSettings: []
+  secondarySpriteTextures: []
+  spritePackingTag: 
+  canvasSize: {x: 400, y: 256}
