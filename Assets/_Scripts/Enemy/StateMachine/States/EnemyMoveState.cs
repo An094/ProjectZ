@@ -8,7 +8,7 @@ public class EnemyMoveState : EnemyState
     protected bool isDetectingLedge;
     protected bool isPlayerInMinAgroRange;
 
-    public EnemyMoveState(EnemyStateMachine stateMachine, E_Apple enemy, string animName, EnemyData enemyData) : base(stateMachine, enemy, animName, enemyData)
+    public EnemyMoveState(EnemyStateMachine stateMachine, Enemy enemy, string animName, EnemyData enemyData) : base(stateMachine, enemy, animName, enemyData)
     {
     }
 
@@ -18,7 +18,7 @@ public class EnemyMoveState : EnemyState
 
         isDetectingLedge = Enemy.IsTouchingWall();
         isDetectingLedge = !Enemy.LedgeVertical();
-        //isPlayerInMinAgroRange = Enemy.Play
+        isPlayerInMinAgroRange = Enemy.CheckPlayerInMinAgroRange();
     }
 
     public override void Enter()
@@ -35,7 +35,10 @@ public class EnemyMoveState : EnemyState
     public override void LogicUpdate()
     {
         base.LogicUpdate();
+
         Enemy.SetVelocityX(EnemyData.moveSpeed * Enemy.FacingDirection);
+
+
     }
 
     public override void PhysicUpdate()

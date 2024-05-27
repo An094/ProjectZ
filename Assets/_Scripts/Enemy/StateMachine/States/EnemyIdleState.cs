@@ -6,6 +6,7 @@ public class EnemyIdleState : EnemyState
 {
     protected bool isFlipAfterIdle;
     protected bool isIdleTimeOver;
+    protected bool isPlayerInMinAgroRange;
 
     public EnemyIdleState(EnemyStateMachine stateMachine, Enemy enemy, string animName, EnemyData enemyData) : base(stateMachine, enemy, animName, enemyData)
     {
@@ -14,6 +15,7 @@ public class EnemyIdleState : EnemyState
     public override void DoCheck()
     {
         base.DoCheck();
+        isPlayerInMinAgroRange = Enemy.CheckPlayerInMinAgroRange();
     }
 
     public override void Enter()

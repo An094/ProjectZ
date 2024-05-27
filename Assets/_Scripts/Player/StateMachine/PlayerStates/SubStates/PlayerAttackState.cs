@@ -47,11 +47,12 @@ public class PlayerAttackState : PlayerAbilityState
             AttackCounter = AttackCounter < 2 ? AttackCounter + 1 : 0;
         }
 
-        Player.SetVelocityZero();
+        //Player.SetVelocityZero();
 
         Player.Animator.SetInteger("AttackCounter", AttackCounter);
         int attackDir = xInput != 0 ? xInput : Player.FacingDirection;
         Player.SetVelocityX(attackDir * 0.2f);
+        Player.SetVelocityY(2f);
     }
 
     public override void Exit()

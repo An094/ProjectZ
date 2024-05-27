@@ -14,7 +14,12 @@ public class E_AppleMoveState : EnemyMoveState
     {
         base.LogicUpdate();
 
-        if(isDetectingWall || isDetectingLedge)
+
+        if(isPlayerInMinAgroRange)
+        {
+            StateMachine.ChangeState(EnemyApple.PlayerDetectedState);
+        }    
+        else if(isDetectingWall || isDetectingLedge)
         {
             StateMachine.ChangeState(EnemyApple.IdleState);
         }

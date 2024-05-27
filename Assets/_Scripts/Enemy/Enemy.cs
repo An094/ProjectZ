@@ -70,4 +70,6 @@ public class Enemy : MonoBehaviour
     public bool IsGrounded() => Physics2D.OverlapCircle(GroundCheck.position, EnemyData.GroundCheckRadius, EnemyData.WhatIsGround);
     public bool IsTouchingWall() => Physics2D.Raycast(WallCheck.position, Vector2.right * FacingDirection, EnemyData.WallCheckRadius, EnemyData.WhatIsGround);
     public bool LedgeVertical() => Physics2D.Raycast(LedgeCheck.position, Vector2.down, EnemyData.LedgeCheckRadius, EnemyData.WhatIsGround);
+    public bool CheckPlayerInMinAgroRange() => Physics2D.Raycast(PlayerCheck.position, Vector2.right * FacingDirection, EnemyData.MinAgroDistance, EnemyData.WhatIsPlayer);
+    public bool CheckPlayerInMaxAgroRange() => Physics2D.Raycast(PlayerCheck.position, Vector2.right * FacingDirection, EnemyData.MaxAgroDistance, EnemyData.WhatIsPlayer);
 }

@@ -6,12 +6,14 @@ public class E_Apple : Enemy
 {
     public E_AppleIdleState IdleState { get; private set; }
     public E_AppleMoveState MoveState { get; private set; }
+    public E_ApplePlayerDetectedState PlayerDetectedState { get; private set; }
     protected override void Awake()
     {
         base.Awake();
 
         IdleState = new E_AppleIdleState(StateMachine, this, "Idle", EnemyData);
         MoveState = new E_AppleMoveState(StateMachine, this, "Move", EnemyData);
+        PlayerDetectedState = new E_ApplePlayerDetectedState(StateMachine, this, "PlayerDetected", EnemyData);
     }
 
     protected override void Start()

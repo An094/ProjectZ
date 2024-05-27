@@ -2,23 +2,27 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class E_AppleIdleState : EnemyIdleState
+public class E_ApplePlayerDetectedState : EnemyPlayerDetectedState
 {
+    bool isPlayerInMaxAgroRange;
     E_Apple EnemyApple;
-    public E_AppleIdleState(EnemyStateMachine stateMachine, E_Apple enemy, string animName, EnemyData enemyData) : base(stateMachine, enemy, animName, enemyData)
+
+    public E_ApplePlayerDetectedState(EnemyStateMachine stateMachine, E_Apple enemy, string animName, EnemyData enemyData) : base(stateMachine, enemy, animName, enemyData)
     {
         EnemyApple = enemy;
-        isFlipAfterIdle = true;
     }
 
     public override void DoCheck()
     {
         base.DoCheck();
+        isPlayerInMaxAgroRange = Enemy.CheckPlayerInMaxAgroRange();
     }
 
     public override void Enter()
     {
         base.Enter();
+
+        Enemy.SetVelocityX(0);
     }
 
     public override void Exit()
@@ -30,13 +34,9 @@ public class E_AppleIdleState : EnemyIdleState
     {
         base.LogicUpdate();
 
-        if(isPlayerInMinAgroRange)
+        if(!isPlayerInMaxAgroRange)
         {
-            StateMachine.ChangeState(EnemyApple.PlayerDetectedState);
-        }
-        else if (isIdleTimeOver)
-        {
-            StateMachine.ChangeState(EnemyApple.MoveState);
+            StateMachine.ChangeState(EnemyApple.IdleState);
         }
     }
 

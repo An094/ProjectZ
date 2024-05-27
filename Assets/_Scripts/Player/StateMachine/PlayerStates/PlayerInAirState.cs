@@ -15,6 +15,7 @@ public class PlayerInAirState : PlayerState
     private bool IsTouchingWall;
     private bool IsTouchingLedge;
     private bool IsOverPlatformer;
+    private bool PrimaryAttack;
 
     public PlayerInAirState(PlayerStateMachine stateMachine, Player player, string animName, PlayerData playerData) : base(stateMachine, player, animName, playerData)
     {
@@ -44,6 +45,7 @@ public class PlayerInAirState : PlayerState
         xInput = Player.InputHandler.NormalInputX;
         JumpInput = Player.InputHandler.JumpInput;
         RollInput = Player.InputHandler.RollInput;
+        PrimaryAttack = Player.InputHandler.PrimaryAttack;
         JumpInputStop = Player.InputHandler.JumpInputStop;
 
         CheckJumpMultiplier();
@@ -67,6 +69,11 @@ public class PlayerInAirState : PlayerState
         else if(IsTouchingWall && (xInput == Player.FacingDirection || xInput == 0) && Player.CurrentVelocity.y < 0.0f)
         {
             StateMachine.ChangeState(Player.WallSlideState);
+        }
+        else if(PrimaryAttack)
+        {
+            Player.InputHandler.UsePrimaryAttackInput();
+            StateMachine.ChangeState(Player.PrimaryAttackState);
         }
         else
         {
