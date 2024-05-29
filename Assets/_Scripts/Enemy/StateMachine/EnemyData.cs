@@ -14,7 +14,7 @@ public class EnemyData : ScriptableObject
     [Header("Player Detected state")]
     public float MinAgroDistance = 3f;
     public float MaxAgroDistance = 4f;
-    public float longRangeActionTime = 1.5f;
+    public float longRangeActionTime = 0.5f;
 
     [Header("Charge state")]
     public float ChargeSpeed = 3.0f;
@@ -24,12 +24,18 @@ public class EnemyData : ScriptableObject
     public float TimeBetweenTurns = 0.75f;
     public int AmountOfTurns = 2;
 
+    [Header("Hurt state")]
+    public float StunTime = 0.2f;
+
     [Header("Melee attack state")]
     public float AttackRadius = 0.5f;
     public float AttackDamage = 10f;
 
-    [Header("Hurt state")]
-    public float StunTime = 0.2f;
+    [Header("Ranged State")]
+    public GameObject ProjectilePref;
+    public float TravelDistance = 5.0f;
+    public float ProjectileSpeed = 10.0f;
+    public float ProjectileDamage = 50.0f;
 
     [Header("Check variables")]
     public float GroundCheckRadius = 0.2f;

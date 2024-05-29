@@ -3,18 +3,15 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class EnemyPlayerDetectedState : EnemyState
-{
-    E_NormalEnemy EnemyApple;
-
+{ 
     protected bool isPlayerInMinAgroRange;
     protected bool isPlayerInMaxAgroRange;
     protected bool performLongRangeAction;
     protected bool performCloseRangeAction;
     protected bool isDetectingLedge;
 
-    public EnemyPlayerDetectedState(EnemyStateMachine stateMachine, E_NormalEnemy enemy, string animName, EnemyData enemyData) : base(stateMachine, enemy, animName, enemyData)
+    public EnemyPlayerDetectedState(EnemyStateMachine stateMachine, Enemy enemy, string animName, EnemyData enemyData) : base(stateMachine, enemy, animName, enemyData)
     {
-        EnemyApple = enemy;
     }
 
     public override void Enter()
