@@ -9,6 +9,7 @@ public class EnemyState
     protected Enemy Enemy;
     private string AnimName;
     protected EnemyData EnemyData;
+    protected bool isAnimationFinished;
 
     protected float StartTime;
 
@@ -24,6 +25,7 @@ public class EnemyState
     {
         DoCheck();
         StartTime = Time.time;
+        isAnimationFinished = false;
         Enemy.Animator.SetBool(AnimName, true);
     }
 
@@ -45,5 +47,13 @@ public class EnemyState
     public virtual void DoCheck()
     {
 
+    }
+    public virtual void AnimationTrigger()
+    {
+    }
+
+    public virtual void AnimationFinishTrigger()
+    {
+        isAnimationFinished = true;
     }
 }

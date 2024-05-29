@@ -25,9 +25,9 @@ public class E_NormalEnemyMeleeAttackState : EnemyMeleeAttackState
         base.Exit();
     }
 
-    public override void FinishAttack()
+    public override void AnimationFinishTrigger()
     {
-        base.FinishAttack();
+        base.AnimationFinishTrigger();
     }
 
     public override void LogicUpdate()
@@ -52,8 +52,8 @@ public class E_NormalEnemyMeleeAttackState : EnemyMeleeAttackState
         base.PhysicUpdate();
     }
 
-    public override void TriggerAttack()
+    public override void AnimationTrigger()
     {
-        base.TriggerAttack();
+        base.AnimationTrigger();
     }
 }

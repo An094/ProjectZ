@@ -7,9 +7,9 @@ public class EnemyMeleeAttackState : EnemyAttackState
     public EnemyMeleeAttackState(EnemyStateMachine stateMachine, Enemy enemy, string animName, EnemyData enemyData, Transform attackPostion) : base(stateMachine, enemy, animName, enemyData, attackPostion)
     {
     }
-    public override void TriggerAttack()
+    public override void AnimationTrigger()
     {
-        base.TriggerAttack();
+        base.AnimationTrigger();
 
         Collider2D[] detectedObjects = Physics2D.OverlapCircleAll(AttackPosition.position, EnemyData.AttackRadius, EnemyData.WhatIsPlayer);
 

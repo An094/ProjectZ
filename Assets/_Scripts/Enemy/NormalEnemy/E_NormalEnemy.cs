@@ -11,6 +11,7 @@ public class E_NormalEnemy : Enemy
     public E_NormalEnemyLookforPlayerState LookforPlayerState { get; private set; }
     public E_NormalEnemyMeleeAttackState MeleeAttackState { get; private set; }
     public E_NormalEnemyHurtState HurtState { get; private set; }
+    public E_NormalEnemyDieState DieState { get; private set; }
 
     [SerializeField] private Transform AttackPostion;
 
@@ -25,6 +26,7 @@ public class E_NormalEnemy : Enemy
         LookforPlayerState = new E_NormalEnemyLookforPlayerState(StateMachine, this, "Lookfor", EnemyData);
         MeleeAttackState = new E_NormalEnemyMeleeAttackState(StateMachine, this, "MeleeAttack", EnemyData, AttackPostion);
         HurtState = new E_NormalEnemyHurtState(StateMachine, this, "Hurt", EnemyData);
+        DieState = new E_NormalEnemyDieState(StateMachine, this, "Die", EnemyData);
     }
 
     protected override void Start()
@@ -43,23 +45,49 @@ public class E_NormalEnemy : Enemy
     protected override void Update()
     {
         base.Update();
+
     }
 
     public override void Damage(DamgeDetails attackDetail)
     {
         base.Damage(attackDetail);
 
+        if (CurrentHp <= 0)
+        {
+            StateMachine.ChangeState(DieState);
+        }
     }
 
     public override void KnockBack(KnockBackDetails details)
     {
         base.KnockBack(details);
 
-        HurtState.SetFacingDirectionWhileHurt(-details.Direction);
-        StateMachine.ChangeState(HurtState);
+        if(IsAlive())
+        {
+            HurtState.SetFacingDirectionWhileHurt(-details.Direction);
+            StateMachine.ChangeState(HurtState);
 
-        Vector2 force = new Vector2(details.Direction, 1f).normalized * details.Strength;
-        Rb.AddForce(force, ForceMode2D.Impulse);
-        //Rb.velocity = force;
+            Vector2 force = new Vector2(details.Direction, 1f).normalized * details.Strength;
+            Rb.AddForce(force, ForceMode2D.Impulse);
+        }
+    }
+
+    public override void AnimationTrigger()
+    {
+        base.AnimationTrigger();
+
+        StateMachine.CurrentState.AnimationTrigger();
+    }
+
+    public override void AnimationFinishTrigger()
+    {
+        base.AnimationFinishTrigger();
+
+        StateMachine.CurrentState.AnimationFinishTrigger();
+    }
+
+    private bool IsAlive()
+    {
+        return CurrentHp > 0;
     }
 }

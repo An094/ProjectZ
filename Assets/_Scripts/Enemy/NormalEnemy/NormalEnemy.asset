@@ -13,11 +13,11 @@ MonoBehaviour:
   m_Name: NormalEnemy
   m_EditorClassIdentifier: 
   idleTime: 1
-  moveSpeed: 1.5
+  moveSpeed: 3
   MinAgroDistance: 4
   MaxAgroDistance: 7
   longRangeActionTime: 1.5
-  ChargeSpeed: 4
+  ChargeSpeed: 6
   ChargeTime: 2
   TimeBetweenTurns: 0.75
   AmountOfTurns: 2

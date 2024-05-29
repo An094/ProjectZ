@@ -5,8 +5,6 @@ using UnityEngine;
 public class EnemyAttackState : EnemyState
 {
     protected Transform AttackPosition;
-
-    protected bool isAnimationFinished;
     protected bool isPlayerInMinAgroRange;
 
     public EnemyAttackState(EnemyStateMachine stateMachine, Enemy enemy, string animName, EnemyData enemyData, Transform attackPostion) : base(stateMachine, enemy, animName, enemyData)
@@ -44,15 +42,5 @@ public class EnemyAttackState : EnemyState
     public override void PhysicUpdate()
     {
         base.PhysicUpdate();
-    }
-
-    public virtual void TriggerAttack()
-    {
-       
-    }
-
-    public virtual void FinishAttack()
-    {
-        isAnimationFinished = true;
     }
 }

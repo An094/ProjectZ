@@ -73,14 +73,14 @@ public class Enemy : MonoBehaviour, IDamageable, IKnockBackable
         transform.Rotate(0f, 180f, 0f);
     }
 
-    private void TriggerAttack()
+    public virtual void AnimationTrigger()
     {
-        AttackState.TriggerAttack();
+        //AttackState.AnimationTrigger();
     }
 
-    private void FinishAttack()
+    public virtual void AnimationFinishTrigger()
     {
-        AttackState.FinishAttack();
+        //AttackState.AnimationFinishTrigger();
     }
 
     public bool IsGrounded() => Physics2D.OverlapCircle(GroundCheck.position, EnemyData.GroundCheckRadius, EnemyData.WhatIsGround);
