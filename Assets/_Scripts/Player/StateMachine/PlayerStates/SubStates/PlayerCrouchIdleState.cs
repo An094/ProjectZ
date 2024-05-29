@@ -44,7 +44,7 @@ public class PlayerCrouchIdleState : PlayerState
         {
             StateMachine.ChangeState(Player.IdleState);
         }
-        else if(xInput != 0 && yInput != -1)
+        else if(xInput != 0)
         {
             StateMachine.ChangeState(Player.MoveState);
         }

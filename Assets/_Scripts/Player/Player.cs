@@ -7,6 +7,8 @@ using UnityEngine;
 public class Player : MonoBehaviour
 {
 
+    private PlayerStats playerStat;
+
     [SerializeField] PlayerData PlayerData;
 
     #region Comps
@@ -46,13 +48,18 @@ public class Player : MonoBehaviour
     public Transform CeilingCheck;
     #endregion
 
+    [SerializeField] private Transform AttackPostion;
+
     private Vector2 Workspace;
     public Vector2 CurrentVelocity { get; private set; }
     public int FacingDirection { get; private set; }
     
     private void Awake()
     {
+        playerStat = new PlayerStats(PlayerData.MaxHp);
+
         StateMachine = new PlayerStateMachine();
+
         IdleState = new PlayerIdleState(StateMachine, this, "Idle", PlayerData);
         MoveState = new PlayerMoveState(StateMachine, this, "Move", PlayerData);
         JumpState = new PlayerJumpState(StateMachine, this, "InAir", PlayerData);
@@ -65,7 +72,7 @@ public class Player : MonoBehaviour
         WallSlideState = new PlayerWallSlideState(StateMachine, this, "WallSlide", PlayerData);
         WallGrabState = new PlayerWallGrabState(StateMachine, this, "WallGrab", PlayerData);
         WallClimbState = new PlayerWallClimbState(StateMachine, this, "WallClimb", PlayerData);
-        PrimaryAttackState = new PlayerAttackState(StateMachine, this, "Attack", PlayerData);
+        PrimaryAttackState = new PlayerAttackState(StateMachine, this, "Attack", PlayerData, AttackPostion);
     }
 
     private void Start()
@@ -143,6 +150,7 @@ public class Player : MonoBehaviour
     public bool IsOverPlatformer() => Physics2D.OverlapCircle(GroundCheck.position, PlayerData.GroundCheckRadius, PlayerData.WhatIsPlatformer);
 
     public void AnimationFinishTrigger() => StateMachine.CurrentState.AnimationFinishTrigger();
+    public void AnimationTrigger() => StateMachine.CurrentState.AniamtionTrigger();
 
     public Vector2 DetermineCornerPostion()
     {

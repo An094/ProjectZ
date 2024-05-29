@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Base
   m_EditorClassIdentifier: 
   StandColliderHeight: 1.17
-  MovementSpeed: 7
+  MovementSpeed: 5
   JumpSpeed: 13
   AmountOfJumps: 2
   CoyoteTime: 0.2
@@ -28,6 +28,9 @@ MonoBehaviour:
   RollingCooldown: 1
   RollingColliderHeight: 0.6
   CrouchColliderHeight: 0.7
+  MeleeAttackRadius: 0.5
+  AttackDamage: 30
+  KnockBackStrength: 2
   GroundCheckRadius: 0.2
   WallCheckRadius: 0.3
   LedgeCheckRadius: 0.3
@@ -38,3 +41,7 @@ MonoBehaviour:
   WhatIsPlatformer:
     serializedVersion: 2
     m_Bits: 128
+  WhatIsEnemy:
+    serializedVersion: 2
+    m_Bits: 512
+  MaxHp: 100

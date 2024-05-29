@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Enemy : MonoBehaviour
+public class Enemy : MonoBehaviour, IDamageable, IKnockBackable
 {
     [SerializeField] protected EnemyData EnemyData;
 
@@ -26,6 +26,8 @@ public class Enemy : MonoBehaviour
     public Vector2 CurrentVelocity { get; private set; }
     public int FacingDirection { get; private set; }
 
+    protected float CurrentHp;
+
     protected virtual void Awake()
     {
         StateMachine = new EnemyStateMachine();
@@ -37,6 +39,8 @@ public class Enemy : MonoBehaviour
         Animator = GetComponent<Animator>();
 
         FacingDirection = 1;
+
+        CurrentHp = EnemyData.MaxHp;
     }
 
     protected virtual void Update()
@@ -86,4 +90,13 @@ public class Enemy : MonoBehaviour
     public bool CheckPlayerInMaxAgroRange() => Physics2D.Raycast(PlayerCheck.position, Vector2.right * FacingDirection, EnemyData.MaxAgroDistance, EnemyData.WhatIsPlayer);
     public bool CheckPlayerInCloseRangeAction() => Physics2D.Raycast(PlayerCheck.position, Vector2.right * FacingDirection, EnemyData.CloseRangeActionDistance, EnemyData.WhatIsPlayer);
 
+    public virtual void Damage(DamgeDetails attackDetail)
+    {
+        CurrentHp -= attackDetail.Dmg;
+    }
+
+    public virtual void KnockBack(KnockBackDetails details)
+    {
+        
+    }
 }

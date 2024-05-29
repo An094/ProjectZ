@@ -44,4 +44,9 @@ public class E_NormalEnemyIdleState : EnemyIdleState
     {
         base.PhysicUpdate();
     }
+
+    public void SetFlipAfterIdle(bool value)
+    {
+        isFlipAfterIdle = value;
+    }
 }

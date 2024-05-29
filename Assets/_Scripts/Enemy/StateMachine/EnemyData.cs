@@ -28,6 +28,9 @@ public class EnemyData : ScriptableObject
     public float AttackRadius = 0.5f;
     public float AttackDamage = 10f;
 
+    [Header("Hurt state")]
+    public float StunTime = 0.2f;
+
     [Header("Check variables")]
     public float GroundCheckRadius = 0.2f;
     public float WallCheckRadius = 0.5f;
@@ -35,4 +38,7 @@ public class EnemyData : ScriptableObject
     public float CloseRangeActionDistance = 2.0f;
     public LayerMask WhatIsGround;
     public LayerMask WhatIsPlayer;
+
+    [Header("Stats")]
+    public float MaxHp = 100.0f;
 }

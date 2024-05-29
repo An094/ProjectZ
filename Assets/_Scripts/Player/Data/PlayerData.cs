@@ -38,6 +38,11 @@ public class PlayerData : ScriptableObject
     [Header("Crouch State")]
     public float CrouchColliderHeight = 0.7f;
 
+    [Header("Attack State")]
+    public float MeleeAttackRadius = 0.5f;
+    public float AttackDamage = 50.0f;
+    public float KnockBackStrength = 1f;
+
     [Header("Check Variables")]
     public float GroundCheckRadius = 0.2f;
     public float WallCheckRadius = 0.5f;
@@ -45,4 +50,8 @@ public class PlayerData : ScriptableObject
     public float CeilingRadius = 0.2f;
     public LayerMask WhatIsGround;
     public LayerMask WhatIsPlatformer;
+    public LayerMask WhatIsEnemy;
+
+    [Header("Default stats")]
+    public float MaxHp = 100f;
 }

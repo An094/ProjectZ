@@ -8,10 +8,36 @@ public class PlayerAttackState : PlayerAbilityState
     private int AttackCounter;
     private float LastAttackedTime;
     int xInput;
+    private Transform AttackPostion;
 
-    public PlayerAttackState(PlayerStateMachine stateMachine, Player player, string animName, PlayerData playerData) : base(stateMachine, player, animName, playerData)
+    public PlayerAttackState(PlayerStateMachine stateMachine, Player player, string animName, PlayerData playerData, Transform attackPosition) : base(stateMachine, player, animName, playerData)
     {
         AttackCounter = - 1;
+        AttackPostion = attackPosition;
+    }
+
+    public override void AniamtionTrigger()
+    {
+        base.AniamtionTrigger();
+
+        ///TODO: Handle attack 
+        Collider2D[] hits = Physics2D.OverlapCircleAll(AttackPostion.position, PlayerData.MeleeAttackRadius, PlayerData.WhatIsEnemy);
+
+        if(hits.Length > 0 )
+        {
+            foreach(Collider2D hit in hits )
+            {
+                if(hit.TryGetComponent<IDamageable>(out IDamageable damageable))
+                {
+                    damageable.Damage(new DamgeDetails(PlayerData.AttackDamage, Player.transform));
+                }
+
+                if(hit.TryGetComponent<IKnockBackable>(out IKnockBackable knockBackable))
+                {
+                    knockBackable.KnockBack(new KnockBackDetails(Player.FacingDirection, PlayerData.KnockBackStrength));
+                }
+            }
+        }
     }
 
     public override void AnimationFinishTrigger()

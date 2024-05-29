@@ -10,8 +10,10 @@ public class E_NormalEnemy : Enemy
     public E_NormalEnemyChargeState ChargeState { get; private set; }
     public E_NormalEnemyLookforPlayerState LookforPlayerState { get; private set; }
     public E_NormalEnemyMeleeAttackState MeleeAttackState { get; private set; }
+    public E_NormalEnemyHurtState HurtState { get; private set; }
 
     [SerializeField] private Transform AttackPostion;
+
     protected override void Awake()
     {
         base.Awake();
@@ -22,6 +24,7 @@ public class E_NormalEnemy : Enemy
         ChargeState = new E_NormalEnemyChargeState(StateMachine, this, "Charge", EnemyData);
         LookforPlayerState = new E_NormalEnemyLookforPlayerState(StateMachine, this, "Lookfor", EnemyData);
         MeleeAttackState = new E_NormalEnemyMeleeAttackState(StateMachine, this, "MeleeAttack", EnemyData, AttackPostion);
+        HurtState = new E_NormalEnemyHurtState(StateMachine, this, "Hurt", EnemyData);
     }
 
     protected override void Start()
@@ -40,5 +43,23 @@ public class E_NormalEnemy : Enemy
     protected override void Update()
     {
         base.Update();
+    }
+
+    public override void Damage(DamgeDetails attackDetail)
+    {
+        base.Damage(attackDetail);
+
+    }
+
+    public override void KnockBack(KnockBackDetails details)
+    {
+        base.KnockBack(details);
+
+        HurtState.SetFacingDirectionWhileHurt(-details.Direction);
+        StateMachine.ChangeState(HurtState);
+
+        Vector2 force = new Vector2(details.Direction, 1f).normalized * details.Strength;
+        Rb.AddForce(force, ForceMode2D.Impulse);
+        //Rb.velocity = force;
     }
 }

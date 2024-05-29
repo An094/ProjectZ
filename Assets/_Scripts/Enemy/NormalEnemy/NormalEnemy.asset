@@ -10,19 +10,20 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f884c513cf6815148bd4d664cb85dcf8, type: 3}
-  m_Name: Apple
+  m_Name: NormalEnemy
   m_EditorClassIdentifier: 
   idleTime: 1
-  moveSpeed: 1
-  MinAgroDistance: 3
-  MaxAgroDistance: 4
+  moveSpeed: 1.5
+  MinAgroDistance: 4
+  MaxAgroDistance: 7
   longRangeActionTime: 1.5
-  ChargeSpeed: 3
+  ChargeSpeed: 4
   ChargeTime: 2
   TimeBetweenTurns: 0.75
   AmountOfTurns: 2
   AttackRadius: 0.5
   AttackDamage: 10
+  StunTime: 0.5
   GroundCheckRadius: 0.2
   WallCheckRadius: 0.5
   LedgeCheckRadius: 0.5
@@ -33,3 +34,4 @@ MonoBehaviour:
   WhatIsPlayer:
     serializedVersion: 2
     m_Bits: 256
+  MaxHp: 100
