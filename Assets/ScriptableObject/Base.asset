@@ -40,8 +40,14 @@ MonoBehaviour:
     m_Bits: 64
   WhatIsPlatformer:
     serializedVersion: 2
-    m_Bits: 128
+    m_Bits: 129
   WhatIsEnemy:
     serializedVersion: 2
     m_Bits: 512
+  PlayerLayer:
+    serializedVersion: 2
+    m_Bits: 256
+  DefaultLayer:
+    serializedVersion: 2
+    m_Bits: 0
   MaxHp: 100

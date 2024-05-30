@@ -51,6 +51,8 @@ public class PlayerData : ScriptableObject
     public LayerMask WhatIsGround;
     public LayerMask WhatIsPlatformer;
     public LayerMask WhatIsEnemy;
+    public LayerMask PlayerLayer;
+    public LayerMask DefaultLayer;
 
     [Header("Default stats")]
     public float MaxHp = 100f;

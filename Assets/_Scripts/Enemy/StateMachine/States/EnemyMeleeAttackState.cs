@@ -15,7 +15,7 @@ public class EnemyMeleeAttackState : EnemyAttackState
 
         foreach (Collider2D collider in detectedObjects)
         {
-            if (collider.CompareTag("Player"))
+            if (collider.gameObject.layer.Equals(EnemyData.WhatIsPlayer.value))
             {
                 //Use IDamageable 
                 if (collider.TryGetComponent(out Player player))

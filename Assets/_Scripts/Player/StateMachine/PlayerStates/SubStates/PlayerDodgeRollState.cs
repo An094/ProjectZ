@@ -47,6 +47,7 @@ public class PlayerDodgeRollState : PlayerAbilityState
         xInput = Player.InputHandler.NormalInputX;
         Player.InputHandler.UseRollInput();
         Player.SetColliderHeight(PlayerData.RollingColliderHeight);
+        Player.gameObject.layer = LayerMask.NameToLayer("RollingPlayer");
     }
 
     public override void Exit()
@@ -54,6 +55,7 @@ public class PlayerDodgeRollState : PlayerAbilityState
         base.Exit();
 
         Player.SetColliderHeight(PlayerData.StandColliderHeight);
+        Player.gameObject.layer = LayerMask.NameToLayer("Player");
         //Player.SetVelocityX(0);
     }
 

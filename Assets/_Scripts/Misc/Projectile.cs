@@ -69,6 +69,7 @@ public class Projectile : MonoBehaviour
                 hasHitGround = true;
                 rb.gravityScale = 0f;
                 rb.velocity = Vector2.zero;
+                Destroy(gameObject, 2f);
             }
 
 
