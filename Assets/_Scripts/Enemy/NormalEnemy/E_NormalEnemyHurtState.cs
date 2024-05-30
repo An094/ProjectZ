@@ -14,20 +14,35 @@ public class E_NormalEnemyHurtState : EnemyHurtState
     {
         base.Enter();
 
-        if(IsFacingPlayerWhileHurt && FacingDirectionWhileHurt != Enemy.FacingDirection)
-        {
-            normalEnemy.Flip();
-        }
+        //if(IsFacingPlayerWhileHurt && FacingDirectionWhileHurt != Enemy.FacingDirection)
+        //{
+        //    normalEnemy.Flip();
+        //}
     }
 
     public override void LogicUpdate()
     {
         base.LogicUpdate();
 
-        if(IsGrounded && IsStunTimerOver)
+        if (IsGrounded && IsStunTimerOver)
         {
             //normalEnemy.IdleState.SetFlipAfterIdle(false);
-            StateMachine.ChangeState(normalEnemy.PlayerDetectedState);
+            //StateMachine.ChangeState(normalEnemy.PlayerDetectedState);
+
+            if (performCloseRangeAction)
+            {
+                StateMachine.ChangeState(normalEnemy.MeleeAttackState);
+            }
+            else if (isPlayerInMinAgroRange)
+            {
+                StateMachine.ChangeState(normalEnemy.ChargeState);
+            }
+            else
+            {
+                normalEnemy.LookforPlayerState.SetTurnImmediately(true);
+                StateMachine.ChangeState(normalEnemy.LookforPlayerState);
+            }
+
         }
     }
 }

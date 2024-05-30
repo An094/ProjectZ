@@ -7,12 +7,12 @@ using UnityEngine;
 public class Player : MonoBehaviour
 {
 
-    private PlayerStats playerStat;
+    public PlayerStats playerStat { get; private set; }
 
     [SerializeField] PlayerData PlayerData;
 
     #region Comps
-    
+
     public Rigidbody2D Rb { get; private set; }
     public Animator Animator { get; private set; }
 
@@ -30,7 +30,7 @@ public class Player : MonoBehaviour
     public PlayerJumpState JumpState { get; private set; }
     public PlayerInAirState InAirState { get; private set; }
     public PlayerLandState LandState { get; private set; }
-    public PlayerLedgeClimbState LedgeClimbState { get; private set ; }
+    public PlayerLedgeClimbState LedgeClimbState { get; private set; }
     public PlayerDodgeRollState DodgeRollState { get; private set; }
     public PlayerCrouchIdleState CrouchIdleState { get; private set; }
     public PlayerDropDownFloor DropDownFloor { get; private set; }
@@ -38,6 +38,8 @@ public class Player : MonoBehaviour
     public PlayerWallGrabState WallGrabState { get; private set; }
     public PlayerWallClimbState WallClimbState { get; private set; }
     public PlayerAttackState PrimaryAttackState { get; private set; }
+    public PlayerHurtState HurtState { get; private set; }
+    public PlayerDieState DieState { get; private set; }
 
     #endregion
 
@@ -53,7 +55,7 @@ public class Player : MonoBehaviour
     private Vector2 Workspace;
     public Vector2 CurrentVelocity { get; private set; }
     public int FacingDirection { get; private set; }
-    
+
     private void Awake()
     {
         playerStat = new PlayerStats(PlayerData.MaxHp);
@@ -73,8 +75,19 @@ public class Player : MonoBehaviour
         WallGrabState = new PlayerWallGrabState(StateMachine, this, "WallGrab", PlayerData);
         WallClimbState = new PlayerWallClimbState(StateMachine, this, "WallClimb", PlayerData);
         PrimaryAttackState = new PlayerAttackState(StateMachine, this, "Attack", PlayerData, AttackPostion);
+        HurtState = new PlayerHurtState(StateMachine, this, "Hurt", PlayerData);
+        DieState = new PlayerDieState(StateMachine, this, "Die", PlayerData);
     }
 
+    private void OnEnable()
+    {
+        playerStat.OnDamaged += OnDamaged;
+    }
+
+    private void OnDisable()
+    {
+        playerStat.OnDamaged -= OnDamaged;
+    }
     private void Start()
     {
         Rb = GetComponent<Rigidbody2D>();
@@ -131,7 +144,7 @@ public class Player : MonoBehaviour
 
     public void CheckIfShouldFlip(int xInput)
     {
-        if(xInput != 0 && xInput != FacingDirection)
+        if (xInput != 0 && xInput != FacingDirection)
         {
             Flip();
         }
@@ -141,6 +154,21 @@ public class Player : MonoBehaviour
     {
         FacingDirection *= -1;
         transform.Rotate(0f, 180f, 0f);
+    }
+
+    private void OnDamaged(bool IsDead)
+    { 
+        if(IsDead)
+        {
+            StateMachine.ChangeState(DieState);
+        }
+        else
+        {
+            if(StateMachine.CurrentState != HurtState)
+            {
+                StateMachine.ChangeState(HurtState);
+            }
+        }
     }
 
     public bool IsGrounded() => Physics2D.OverlapCircle(GroundCheck.position, PlayerData.GroundCheckRadius, PlayerData.WhatIsGround) || IsOverPlatformer();

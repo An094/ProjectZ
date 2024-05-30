@@ -21,7 +21,7 @@ MonoBehaviour:
   ChargeTime: 2
   TimeBetweenTurns: 0.5
   AmountOfTurns: 1
-  StunTime: 0.2
+  StunTime: 0.5
   AttackRadius: 0.6
   AttackDamage: 20
   ProjectilePref: {fileID: 2931077573359834456, guid: e48ca82b1d25a6b4da813d4cee6d7dab, type: 3}

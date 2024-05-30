@@ -6,6 +6,8 @@ public class EnemyHurtState : EnemyState
 {
     protected bool IsGrounded;
     protected bool IsStunTimerOver;
+    protected bool performCloseRangeAction;
+    protected bool isPlayerInMinAgroRange;
     protected bool IsFacingPlayerWhileHurt;
     protected int FacingDirectionWhileHurt;
     public EnemyHurtState(EnemyStateMachine stateMachine, Enemy enemy, string animName, EnemyData enemyData) : base(stateMachine, enemy, animName, enemyData)
@@ -17,6 +19,8 @@ public class EnemyHurtState : EnemyState
         base.DoCheck();
 
         IsGrounded = Enemy.IsGrounded();
+        performCloseRangeAction = Enemy.CheckPlayerInCloseRangeAction();
+        isPlayerInMinAgroRange = Enemy.CheckPlayerInMinAgroRange();
     }
 
     public override void Enter()

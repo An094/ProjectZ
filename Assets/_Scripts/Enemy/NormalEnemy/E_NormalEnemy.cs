@@ -64,7 +64,7 @@ public class E_NormalEnemy : Enemy
 
         if(IsAlive())
         {
-            HurtState.SetFacingDirectionWhileHurt(-details.Direction);
+            //HurtState.SetFacingDirectionWhileHurt(-details.Direction);
             StateMachine.ChangeState(HurtState);
 
             Vector2 force = new Vector2(details.Direction, 1f).normalized * details.Strength;

@@ -15,12 +15,18 @@ public class EnemyMeleeAttackState : EnemyAttackState
 
         foreach (Collider2D collider in detectedObjects)
         {
-            if (collider.gameObject.layer.Equals(EnemyData.WhatIsPlayer.value))
+            if (collider.gameObject.layer.Equals(LayerMask.NameToLayer("Player")))
             {
                 //Use IDamageable 
-                if (collider.TryGetComponent(out Player player))
+                if (collider.TryGetComponent(out IDamageable playerDamageable))
                 {
                     //player.Damage();
+                    playerDamageable.Damage(new DamgeDetails(EnemyData.AttackDamage, Enemy.transform));
+                }
+
+                if(collider.TryGetComponent(out IKnockBackable playerKnockbackable))
+                {
+                    playerKnockbackable.KnockBack(new KnockBackDetails(Enemy.FacingDirection, EnemyData.AttackDamage));
                 }
             }
         }

@@ -17,6 +17,7 @@ public class Projectile : MonoBehaviour
 
     private bool isGravityOn;
     private bool hasHitGround;
+    private float Dmg;
 
     [SerializeField]
     private LayerMask whatIsGround;
@@ -61,6 +62,10 @@ public class Projectile : MonoBehaviour
             if (damageHit)
             {
                 //damageHit.transform.SendMessage("Damage", attackDetails);
+                if(damageHit.TryGetComponent<IDamageable>(out IDamageable playerConbatController))
+                {
+                    playerConbatController.Damage(new DamgeDetails(Dmg, transform));
+                }
                 Destroy(gameObject);
             }
 
@@ -85,7 +90,7 @@ public class Projectile : MonoBehaviour
     {
         this.speed = speed;
         this.travelDistance = travelDistance;
-        //attackDetails.damageAmount = damage;
+        this.Dmg = damage;
     }
 
     private void OnDrawGizmos()
