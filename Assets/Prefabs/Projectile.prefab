@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 3324762714211268352}
   - component: {fileID: 566305409312429509}
   - component: {fileID: 206161700262612515}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Projectile
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -101,7 +101,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gravity: 3
-  damageRadius: 0.3
+  damageRadius: 0.2
   whatIsGround:
     serializedVersion: 2
     m_Bits: 64
@@ -190,7 +190,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6136448727065102472}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: DamagePostion
   m_TagString: Untagged
   m_Icon: {fileID: 0}

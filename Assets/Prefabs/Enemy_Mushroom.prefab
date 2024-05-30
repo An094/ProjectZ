@@ -218,7 +218,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9e5dc02bb5033aa4485d8f8afba75df9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  EnemyData: {fileID: 11400000, guid: ee391b4ac9c089441acd99c046aefced, type: 2}
+  EnemyData: {fileID: 11400000, guid: 74549476e76f55e4d916cc343105f63e, type: 2}
   GroundCheck: {fileID: 4926519268318509369}
   WallCheck: {fileID: 4640312352712462358}
   LedgeCheck: {fileID: 3409480105405987061}

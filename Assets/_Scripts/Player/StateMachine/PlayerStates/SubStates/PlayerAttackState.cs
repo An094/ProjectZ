@@ -57,7 +57,7 @@ public class PlayerAttackState : PlayerAbilityState
     {
         base.Enter();
 
-        if (Time.time < LastAttackedTime + 0.2f)
+        if (Time.time < LastAttackedTime + 0.1f)
         {
             return;
         }
