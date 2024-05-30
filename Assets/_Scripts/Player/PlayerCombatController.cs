@@ -7,7 +7,7 @@ public class PlayerCombatController : MonoBehaviour, IDamageable, IKnockBackable
     private Player player;
     public void Damage(DamgeDetails damageDetail)
     {
-        player.playerStat.DecreaseHp(damageDetail.Dmg);
+        player.PlayerStats.DecreaseHp(damageDetail.Dmg);
     }
 
     public void KnockBack(KnockBackDetails details)

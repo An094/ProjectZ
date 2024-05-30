@@ -5,27 +5,24 @@ using UnityEngine;
 
 public class PlayerStats
 {
-    public event Action<bool> OnDamaged;
+    public event Action<float> OnDamaged;
 
-    public float currentHp;
+    public float CurrentHp;
 
     public PlayerStats(float currentHp)
     {
-        this.currentHp = currentHp;
+        this.CurrentHp = currentHp;
     }
 
     public void DecreaseHp(float amount)
     {
-        currentHp -= amount;
+        CurrentHp -= amount;
 
-        if(currentHp <= 0)
+        OnDamaged?.Invoke(CurrentHp);
+
+        if(CurrentHp <= 0)
         {
-            OnDamaged?.Invoke(true);//Dead
             OnDamaged = null;
-        }
-        else
-        {
-            OnDamaged?.Invoke(false);
         }
     }
 }

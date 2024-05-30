@@ -6,8 +6,17 @@ using UnityEngine;
 
 public class Player : MonoBehaviour
 {
-
-    public PlayerStats playerStat { get; private set; }
+    private PlayerStats playerStats;
+    public PlayerStats PlayerStats { 
+        get
+        {
+            if(playerStats == null)
+            {
+                playerStats = new PlayerStats(PlayerData.MaxHp);
+            }
+            return playerStats;
+        }       
+    }
 
     [SerializeField] PlayerData PlayerData;
 
@@ -58,7 +67,10 @@ public class Player : MonoBehaviour
 
     private void Awake()
     {
-        playerStat = new PlayerStats(PlayerData.MaxHp);
+        if(playerStats == null)
+        {
+            playerStats = new PlayerStats(PlayerData.MaxHp);
+        }
 
         StateMachine = new PlayerStateMachine();
 
@@ -81,12 +93,12 @@ public class Player : MonoBehaviour
 
     private void OnEnable()
     {
-        playerStat.OnDamaged += OnDamaged;
+        playerStats.OnDamaged += OnDamaged;
     }
 
     private void OnDisable()
     {
-        playerStat.OnDamaged -= OnDamaged;
+        playerStats.OnDamaged -= OnDamaged;
     }
     private void Start()
     {
@@ -156,9 +168,9 @@ public class Player : MonoBehaviour
         transform.Rotate(0f, 180f, 0f);
     }
 
-    private void OnDamaged(bool IsDead)
+    private void OnDamaged(float CurrentHp)
     { 
-        if(IsDead)
+        if(CurrentHp <= 0)
         {
             StateMachine.ChangeState(DieState);
         }
