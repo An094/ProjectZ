@@ -13,6 +13,7 @@ public class PlayerInputHandler : MonoBehaviour
     public bool RollInput { get; private set; }
     public bool JumpInputStop { get; private set; }
     public bool PrimaryAttack {  get; private set; }
+    public bool DefendInput { get; private set; }
 
     [SerializeField] private float InputHoldTime = 0.2f;
 
@@ -80,6 +81,19 @@ public class PlayerInputHandler : MonoBehaviour
         if (context.canceled)
         {
             PrimaryAttack = false;
+        }
+    }
+
+    public void OnDefendInput(InputAction.CallbackContext context)
+    {
+        if(context.performed)
+        {
+            DefendInput = true;
+        }
+
+        if(context.canceled)
+        {
+            DefendInput = false;
         }
     }
 

@@ -12,6 +12,8 @@ public class E_ArcherEnemy : Enemy
     public E_ArcherEnemyHurtState HurtState { get; private set;}
     public E_ArcherEnemyDieState DieState { get; private set; }
 
+    public E_ArcherEnemyDodgeState DodgeState { get; private set;}
+
     [SerializeField] private Transform AttackPosition;
 
     protected override void Awake()
@@ -22,6 +24,7 @@ public class E_ArcherEnemy : Enemy
         MoveState = new E_ArcherEnemyMoveState(StateMachine, this, "Move", EnemyData);
         PlayerDetectedState = new E_ArcherEnemyPlayerDetectedState(StateMachine, this, "PlayerDetected", EnemyData);
         LookforPlayerState = new E_ArcherEnemyLookforPlayerState(StateMachine, this, "Lookfor", EnemyData);
+        DodgeState = new E_ArcherEnemyDodgeState(StateMachine, this, "Dodge", EnemyData);
         RangedAttackState = new E_ArcherEnemyRangedAttackState(StateMachine, this, "RangedAttack", EnemyData, AttackPosition);
         HurtState = new E_ArcherEnemyHurtState(StateMachine, this, "Hurt", EnemyData);
         DieState = new E_ArcherEnemyDieState(StateMachine, this, "Die", EnemyData);

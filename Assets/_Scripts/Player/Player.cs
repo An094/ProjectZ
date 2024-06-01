@@ -47,6 +47,7 @@ public class Player : MonoBehaviour
     public PlayerWallGrabState WallGrabState { get; private set; }
     public PlayerWallClimbState WallClimbState { get; private set; }
     public PlayerAttackState PrimaryAttackState { get; private set; }
+    public PlayerDefendState DefendState { get; private set; }
     public PlayerHurtState HurtState { get; private set; }
     public PlayerDieState DieState { get; private set; }
 
@@ -87,6 +88,7 @@ public class Player : MonoBehaviour
         WallGrabState = new PlayerWallGrabState(StateMachine, this, "WallGrab", PlayerData);
         WallClimbState = new PlayerWallClimbState(StateMachine, this, "WallClimb", PlayerData);
         PrimaryAttackState = new PlayerAttackState(StateMachine, this, "Attack", PlayerData, AttackPostion);
+        DefendState = new PlayerDefendState(StateMachine, this, "Defend", PlayerData);
         HurtState = new PlayerHurtState(StateMachine, this, "Hurt", PlayerData);
         DieState = new PlayerDieState(StateMachine, this, "Die", PlayerData);
     }

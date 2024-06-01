@@ -2,10 +2,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class E_ArcherEnemyRangedAttackState : EnemyRangedAttackState
+public class E_ArcherEnemyDodgeState : EnemyDodgeState
 {
     E_ArcherEnemy ArcherEnemy;
-    public E_ArcherEnemyRangedAttackState(EnemyStateMachine stateMachine, E_ArcherEnemy enemy, string animName, EnemyData enemyData, Transform attackPostion) : base(stateMachine, enemy, animName, enemyData, attackPostion)
+    public E_ArcherEnemyDodgeState(EnemyStateMachine stateMachine, E_ArcherEnemy enemy, string animName, EnemyData enemyData) : base(stateMachine, enemy, animName, enemyData)
     {
         ArcherEnemy = enemy;
     }
@@ -13,18 +13,11 @@ public class E_ArcherEnemyRangedAttackState : EnemyRangedAttackState
     public override void AnimationFinishTrigger()
     {
         base.AnimationFinishTrigger();
+    }
 
-        if (isAnimationFinished)
-        {
-            if (isPlayerInMaxAgroRange)
-            {
-                StateMachine.ChangeState(ArcherEnemy.PlayerDetectedState);
-            }
-            else
-            {
-                StateMachine.ChangeState(ArcherEnemy.LookforPlayerState);
-            }
-        }
+    public override void AnimationTrigger()
+    {
+        base.AnimationTrigger();
     }
 
     public override void DoCheck()
@@ -45,6 +38,11 @@ public class E_ArcherEnemyRangedAttackState : EnemyRangedAttackState
     public override void LogicUpdate()
     {
         base.LogicUpdate();
+
+        if(isPlayerInMaxAgroRange)
+        {
+            
+        }
     }
 
     public override void PhysicUpdate()

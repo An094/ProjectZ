@@ -16,12 +16,15 @@ MonoBehaviour:
   moveSpeed: 3
   MinAgroDistance: 4
   MaxAgroDistance: 7
-  longRangeActionTime: 0.5
+  longRangeActionTime: 1
   ChargeSpeed: 7
   ChargeTime: 2
   TimeBetweenTurns: 0.5
   AmountOfTurns: 1
   StunTime: 0.5
+  DodgeSpeed: 5
+  DodgeAngle: {x: 1, y: 1}
+  DodgeTime: 1
   AttackRadius: 0.6
   AttackDamage: 20
   ProjectilePref: {fileID: 2931077573359834456, guid: e48ca82b1d25a6b4da813d4cee6d7dab, type: 3}

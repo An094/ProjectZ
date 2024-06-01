@@ -6,6 +6,7 @@ public class PlayerAbilityState : PlayerState
 {
     protected bool IsAbilityDone;
     private bool IsGrounded;
+    private bool PrimaryAttackInput;
 
     public PlayerAbilityState(PlayerStateMachine stateMachine, Player player, string animName, PlayerData playerData) : base(stateMachine, player, animName, playerData)
     {
@@ -22,15 +23,22 @@ public class PlayerAbilityState : PlayerState
     {
         base.LogicUpdate();
 
+        PrimaryAttackInput = Player.InputHandler.PrimaryAttack;
+
         if (IsAbilityDone)
         {
             if(IsGrounded && Player.CurrentVelocity.y < 0.01f)
             {
-                Player.StateMachine.ChangeState(Player.IdleState);
+                StateMachine.ChangeState(Player.IdleState);
+            }
+            else if(PrimaryAttackInput)
+            {
+                Player.InputHandler.UsePrimaryAttackInput();
+                StateMachine.ChangeState(Player.PrimaryAttackState);
             }
             else
             {
-                Player.StateMachine.ChangeState(Player.InAirState);
+                StateMachine.ChangeState(Player.InAirState);
             }
         }
     }

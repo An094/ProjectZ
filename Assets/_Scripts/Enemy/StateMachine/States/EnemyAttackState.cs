@@ -6,6 +6,7 @@ public class EnemyAttackState : EnemyState
 {
     protected Transform AttackPosition;
     protected bool isPlayerInMinAgroRange;
+    protected bool isPlayerInMaxAgroRange;
 
     public EnemyAttackState(EnemyStateMachine stateMachine, Enemy enemy, string animName, EnemyData enemyData, Transform attackPostion) : base(stateMachine, enemy, animName, enemyData)
     {
@@ -17,6 +18,7 @@ public class EnemyAttackState : EnemyState
         base.DoCheck();
 
         isPlayerInMinAgroRange = Enemy.CheckPlayerInMinAgroRange();
+        isPlayerInMaxAgroRange = Enemy.CheckPlayerInMaxAgroRange();
     }
 
     public override void Enter()

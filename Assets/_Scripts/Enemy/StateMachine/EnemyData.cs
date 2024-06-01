@@ -27,6 +27,11 @@ public class EnemyData : ScriptableObject
     [Header("Hurt state")]
     public float StunTime = 0.2f;
 
+    [Header("Dodge state")]
+    public float DodgeSpeed = 5.0f;
+    public Vector2 DodgeAngle = Vector2.one;
+    public float DodgeTime = 1f;
+
     [Header("Melee attack state")]
     public float AttackRadius = 0.5f;
     public float AttackDamage = 10f;

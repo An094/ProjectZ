@@ -25,6 +25,8 @@ public class EnemyPlayerDetectedState : EnemyState
     public override void Exit()
     {
         base.Exit();
+
+        performCloseRangeAction = false;
     }
 
     public override void LogicUpdate()

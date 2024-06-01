@@ -2,14 +2,12 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class E_ArcherEnemyPlayerDetectedState : EnemyPlayerDetectedState
+public class E_ArcherEnemyDodgeState : EnemyDodgeState
 {
     E_ArcherEnemy ArcherEnemy;
-    private bool HasDodged;
-    public E_ArcherEnemyPlayerDetectedState(EnemyStateMachine stateMachine, E_ArcherEnemy enemy, string animName, EnemyData enemyData) : base(stateMachine, enemy, animName, enemyData)
+    public E_ArcherEnemyDodgeState(EnemyStateMachine stateMachine, E_ArcherEnemy enemy, string animName, EnemyData enemyData) : base(stateMachine, enemy, animName, enemyData)
     {
         ArcherEnemy = enemy;
-        HasDodged = false;
     }
 
     public override void AnimationFinishTrigger()
@@ -41,19 +39,18 @@ public class E_ArcherEnemyPlayerDetectedState : EnemyPlayerDetectedState
     {
         base.LogicUpdate();
 
-        if (performCloseRangeAction && !HasDodged)
+        if(isDodgeOver)
         {
-            HasDodged = true;
-            StateMachine.ChangeState(ArcherEnemy.DodgeState);
+            if (isPlayerInMaxAgroRange)
+            {
+                StateMachine.ChangeState(ArcherEnemy.RangedAttackState);
+            }
+            else
+            {
+                StateMachine.ChangeState(ArcherEnemy.LookforPlayerState);
+            }
         }
-        else if (performLongRangeAction)
-        {
-            StateMachine.ChangeState(ArcherEnemy.RangedAttackState);
-        }
-        else if (!isPlayerInMaxAgroRange)
-        {
-            StateMachine.ChangeState(ArcherEnemy.LookforPlayerState);
-        }
+        
     }
 
     public override void PhysicUpdate()

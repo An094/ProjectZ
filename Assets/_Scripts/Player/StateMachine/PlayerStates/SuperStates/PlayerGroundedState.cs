@@ -10,6 +10,7 @@ public class PlayerGroundedState : PlayerState
     private bool IsGrounded;
     private bool RollInput;
     private bool PrimaryAttack;
+    private bool DefendInput;
     public PlayerGroundedState(PlayerStateMachine stateMachine, Player player, string animName, PlayerData playerData) : base(stateMachine, player, animName, playerData)
     {
     }
@@ -41,6 +42,7 @@ public class PlayerGroundedState : PlayerState
         JumpInput = Player.InputHandler.JumpInput;
         RollInput = Player.InputHandler.RollInput;
         PrimaryAttack = Player.InputHandler.PrimaryAttack;
+        DefendInput = Player.InputHandler.DefendInput;
 
         IsGrounded = Player.IsGrounded();
 
@@ -62,6 +64,10 @@ public class PlayerGroundedState : PlayerState
         {
             Player.InputHandler.UsePrimaryAttackInput();
             StateMachine.ChangeState(Player.PrimaryAttackState);
+        }
+        else if(DefendInput)
+        {
+            StateMachine.ChangeState(Player.DefendState);
         }
         
     }

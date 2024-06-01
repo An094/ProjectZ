@@ -28,6 +28,8 @@ public class PlayerState
         Player.Animator.SetBool(AnimName, true);
         IsAnimationFinished = false;
         IsExitingState = false;
+
+        Debug.Log("Enter" + AnimName);
     }
 
     public virtual void Exit()
