@@ -52,4 +52,9 @@ public class EnemyData : ScriptableObject
 
     [Header("Stats")]
     public float MaxHp = 100.0f;
+
+    [Header("Explosion")]
+    public bool IsTriggerExplositionAfterDead = false;
+    public GameObject Explosion;
+    public float ExplosionRadius = 1f;
 }

@@ -10,23 +10,23 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f884c513cf6815148bd4d664cb85dcf8, type: 3}
-  m_Name: MushroomData
+  m_Name: ExplodingAppleData
   m_EditorClassIdentifier: 
   idleTime: 1
   moveSpeed: 3
-  MinAgroDistance: 3
+  MinAgroDistance: 4
   MaxAgroDistance: 7
   longRangeActionTime: 0.5
-  ChargeSpeed: 6
-  ChargeTime: 3
+  ChargeSpeed: 5
+  ChargeTime: 2
   TimeBetweenTurns: 0.75
-  AmountOfTurns: 1
-  StunTime: 0.2
+  AmountOfTurns: 2
+  StunTime: 0.5
   DodgeSpeed: 5
   DodgeAngle: {x: 1, y: 1}
   DodgeTime: 1
-  AttackRadius: 0.7
-  AttackDamage: 20
+  AttackRadius: 0.5
+  AttackDamage: 10
   ProjectilePref: {fileID: 0}
   TravelDistance: 5
   ProjectileSpeed: 10
@@ -34,14 +34,14 @@ MonoBehaviour:
   GroundCheckRadius: 0.2
   WallCheckRadius: 0.5
   LedgeCheckRadius: 0.5
-  CloseRangeActionDistance: 1.2
+  CloseRangeActionDistance: 0.8
   WhatIsGround:
     serializedVersion: 2
     m_Bits: 64
   WhatIsPlayer:
     serializedVersion: 2
     m_Bits: 256
-  MaxHp: 150
-  IsTriggerExplositionAfterDead: 0
-  Explosion: {fileID: 0}
+  MaxHp: 100
+  IsTriggerExplositionAfterDead: 1
+  Explosion: {fileID: 449445612113672019, guid: 3f7091d3055a8074c8c28917c2227a1d, type: 3}
   ExplosionRadius: 1

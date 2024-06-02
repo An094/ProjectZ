@@ -26,7 +26,7 @@ MonoBehaviour:
   DodgeAngle: {x: 1, y: 1}
   DodgeTime: 1
   AttackRadius: 0.6
-  AttackDamage: 20
+  AttackDamage: 15
   ProjectilePref: {fileID: 2931077573359834456, guid: e48ca82b1d25a6b4da813d4cee6d7dab, type: 3}
   TravelDistance: 5
   ProjectileSpeed: 10
@@ -42,3 +42,6 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 256
   MaxHp: 100
+  IsTriggerExplositionAfterDead: 0
+  Explosion: {fileID: 0}
+  ExplosionRadius: 1
