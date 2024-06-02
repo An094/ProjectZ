@@ -21,7 +21,10 @@ public class EnemyMeleeAttackState : EnemyAttackState
                 if (collider.TryGetComponent(out IDamageable playerDamageable))
                 {
                     //player.Damage();
-                    playerDamageable.Damage(new DamgeDetails(EnemyData.AttackDamage, Enemy.transform));
+                    if(!playerDamageable.Damage(new DamgeDetails(EnemyData.AttackDamage, Enemy.transform)))
+                    {
+                        Enemy.KnockBack(new KnockBackDetails(-Enemy.FacingDirection, 1f));
+                    }
                 }
 
                 if(collider.TryGetComponent(out IKnockBackable playerKnockbackable))

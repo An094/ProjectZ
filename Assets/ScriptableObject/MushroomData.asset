@@ -22,6 +22,9 @@ MonoBehaviour:
   TimeBetweenTurns: 0.75
   AmountOfTurns: 1
   StunTime: 0.2
+  DodgeSpeed: 5
+  DodgeAngle: {x: 1, y: 1}
+  DodgeTime: 1
   AttackRadius: 0.7
   AttackDamage: 30
   ProjectilePref: {fileID: 0}
@@ -31,7 +34,7 @@ MonoBehaviour:
   GroundCheckRadius: 0.2
   WallCheckRadius: 0.5
   LedgeCheckRadius: 0.5
-  CloseRangeActionDistance: 1
+  CloseRangeActionDistance: 1.2
   WhatIsGround:
     serializedVersion: 2
     m_Bits: 64

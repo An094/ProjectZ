@@ -28,6 +28,7 @@ public class Player : MonoBehaviour
     public BoxCollider2D Collider { get; private set; }
     public PlayerInputHandler InputHandler { get; private set; }
 
+    public PlayerCombatController CombatController { get; private set; }
     #endregion
 
     #region Finite State Machine
@@ -108,6 +109,7 @@ public class Player : MonoBehaviour
         Animator = GetComponent<Animator>();
         Collider = GetComponent<BoxCollider2D>();
         InputHandler = GetComponent<PlayerInputHandler>();
+        CombatController = GetComponent<PlayerCombatController>();
 
         StateMachine.Initialize(IdleState);
 

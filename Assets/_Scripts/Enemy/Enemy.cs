@@ -99,9 +99,10 @@ public class Enemy : MonoBehaviour, IDamageable, IKnockBackable
     public bool CheckPlayerInMaxAgroRange() => Physics2D.Raycast(PlayerCheck.position, Vector2.right * FacingDirection, EnemyData.MaxAgroDistance, EnemyData.WhatIsPlayer);
     public bool CheckPlayerInCloseRangeAction() => Physics2D.Raycast(PlayerCheck.position, Vector2.right * FacingDirection, EnemyData.CloseRangeActionDistance, EnemyData.WhatIsPlayer);
 
-    public virtual void Damage(DamgeDetails attackDetail)
+    public virtual bool Damage(DamgeDetails attackDetail)
     {
         CurrentHp -= attackDetail.Dmg;
+        return true;
     }
 
     public virtual void KnockBack(KnockBackDetails details)

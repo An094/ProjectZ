@@ -16,5 +16,5 @@ public class DamgeDetails
 
 public interface IDamageable
 {
-    void Damage(DamgeDetails attackDetail);
+    bool Damage(DamgeDetails attackDetail);
 }

@@ -48,14 +48,16 @@ public class E_NormalEnemy : Enemy
 
     }
 
-    public override void Damage(DamgeDetails attackDetail)
+    public override bool Damage(DamgeDetails attackDetail)
     {
         base.Damage(attackDetail);
 
         if (CurrentHp <= 0)
         {
             StateMachine.ChangeState(DieState);
+            return true;
         }
+        return false;
     }
 
     public override void KnockBack(KnockBackDetails details)

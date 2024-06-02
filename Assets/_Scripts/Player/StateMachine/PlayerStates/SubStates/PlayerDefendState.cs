@@ -28,12 +28,17 @@ public class PlayerDefendState : PlayerAbilityState
     {
         base.Enter();
 
+        Player.CombatController.IsShieldActive = true;
+
         IsAbilityDone = false;
     }
 
     public override void Exit()
     {
+        Player.CombatController.IsShieldActive = false;
+
         base.Exit();
+
     }
 
     public override void LogicUpdate()
