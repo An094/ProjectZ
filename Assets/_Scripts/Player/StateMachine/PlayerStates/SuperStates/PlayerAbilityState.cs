@@ -31,11 +31,11 @@ public class PlayerAbilityState : PlayerState
             {
                 StateMachine.ChangeState(Player.IdleState);
             }
-            else if(PrimaryAttackInput)
-            {
-                Player.InputHandler.UsePrimaryAttackInput();
-                StateMachine.ChangeState(Player.PrimaryAttackState);
-            }
+            //else if(PrimaryAttackInput)
+            //{
+            //    Player.InputHandler.UsePrimaryAttackInput();
+            //    StateMachine.ChangeState(Player.PrimaryAttackState);
+            //}
             else
             {
                 StateMachine.ChangeState(Player.InAirState);

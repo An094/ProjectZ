@@ -57,10 +57,10 @@ public class PlayerAttackState : PlayerAbilityState
     {
         base.Enter();
 
-        if (Time.time < LastAttackedTime + 0.1f)
-        {
-            return;
-        }
+        //if (Time.time < LastAttackedTime + 0.1f)
+        //{
+        //    return;
+        //}
 
         IsAbilityDone = false;// use this for only attack state.
 
