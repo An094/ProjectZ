@@ -24,7 +24,7 @@ public class Enemy : MonoBehaviour, IDamageable, IKnockBackable
 
     private Vector2 Workspace;
     public Vector2 CurrentVelocity { get; private set; }
-    public int FacingDirection { get; private set; }
+    public int FacingDirection { get; set; }
 
     protected float CurrentHp;
 
