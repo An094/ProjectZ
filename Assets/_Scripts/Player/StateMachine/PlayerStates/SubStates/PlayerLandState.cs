@@ -28,5 +28,9 @@ public class PlayerLandState : PlayerGroundedState
                 Player.StateMachine.ChangeState(Player.IdleState);
             }
         }
+        else
+        {
+            Player.SetVelocityZero();
+        }
     }
 }

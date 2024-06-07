@@ -1,0 +1,55 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f884c513cf6815148bd4d664cb85dcf8, type: 3}
+  m_Name: RANGER
+  m_EditorClassIdentifier: 
+  idleTime: 1
+  moveSpeed: 1
+  MinAgroDistance: 3
+  MaxAgroDistance: 4
+  longRangeActionTime: 0.5
+  ChargeSpeed: 3
+  ChargeTime: 2
+  TimeBetweenTurns: 0.75
+  AmountOfTurns: 2
+  StunTime: 0.2
+  DodgeSpeed: 5
+  DodgeAngle: {x: 1, y: 1}
+  DodgeTime: 1
+  AttackRadius: 0.5
+  AttackDamage: 10
+  ProjectilePref: {fileID: 0}
+  TravelDistance: 5
+  ProjectileSpeed: 10
+  ProjectileDamage: 50
+  GroundCheckRadius: 0.2
+  WallCheckRadius: 0.5
+  LedgeCheckRadius: 0.5
+  CloseRangeActionDistance: 2
+  WhatIsGround:
+    serializedVersion: 2
+    m_Bits: 64
+  WhatIsPlayer:
+    serializedVersion: 2
+    m_Bits: 256
+  MaxHp: 100
+  IsTriggerExplositionAfterDead: 0
+  Explosion: {fileID: 0}
+  ExplosionRadius: 1
+  CloseActionDistance: 2
+  FallingStarCooldown: 20
+  BeamAttackCooldown: 10
+  DodgeAndShootCooldown: 20
+  DodgeCooldown: 15
+  RollCooldown: 10
+  SlideCooldown: 5
+  DefendCooldown: 2.5

@@ -57,4 +57,17 @@ public class EnemyData : ScriptableObject
     public bool IsTriggerExplositionAfterDead = false;
     public GameObject Explosion;
     public float ExplosionRadius = 1f;
+
+    [Header("BOSS")]
+    public float CloseActionDistance = 2.0f;
+
+    public float FallingStarCooldown = 20.0f;
+    public float BeamAttackCooldown = 10.0f;
+
+    public float DodgeAndShootCooldown = 20.0f;
+    public float DodgeCooldown = 15.0f;
+    public float RollCooldown = 10.0f;
+    public float SlideCooldown = 5.0f;
+    public float DefendCooldown = 2.5f;
+
 }

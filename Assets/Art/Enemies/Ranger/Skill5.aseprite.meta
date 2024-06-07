@@ -1,0 +1,1116 @@
+fileFormatVersion: 2
+guid: 6b29dd20c6de7b849ab0276139d2bc34
+ScriptedImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 2
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+  script: {fileID: 11500000, guid: 62a9f0aa5b59740cfbadc7e5f9823bb0, type: 3}
+  textureImporterSettings:
+    alphaSource: 1
+    mipMapMode: 0
+    enableMipMap: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+    convertToNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+    swizzle: 50462976
+    isReadable: 0
+    streamingMipmaps: 0
+    streamingMipmapsPriority: 0
+    vTOnly: 0
+    ignoreMipmapLimit: 0
+    nPOTScale: 1
+    sRGBTexture: 1
+    spriteMode: 2
+    spriteExtrude: 1
+    spriteMeshType: 1
+    alignment: 0
+    spritePivot: {x: 0.5, y: 0.5}
+    spritePixelsToUnits: 100
+    spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+    spriteGenerateFallbackPhysicsShape: 0
+    generateCubemap: 6
+    cubemapConvolution: 0
+    seamlessCubemap: 0
+    alphaIsTransparency: 1
+    spriteTessellationDetail: -1
+    textureType: 8
+    textureShape: 1
+    singleChannelComponent: 0
+    flipbookRows: 0
+    flipbookColumns: 0
+    ignorePngGamma: 0
+    cookieMode: 0
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+    normalMap: 0
+    textureFormat: 0
+    maxTextureSize: 0
+    lightmap: 0
+    compressionQuality: 0
+    linearTexture: 0
+    grayScaleToAlpha: 0
+    rGBM: 0
+    cubemapConvolutionSteps: 0
+    cubemapConvolutionExponent: 0
+    maxTextureSizeSet: 0
+    compressionQualitySet: 0
+    textureFormatSet: 0
+    applyGammaDecoding: 0
+  previousAsepriteImporterSettings:
+    fileImportMode: 1
+    importHiddenLayers: 0
+    layerImportMode: 1
+    defaultPivotSpace: 0
+    defaultPivotAlignment: 7
+    customPivotPosition: {x: 0.5, y: 0.5}
+    spritePadding: 0
+    generateModelPrefab: 1
+    generateAnimationClips: 1
+    addSortingGroup: 1
+    addShadowCasters: 0
+  asepriteImporterSettings:
+    fileImportMode: 1
+    importHiddenLayers: 0
+    layerImportMode: 1
+    defaultPivotSpace: 0
+    defaultPivotAlignment: 7
+    customPivotPosition: {x: 0.5, y: 0.5}
+    spritePadding: 0
+    generateModelPrefab: 1
+    generateAnimationClips: 1
+    addSortingGroup: 1
+    addShadowCasters: 0
+  importFileNodeState: 1
+  platformSettingsDirtyTick: 0
+  textureAssetName: 
+  singleSpriteImportData:
+  - name: 
+    originalName: 
+    pivot: {x: 0, y: 0}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 0
+      height: 0
+    spriteID: 
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 0, y: 0}
+  animatedSpriteImportData:
+  - name: Skill5_Frame_0
+    originalName: 
+    pivot: {x: 0.58000004, y: -0.014084507}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 718
+      y: 1324
+      width: 100
+      height: 142
+    spriteID: e7b235171752f5142bba87022a5fd841
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 718, y: 1324}
+  - name: Skill5_Frame_1
+    originalName: 
+    pivot: {x: 0.5500001, y: -0.014084507}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 590
+      y: 1324
+      width: 120
+      height: 142
+    spriteID: e0ed3d6cdb4325c449bbb0a9e9bc3572
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 590, y: 1324}
+  - name: Skill5_Frame_2
+    originalName: 
+    pivot: {x: 0.57812494, y: -0.014084507}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 1838
+      y: 838
+      width: 128
+      height: 142
+    spriteID: 1257d4baac32e6b489229525cdd79a03
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 1838, y: 838}
+  - name: Skill5_Frame_3
+    originalName: 
+    pivot: {x: 0.20114945, y: -0.014705882}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 1180
+      width: 348
+      height: 136
+    spriteID: 3eca8b94433ba2e42a91112eebae3346
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 1180}
+  - name: Skill5_Frame_4
+    originalName: 
+    pivot: {x: 0.33492824, y: -0.01724138}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 1056
+      width: 418
+      height: 116
+    spriteID: 79d3cdc922e9fbf4b9c367139bac864b
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 1056}
+  - name: Skill5_Frame_5
+    originalName: 
+    pivot: {x: 0.50000006, y: -0.02173913}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 1164
+      y: 478
+      width: 572
+      height: 92
+    spriteID: b35fa2934d9789346bdb9a71bbc0e0ad
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 1164, y: 478}
+  - name: Skill5_Frame_6
+    originalName: 
+    pivot: {x: 0.50000006, y: -0.020408163}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 584
+      y: 478
+      width: 572
+      height: 98
+    spriteID: 0689e1d6600be0b46887532cf8004ddc
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 584, y: 478}
+  - name: Skill5_Frame_7
+    originalName: 
+    pivot: {x: 0.50000006, y: -0.01724138}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 478
+      width: 572
+      height: 116
+    spriteID: f7dd00379a26de342ae8cab858d99e5c
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 478}
+  - name: Skill5_Frame_8
+    originalName: 
+    pivot: {x: 0.50000006, y: -0.014925373}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 1138
+      y: 320
+      width: 572
+      height: 134
+    spriteID: 9f38b953a798d224188bc44fc6c0ee84
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 1138, y: 320}
+  - name: Skill5_Frame_9
+    originalName: 
+    pivot: {x: 0.50000006, y: -0.014492754}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 558
+      y: 320
+      width: 572
+      height: 138
+    spriteID: 75b5d6a1ffa0959448dcc5aac874fd7b
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 558, y: 320}
+  - name: Skill5_Frame_10
+    originalName: 
+    pivot: {x: 0.50000006, y: -0.013888889}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 1148
+      y: 162
+      width: 572
+      height: 144
+    spriteID: c82f7f9480327454287791343c689e04
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 1148, y: 162}
+  - name: Skill5_Frame_11
+    originalName: 
+    pivot: {x: 0.50000006, y: -0.013333334}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 4
+      width: 572
+      height: 150
+    spriteID: 585e2304d4999c04b8c619cb166b1fec
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 4}
+  - name: Skill5_Frame_12
+    originalName: 
+    pivot: {x: 0.50000006, y: -0.013333334}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 584
+      y: 4
+      width: 572
+      height: 150
+    spriteID: c8b12edb0403f7641bfde1d387b5da9f
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 584, y: 4}
+  - name: Skill5_Frame_13
+    originalName: 
+    pivot: {x: 0.50000006, y: -0.013333334}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 1164
+      y: 4
+      width: 572
+      height: 150
+    spriteID: 366c7eb2e05443e40bdb87d5d28a9f87
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 1164, y: 4}
+  - name: Skill5_Frame_14
+    originalName: 
+    pivot: {x: 0.50000006, y: -0.013333334}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 162
+      width: 572
+      height: 150
+    spriteID: 14c84356ad79431409b2df77d8ed4cd5
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 162}
+  - name: Skill5_Frame_15
+    originalName: 
+    pivot: {x: 0.48920858, y: -0.013333334}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 584
+      y: 162
+      width: 556
+      height: 150
+    spriteID: 22f61c30367bdbd41839c2a0c3a03988
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 584, y: 162}
+  - name: Skill5_Frame_16
+    originalName: 
+    pivot: {x: 0.4798535, y: -0.013333334}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 320
+      width: 546
+      height: 150
+    spriteID: ba11389d25e53c248919b3537052a7cd
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 320}
+  - name: Skill5_Frame_17
+    originalName: 
+    pivot: {x: 0.33333334, y: -0.013333334}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 598
+      y: 602
+      width: 426
+      height: 150
+    spriteID: e57e67c1782ef6a4889c8076a13aded1
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 598, y: 602}
+  - name: Skill5_Frame_18
+    originalName: 
+    pivot: {x: 0.20670389, y: -0.013333334}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 270
+      y: 838
+      width: 358
+      height: 150
+    spriteID: b431e3644e2dcbb4d8ef64074d511d39
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 270, y: 838}
+  - name: Skill5_Frame_19
+    originalName: 
+    pivot: {x: 0.21978024, y: -0.013333334}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 1618
+      y: 602
+      width: 364
+      height: 150
+    spriteID: e514d221b4fc64448bdea84fb0779591
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 1618, y: 602}
+  - name: Skill5_Frame_20
+    originalName: 
+    pivot: {x: 0.13414635, y: -0.013333334}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 1212
+      y: 838
+      width: 328
+      height: 150
+    spriteID: 9bdde0b6528cd304884eeb3a31d5015c
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 1212, y: 838}
+  - name: Skill5_Frame_21
+    originalName: 
+    pivot: {x: 0.08387098, y: -0.012048192}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 894
+      y: 838
+      width: 310
+      height: 166
+    spriteID: bfc4b42d3e3a2fa49bf46b759240bcb4
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 894, y: 838}
+  - name: Skill5_Frame_22
+    originalName: 
+    pivot: {x: -0.0070921713, y: -0.011627907}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 1548
+      y: 838
+      width: 282
+      height: 172
+    spriteID: 037d7888713c5d246a9e8754f1ab72fe
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 1548, y: 838}
+  - name: Skill5_Frame_23
+    originalName: 
+    pivot: {x: 0.020689635, y: -0.008928572}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 300
+      y: 602
+      width: 290
+      height: 224
+    spriteID: bc23fb2796abffd4baf2438d43f33a53
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 300, y: 602}
+  - name: Skill5_Frame_24
+    originalName: 
+    pivot: {x: 0.0138888955, y: -0.00877193}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 602
+      width: 288
+      height: 228
+    spriteID: 30209219f6d7ddc449ed2e54bc9590ee
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 602}
+  - name: Skill5_Frame_25
+    originalName: 
+    pivot: {x: 0.027397273, y: -0.00952381}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 1032
+      y: 602
+      width: 292
+      height: 210
+    spriteID: e62d188b390f20743ae3956f692666ca
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 1032, y: 602}
+  - name: Skill5_Frame_26
+    originalName: 
+    pivot: {x: -0.021582773, y: -0.009615385}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 1332
+      y: 602
+      width: 278
+      height: 208
+    spriteID: 94bdc122973038745933ad7ae59298ef
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 1332, y: 602}
+  - name: Skill5_Frame_27
+    originalName: 
+    pivot: {x: -0.10400001, y: -0.009708738}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 636
+      y: 838
+      width: 250
+      height: 206
+    spriteID: d8fbe3e74ca19e9469759f2585aef04b
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 636, y: 838}
+  - name: Skill5_Frame_28
+    originalName: 
+    pivot: {x: -0.108527124, y: 0}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 838
+      width: 258
+      height: 210
+    spriteID: 376f1e7685b852e4f96010e15992db3c
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 838}
+  - name: Skill5_Frame_29
+    originalName: 
+    pivot: {x: -0.014388434, y: -0.0125}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 1324
+      width: 278
+      height: 160
+    spriteID: 4e1fde0b13d7acd4294e1b17ef01b5f5
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 1324}
+  - name: Skill5_Frame_30
+    originalName: 
+    pivot: {x: 0.07534247, y: -0.014084507}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 290
+      y: 1324
+      width: 292
+      height: 142
+    spriteID: efcc642e1d5fbbf4da7b6d4a087776c2
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 290, y: 1324}
+  - name: Skill5_Frame_31
+    originalName: 
+    pivot: {x: 0.09032257, y: -0.014084507}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 1718
+      y: 320
+      width: 310
+      height: 142
+    spriteID: 26b1cd99a080ac04faf8dfa9627ce1aa
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 1718, y: 320}
+  - name: Skill5_Frame_32
+    originalName: 
+    pivot: {x: 0.0827586, y: -0.01369863}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 1744
+      y: 4
+      width: 290
+      height: 146
+    spriteID: 0ed4fb5341813e5419fec2ea2b8d47c0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 1744, y: 4}
+  - name: Skill5_Frame_33
+    originalName: 
+    pivot: {x: 0.16883118, y: -0.013513514}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 1728
+      y: 162
+      width: 308
+      height: 148
+    spriteID: a97afc23f3ccdfe4ba5d992ffb1a05c5
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 1728, y: 162}
+  - name: Skill5_Frame_34
+    originalName: 
+    pivot: {x: 0.5208333, y: -0.013888889}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 826
+      y: 1324
+      width: 96
+      height: 144
+    spriteID: 0d306ca380b58444a8638b39685eec1b
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 826, y: 1324}
+  spriteSheetImportData: []
+  asepriteLayers:
+  - layerIndex: 0
+    guid: 377810606
+    name: Skill5
+    layerFlags: 0
+    layerType: 0
+    blendMode: 0
+    cells:
+    - name: Skill5_Frame_0
+      frameIndex: 0
+      cellRect:
+        x: 230
+        y: 2
+        width: 100
+        height: 142
+      spriteId: e7b235171752f5142bba87022a5fd841
+    - name: Skill5_Frame_1
+      frameIndex: 1
+      cellRect:
+        x: 222
+        y: 2
+        width: 120
+        height: 142
+      spriteId: e0ed3d6cdb4325c449bbb0a9e9bc3572
+    - name: Skill5_Frame_2
+      frameIndex: 2
+      cellRect:
+        x: 214
+        y: 2
+        width: 128
+        height: 142
+      spriteId: 1257d4baac32e6b489229525cdd79a03
+    - name: Skill5_Frame_3
+      frameIndex: 3
+      cellRect:
+        x: 218
+        y: 2
+        width: 348
+        height: 136
+      spriteId: 3eca8b94433ba2e42a91112eebae3346
+    - name: Skill5_Frame_4
+      frameIndex: 4
+      cellRect:
+        x: 148
+        y: 2
+        width: 418
+        height: 116
+      spriteId: 79d3cdc922e9fbf4b9c367139bac864b
+    - name: Skill5_Frame_5
+      frameIndex: 5
+      cellRect:
+        x: 2
+        y: 2
+        width: 572
+        height: 92
+      spriteId: b35fa2934d9789346bdb9a71bbc0e0ad
+    - name: Skill5_Frame_6
+      frameIndex: 6
+      cellRect:
+        x: 2
+        y: 2
+        width: 572
+        height: 98
+      spriteId: 0689e1d6600be0b46887532cf8004ddc
+    - name: Skill5_Frame_7
+      frameIndex: 7
+      cellRect:
+        x: 2
+        y: 2
+        width: 572
+        height: 116
+      spriteId: f7dd00379a26de342ae8cab858d99e5c
+    - name: Skill5_Frame_8
+      frameIndex: 8
+      cellRect:
+        x: 2
+        y: 2
+        width: 572
+        height: 134
+      spriteId: 9f38b953a798d224188bc44fc6c0ee84
+    - name: Skill5_Frame_9
+      frameIndex: 9
+      cellRect:
+        x: 2
+        y: 2
+        width: 572
+        height: 138
+      spriteId: 75b5d6a1ffa0959448dcc5aac874fd7b
+    - name: Skill5_Frame_10
+      frameIndex: 10
+      cellRect:
+        x: 2
+        y: 2
+        width: 572
+        height: 144
+      spriteId: c82f7f9480327454287791343c689e04
+    - name: Skill5_Frame_11
+      frameIndex: 11
+      cellRect:
+        x: 2
+        y: 2
+        width: 572
+        height: 150
+      spriteId: 585e2304d4999c04b8c619cb166b1fec
+    - name: Skill5_Frame_12
+      frameIndex: 12
+      cellRect:
+        x: 2
+        y: 2
+        width: 572
+        height: 150
+      spriteId: c8b12edb0403f7641bfde1d387b5da9f
+    - name: Skill5_Frame_13
+      frameIndex: 13
+      cellRect:
+        x: 2
+        y: 2
+        width: 572
+        height: 150
+      spriteId: 366c7eb2e05443e40bdb87d5d28a9f87
+    - name: Skill5_Frame_14
+      frameIndex: 14
+      cellRect:
+        x: 2
+        y: 2
+        width: 572
+        height: 150
+      spriteId: 14c84356ad79431409b2df77d8ed4cd5
+    - name: Skill5_Frame_15
+      frameIndex: 15
+      cellRect:
+        x: 16
+        y: 2
+        width: 556
+        height: 150
+      spriteId: 22f61c30367bdbd41839c2a0c3a03988
+    - name: Skill5_Frame_16
+      frameIndex: 16
+      cellRect:
+        x: 26
+        y: 2
+        width: 546
+        height: 150
+      spriteId: ba11389d25e53c248919b3537052a7cd
+    - name: Skill5_Frame_17
+      frameIndex: 17
+      cellRect:
+        x: 146
+        y: 2
+        width: 426
+        height: 150
+      spriteId: e57e67c1782ef6a4889c8076a13aded1
+    - name: Skill5_Frame_18
+      frameIndex: 18
+      cellRect:
+        x: 214
+        y: 2
+        width: 358
+        height: 150
+      spriteId: b431e3644e2dcbb4d8ef64074d511d39
+    - name: Skill5_Frame_19
+      frameIndex: 19
+      cellRect:
+        x: 208
+        y: 2
+        width: 364
+        height: 150
+      spriteId: e514d221b4fc64448bdea84fb0779591
+    - name: Skill5_Frame_20
+      frameIndex: 20
+      cellRect:
+        x: 244
+        y: 2
+        width: 328
+        height: 150
+      spriteId: 9bdde0b6528cd304884eeb3a31d5015c
+    - name: Skill5_Frame_21
+      frameIndex: 21
+      cellRect:
+        x: 262
+        y: 2
+        width: 310
+        height: 166
+      spriteId: bfc4b42d3e3a2fa49bf46b759240bcb4
+    - name: Skill5_Frame_22
+      frameIndex: 22
+      cellRect:
+        x: 290
+        y: 2
+        width: 282
+        height: 172
+      spriteId: 037d7888713c5d246a9e8754f1ab72fe
+    - name: Skill5_Frame_23
+      frameIndex: 23
+      cellRect:
+        x: 282
+        y: 2
+        width: 290
+        height: 224
+      spriteId: bc23fb2796abffd4baf2438d43f33a53
+    - name: Skill5_Frame_24
+      frameIndex: 24
+      cellRect:
+        x: 284
+        y: 2
+        width: 288
+        height: 228
+      spriteId: 30209219f6d7ddc449ed2e54bc9590ee
+    - name: Skill5_Frame_25
+      frameIndex: 25
+      cellRect:
+        x: 280
+        y: 2
+        width: 292
+        height: 210
+      spriteId: e62d188b390f20743ae3956f692666ca
+    - name: Skill5_Frame_26
+      frameIndex: 26
+      cellRect:
+        x: 294
+        y: 2
+        width: 278
+        height: 208
+      spriteId: 94bdc122973038745933ad7ae59298ef
+    - name: Skill5_Frame_27
+      frameIndex: 27
+      cellRect:
+        x: 314
+        y: 2
+        width: 250
+        height: 206
+      spriteId: d8fbe3e74ca19e9469759f2585aef04b
+    - name: Skill5_Frame_28
+      frameIndex: 28
+      cellRect:
+        x: 316
+        y: 0
+        width: 258
+        height: 210
+      spriteId: 376f1e7685b852e4f96010e15992db3c
+    - name: Skill5_Frame_29
+      frameIndex: 29
+      cellRect:
+        x: 292
+        y: 2
+        width: 278
+        height: 160
+      spriteId: 4e1fde0b13d7acd4294e1b17ef01b5f5
+    - name: Skill5_Frame_30
+      frameIndex: 30
+      cellRect:
+        x: 266
+        y: 2
+        width: 292
+        height: 142
+      spriteId: efcc642e1d5fbbf4da7b6d4a087776c2
+    - name: Skill5_Frame_31
+      frameIndex: 31
+      cellRect:
+        x: 260
+        y: 2
+        width: 310
+        height: 142
+      spriteId: 26b1cd99a080ac04faf8dfa9627ce1aa
+    - name: Skill5_Frame_32
+      frameIndex: 32
+      cellRect:
+        x: 264
+        y: 2
+        width: 290
+        height: 146
+      spriteId: 0ed4fb5341813e5419fec2ea2b8d47c0
+    - name: Skill5_Frame_33
+      frameIndex: 33
+      cellRect:
+        x: 236
+        y: 2
+        width: 308
+        height: 148
+      spriteId: a97afc23f3ccdfe4ba5d992ffb1a05c5
+    - name: Skill5_Frame_34
+      frameIndex: 34
+      cellRect:
+        x: 238
+        y: 2
+        width: 96
+        height: 144
+      spriteId: 0d306ca380b58444a8638b39685eec1b
+    linkedCells: []
+    parentIndex: -1
+  platformSettings: []
+  secondarySpriteTextures: []
+  spritePackingTag: 
+  canvasSize: {x: 576, y: 256}

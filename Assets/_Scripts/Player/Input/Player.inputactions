@@ -206,11 +206,33 @@
                 },
                 {
                     "name": "",
+                    "id": "f5a1cf6c-1c4f-4dce-a438-210abaf95b17",
+                    "path": "<Keyboard>/j",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Keyboard",
+                    "action": "PrimaryAttack",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
                     "id": "a68dda6c-03ab-4a3e-8e23-709423c45331",
                     "path": "<Gamepad>/buttonNorth",
                     "interactions": "",
                     "processors": "",
                     "groups": "Gamepad",
+                    "action": "Defend",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "fbc4ee97-68f3-44bb-873b-43099a754a65",
+                    "path": "<Keyboard>/k",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Keyboard",
                     "action": "Defend",
                     "isComposite": false,
                     "isPartOfComposite": false

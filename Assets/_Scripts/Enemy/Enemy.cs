@@ -14,13 +14,13 @@ public class Enemy : MonoBehaviour, IDamageable, IKnockBackable
     public EnemyAttackState AttackState;
 
     [SerializeField]
-    private Transform GroundCheck;
+    protected Transform GroundCheck;
     [SerializeField]
     private Transform WallCheck;
     [SerializeField]
     private Transform LedgeCheck;
     [SerializeField]
-    private Transform PlayerCheck;
+    protected Transform PlayerCheck;
 
     private Vector2 Workspace;
     public Vector2 CurrentVelocity { get; private set; }
@@ -84,12 +84,12 @@ public class Enemy : MonoBehaviour, IDamageable, IKnockBackable
 
     public virtual void AnimationTrigger()
     {
-        //AttackState.AnimationTrigger();
+        StateMachine.CurrentState.AnimationTrigger();
     }
 
     public virtual void AnimationFinishTrigger()
     {
-        //AttackState.AnimationFinishTrigger();
+        StateMachine.CurrentState.AnimationFinishTrigger();
     }
 
     public bool IsGrounded() => Physics2D.OverlapCircle(GroundCheck.position, EnemyData.GroundCheckRadius, EnemyData.WhatIsGround);

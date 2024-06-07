@@ -19,15 +19,11 @@ public class E_EnemyBush : Enemy
     public override void AnimationFinishTrigger()
     {
         base.AnimationFinishTrigger();
-
-        StateMachine.CurrentState.AnimationFinishTrigger();
     }
 
     public override void AnimationTrigger()
     {
         base.AnimationTrigger();
-
-        StateMachine.CurrentState.AnimationTrigger();
     }
 
     public override bool Damage(DamgeDetails attackDetail)

@@ -50,15 +50,11 @@ public class E_ArcherEnemy : Enemy
     public override void AnimationTrigger()
     {
         base.AnimationTrigger();
-
-        StateMachine.CurrentState.AnimationTrigger();
     }
 
     public override void AnimationFinishTrigger()
     {
         base.AnimationFinishTrigger();
-
-        StateMachine.CurrentState.AnimationFinishTrigger();
     }
 
     public override bool Damage(DamgeDetails attackDetail)

@@ -77,15 +77,11 @@ public class E_NormalEnemy : Enemy
     public override void AnimationTrigger()
     {
         base.AnimationTrigger();
-
-        StateMachine.CurrentState.AnimationTrigger();
     }
 
     public override void AnimationFinishTrigger()
     {
         base.AnimationFinishTrigger();
-
-        StateMachine.CurrentState.AnimationFinishTrigger();
     }
 
     private bool IsAlive()

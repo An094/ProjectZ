@@ -1,0 +1,113 @@
+using System.Collections;
+using System.Collections.Generic;
+using Unity.IO.LowLevel.Unsafe;
+using UnityEditor.Tilemaps;
+using UnityEngine;
+
+public class E_Ranger : Enemy
+{
+    [SerializeField] EnemyData RangerData;
+    //public Rigidbody2D rb2D {  get; private set; }
+    public Collider2D Collider2D { get; private set; }
+    private GameObject Player;
+
+    //private int FacingDirection;
+
+    public E_RangerPlayerDetectedState      playerDetectedState { get; private set; }
+    public E_RangerDefendState              defendState         { get; private set; }
+    public E_RangerDieState                 dieState            { get; private set; }
+    public E_RangerDodgeState               dodgeState          { get; private set; }
+    public E_RangerDodgeAndShootState       dodgeNShootState    { get; private set; }
+    public E_RangerHurtState                hurtState           { get; private set; }
+    public E_RangerInAirState               inAirState          { get; private set; }
+    public E_RangerLandState                landState           { get; private set; }
+    public E_RangerMeleeAttack              meleeAttack         { get; private set; }
+    public E_RangerRangedAttack             rangedAttack        { get; private set; }
+    public E_RangerRollState                rollState           { get; private set; }
+    public E_RangerSkillBeamAttack          beamAttack          { get; private set; }
+    public E_RangerSkillFallingStarState    fallingStarState    { get; private set; }
+    public E_RangerSlideState               slideState          { get; private set; }
+
+    //[SerializeField]
+    //private Transform GroundCheck;
+    //[SerializeField]
+    //private Transform PlayerCheck;
+
+    public override void AnimationFinishTrigger()
+    {
+        base.AnimationFinishTrigger();
+    }
+
+    public override void AnimationTrigger()
+    {
+        base.AnimationTrigger();
+    }
+
+    public override bool Damage(DamgeDetails attackDetail)
+    {
+        return base.Damage(attackDetail);
+    }
+
+    public override void KnockBack(KnockBackDetails details)
+    {
+        base.KnockBack(details);
+    }
+
+    protected override void Awake()
+    {
+        base.Awake();
+
+        playerDetectedState = new E_RangerPlayerDetectedState(StateMachine, this, "PlayerDetected", RangerData);
+        defendState = new E_RangerDefendState(StateMachine, this, "Defedn", RangerData);
+        dieState = new E_RangerDieState(StateMachine, this, "Die", RangerData);
+        dodgeState = new E_RangerDodgeState(StateMachine, this, "Dodge", RangerData);
+        dodgeNShootState = new E_RangerDodgeAndShootState(StateMachine, this, "DodgeAndShoot", RangerData);
+        hurtState = new E_RangerHurtState(StateMachine, this, "Hurt", RangerData);
+        inAirState = new E_RangerInAirState(StateMachine, this, "InAir", RangerData);
+        landState = new E_RangerLandState(StateMachine, this, "Land", RangerData);
+        meleeAttack = new E_RangerMeleeAttack(StateMachine, this, "MeleeAttack", RangerData);
+        rangedAttack = new E_RangerRangedAttack(StateMachine, this, "RangedAttack", RangerData);
+        rollState = new E_RangerRollState(StateMachine, this, "Roll", RangerData);
+        beamAttack = new E_RangerSkillBeamAttack(StateMachine, this, "BeamAttack", RangerData);
+        fallingStarState = new E_RangerSkillFallingStarState(StateMachine, this, "FallingStar", RangerData);
+        slideState = new E_RangerSlideState(StateMachine, this, "Slide", RangerData);
+    }
+
+    protected override void FixedUpdate()
+    {
+        base.FixedUpdate();
+    }
+
+    protected override void Start()
+    {
+        base.Start();
+
+        Player = GameObject.FindGameObjectWithTag("Player");
+
+        StateMachine.Initialize(playerDetectedState);
+    }
+
+    //private void Flip()
+    //{
+    //    FacingDirection *= -1;
+    //    transform.Rotate(0.0f, 180.0f, 0.0f);
+    //}
+
+    private void CheckIfShouldFlip()
+    {
+        if(FacingDirection > 0 && Player.transform.position.x < gameObject.transform.position.x
+            || FacingDirection < 0 && Player.transform.position.x > gameObject.transform.position.x)
+        {
+            Flip();
+        }
+    }    
+
+    protected override void Update()
+    {
+        base.Update();
+
+        CheckIfShouldFlip();//TODO: Recheck
+    }
+
+    public bool IsPlayerClose() => Physics2D.OverlapCircle(PlayerCheck.position, EnemyData.CloseActionDistance, EnemyData.WhatIsPlayer);
+}
