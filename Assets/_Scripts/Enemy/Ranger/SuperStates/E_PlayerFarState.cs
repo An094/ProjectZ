@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class E_PlayerFarState : EnemyState
 {
-    E_Ranger Ranger;
+    protected E_Ranger Ranger;
     protected bool IsDone;
    
     protected float LastTimeFinish;

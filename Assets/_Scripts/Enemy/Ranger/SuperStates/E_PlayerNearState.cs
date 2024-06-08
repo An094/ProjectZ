@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class E_PlayerNearState : EnemyState
 {
-    E_Ranger Ranger;
+    protected E_Ranger Ranger;
     protected bool IsDone;
     protected float LastTimeFinish;
     protected bool IsGrounded;
@@ -46,15 +46,23 @@ public class E_PlayerNearState : EnemyState
         base.Exit();
 
         IsExiting = true;
+        LastTimeFinish = Time.time;
     }
 
     public override void LogicUpdate()
     {
         base.LogicUpdate();
 
-        if (IsDone && IsGrounded)
+        if(IsDone)
         {
-            StateMachine.ChangeState(Ranger.playerDetectedState);
+            if(IsGrounded)
+            {
+                StateMachine.ChangeState(Ranger.playerDetectedState);
+            }
+            else
+            {
+                StateMachine.ChangeState(Ranger.inAirState);
+            }
         }
     }
 

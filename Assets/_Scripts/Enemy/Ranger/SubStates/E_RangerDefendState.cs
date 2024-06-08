@@ -11,11 +11,14 @@ public class E_RangerDefendState : E_PlayerNearState
     public override void AnimationFinishTrigger()
     {
         base.AnimationFinishTrigger();
+        
+        IsDone = true;
     }
 
     public override void AnimationTrigger()
     {
         base.AnimationTrigger();
+
     }
 
     public override void DoCheck()
@@ -41,6 +44,11 @@ public class E_RangerDefendState : E_PlayerNearState
     public override void LogicUpdate()
     {
         base.LogicUpdate();
+
+        if(!IsExiting)
+        {
+            Ranger.SetZeroVelocity();
+        }
     }
 
     public override void PhysicUpdate()

@@ -68,6 +68,13 @@ public class Enemy : MonoBehaviour, IDamageable, IKnockBackable
         CurrentVelocity = Workspace;
     }
 
+    public void SetZeroVelocity()
+    {
+        Workspace.Set(0f, 0f);
+        Rb.velocity = Workspace;
+        CurrentVelocity = Workspace;
+    }
+
     public void SetVelocity(float velocity, Vector2 angle, int direction)
     {
         angle.Normalize();

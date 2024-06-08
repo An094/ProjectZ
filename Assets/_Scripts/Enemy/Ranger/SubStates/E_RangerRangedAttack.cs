@@ -4,8 +4,12 @@ using UnityEngine;
 
 public class E_RangerRangedAttack : E_PlayerFarState
 {
-    public E_RangerRangedAttack(EnemyStateMachine stateMachine, E_Ranger enemy, string animName, EnemyData enemyData) : base(stateMachine, enemy, animName, enemyData)
+    protected GameObject ProjectileObj;
+    protected Projectile Projectile;
+    private Transform AttackPosition;
+    public E_RangerRangedAttack(EnemyStateMachine stateMachine, E_Ranger enemy, string animName, EnemyData enemyData, Transform attackPosition) : base(stateMachine, enemy, animName, enemyData)
     {
+        AttackPosition = attackPosition;
     }
 
     public override void AnimationFinishTrigger()
@@ -16,6 +20,12 @@ public class E_RangerRangedAttack : E_PlayerFarState
     public override void AnimationTrigger()
     {
         base.AnimationTrigger();
+
+        ProjectileObj = GameObject.Instantiate(EnemyData.ProjectilePref, AttackPosition.position, AttackPosition.rotation);
+        if (ProjectileObj.TryGetComponent<Projectile>(out Projectile projectile))
+        {
+            projectile.FireProjectile(EnemyData.ProjectileSpeed, EnemyData.TravelDistance, EnemyData.ProjectileDamage);
+        }
     }
 
     public override void DoCheck()

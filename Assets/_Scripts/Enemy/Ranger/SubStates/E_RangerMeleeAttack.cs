@@ -11,6 +11,8 @@ public class E_RangerMeleeAttack : E_PlayerNearState
     public override void AnimationFinishTrigger()
     {
         base.AnimationFinishTrigger();
+
+        IsDone = true;
     }
 
     public override void AnimationTrigger()
@@ -36,6 +38,11 @@ public class E_RangerMeleeAttack : E_PlayerNearState
     public override void LogicUpdate()
     {
         base.LogicUpdate();
+
+        if (!IsExiting)
+        {
+            Ranger.SetZeroVelocity();
+        }
     }
 
     public override void PhysicUpdate()

@@ -31,6 +31,8 @@ public class E_RangerPlayerDetectedState : EnemyState
     public override void Enter()
     {
         base.Enter();
+
+        Ranger.SetZeroVelocity();
     }
 
     public override void Exit()
@@ -44,11 +46,12 @@ public class E_RangerPlayerDetectedState : EnemyState
 
         if(IsPlayerClose)
         {
-            if(!Ranger.dodgeNShootState.IsOnCooldown())
-            {
-                StateMachine.ChangeState(Ranger.dodgeNShootState);
-            }
-            else if(!Ranger.dodgeState.IsOnCooldown())
+            //if(!Ranger.dodgeNShootState.IsOnCooldown())
+            //{
+            //    StateMachine.ChangeState(Ranger.dodgeNShootState);
+            //}
+            //else
+            if(!Ranger.dodgeState.IsOnCooldown())
             {
                 StateMachine.ChangeState(Ranger.dodgeState);
             }

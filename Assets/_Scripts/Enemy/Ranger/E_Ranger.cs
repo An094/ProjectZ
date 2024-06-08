@@ -9,7 +9,7 @@ public class E_Ranger : Enemy
     [SerializeField] EnemyData RangerData;
     //public Rigidbody2D rb2D {  get; private set; }
     public Collider2D Collider2D { get; private set; }
-    private GameObject Player;
+    public GameObject Player {  get; private set; }
 
     //private int FacingDirection;
 
@@ -17,7 +17,7 @@ public class E_Ranger : Enemy
     public E_RangerDefendState              defendState         { get; private set; }
     public E_RangerDieState                 dieState            { get; private set; }
     public E_RangerDodgeState               dodgeState          { get; private set; }
-    public E_RangerDodgeAndShootState       dodgeNShootState    { get; private set; }
+    public E_RangerShootInAirState          shootInAirState    { get; private set; }
     public E_RangerHurtState                hurtState           { get; private set; }
     public E_RangerInAirState               inAirState          { get; private set; }
     public E_RangerLandState                landState           { get; private set; }
@@ -32,6 +32,10 @@ public class E_Ranger : Enemy
     //private Transform GroundCheck;
     //[SerializeField]
     //private Transform PlayerCheck;
+    [SerializeField]
+    private Transform AttackPostion;
+    [SerializeField]
+    private Transform ShootingInAirPostion;
 
     public override void AnimationFinishTrigger()
     {
@@ -58,15 +62,15 @@ public class E_Ranger : Enemy
         base.Awake();
 
         playerDetectedState = new E_RangerPlayerDetectedState(StateMachine, this, "PlayerDetected", RangerData);
-        defendState = new E_RangerDefendState(StateMachine, this, "Defedn", RangerData);
+        defendState = new E_RangerDefendState(StateMachine, this, "Defend", RangerData);
         dieState = new E_RangerDieState(StateMachine, this, "Die", RangerData);
-        dodgeState = new E_RangerDodgeState(StateMachine, this, "Dodge", RangerData);
-        dodgeNShootState = new E_RangerDodgeAndShootState(StateMachine, this, "DodgeAndShoot", RangerData);
+        dodgeState = new E_RangerDodgeState(StateMachine, this, "InAir", RangerData);
+        shootInAirState = new E_RangerShootInAirState(StateMachine, this, "DodgeAndShoot", RangerData, ShootingInAirPostion);
         hurtState = new E_RangerHurtState(StateMachine, this, "Hurt", RangerData);
         inAirState = new E_RangerInAirState(StateMachine, this, "InAir", RangerData);
         landState = new E_RangerLandState(StateMachine, this, "Land", RangerData);
         meleeAttack = new E_RangerMeleeAttack(StateMachine, this, "MeleeAttack", RangerData);
-        rangedAttack = new E_RangerRangedAttack(StateMachine, this, "RangedAttack", RangerData);
+        rangedAttack = new E_RangerRangedAttack(StateMachine, this, "RangedAttack", RangerData, AttackPostion);
         rollState = new E_RangerRollState(StateMachine, this, "Roll", RangerData);
         beamAttack = new E_RangerSkillBeamAttack(StateMachine, this, "BeamAttack", RangerData);
         fallingStarState = new E_RangerSkillFallingStarState(StateMachine, this, "FallingStar", RangerData);

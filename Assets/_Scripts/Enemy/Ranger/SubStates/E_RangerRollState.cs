@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class E_RangerRollState : E_PlayerNearState
 {
+    int RollingDirection;
     public E_RangerRollState(EnemyStateMachine stateMachine, E_Ranger enemy, string animName, EnemyData enemyData) : base(stateMachine, enemy, animName, enemyData)
     {
     }
@@ -11,6 +12,8 @@ public class E_RangerRollState : E_PlayerNearState
     public override void AnimationFinishTrigger()
     {
         base.AnimationFinishTrigger();
+
+        IsDone = true;
     }
 
     public override void AnimationTrigger()
@@ -26,6 +29,8 @@ public class E_RangerRollState : E_PlayerNearState
     public override void Enter()
     {
         base.Enter();
+        RollingDirection = Ranger.FacingDirection;
+
     }
 
     public override void Exit()
@@ -41,6 +46,11 @@ public class E_RangerRollState : E_PlayerNearState
     public override void LogicUpdate()
     {
         base.LogicUpdate();
+
+        if(!IsExiting)
+        {
+            Ranger.SetVelocityX(10.0f * RollingDirection);
+        }
     }
 
     public override void PhysicUpdate()

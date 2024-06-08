@@ -297,7 +297,7 @@ BlendTree:
     m_Motion: {fileID: 7400000, guid: a32aa157f508e7b43ba86a9b687cda3c, type: 2}
     m_Threshold: -1
     m_Position: {x: 0, y: 0}
-    m_TimeScale: 0.01
+    m_TimeScale: 1
     m_CycleOffset: 0
     m_DirectBlendParameter: yVelocity
     m_Mirror: 0
@@ -305,7 +305,7 @@ BlendTree:
     m_Motion: {fileID: 7400000, guid: e64d38cfe0aaf8d49ac812cfdc29cc28, type: 2}
     m_Threshold: 1
     m_Position: {x: 0, y: 0}
-    m_TimeScale: 0.01
+    m_TimeScale: 1
     m_CycleOffset: 0
     m_DirectBlendParameter: yVelocity
     m_Mirror: 0
@@ -375,7 +375,7 @@ AnimatorStateMachine:
     m_Position: {x: 320, y: 900, z: 0}
   - serializedVersion: 1
     m_State: {fileID: -5052614854380961487}
-    m_Position: {x: 314.1454, y: 191.33954, z: 0}
+    m_Position: {x: 310, y: 190, z: 0}
   m_ChildStateMachines: []
   m_AnyStateTransitions: []
   m_EntryTransitions:
@@ -432,7 +432,7 @@ AnimatorTransition:
   m_Name: 
   m_Conditions:
   - m_ConditionMode: 1
-    m_ConditionEvent: Dodge
+    m_ConditionEvent: InAir
     m_EventTreshold: 0
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: -5052614854380961487}
@@ -695,7 +695,7 @@ AnimatorController:
     m_Controller: {fileID: 0}
   - m_Name: yVelocity
     m_Type: 1
-    m_DefaultFloat: 0
+    m_DefaultFloat: 10
     m_DefaultInt: 0
     m_DefaultBool: 0
     m_Controller: {fileID: 0}
@@ -754,6 +754,12 @@ AnimatorController:
     m_DefaultBool: 0
     m_Controller: {fileID: 0}
   - m_Name: Slide
+    m_Type: 4
+    m_DefaultFloat: 0
+    m_DefaultInt: 0
+    m_DefaultBool: 0
+    m_Controller: {fileID: 0}
+  - m_Name: InAir
     m_Type: 4
     m_DefaultFloat: 0
     m_DefaultInt: 0
@@ -1017,7 +1023,7 @@ AnimatorStateTransition:
   m_Name: 
   m_Conditions:
   - m_ConditionMode: 2
-    m_ConditionEvent: DodgeAndShoot
+    m_ConditionEvent: InAir
     m_EventTreshold: 0
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: 0}
