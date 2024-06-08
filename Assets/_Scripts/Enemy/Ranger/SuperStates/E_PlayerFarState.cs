@@ -13,6 +13,7 @@ public class E_PlayerFarState : EnemyState
 
     protected bool IsExiting;
 
+
     public E_PlayerFarState(EnemyStateMachine stateMachine, E_Ranger enemy, string animName, EnemyData enemyData) : base(stateMachine, enemy, animName, enemyData)
     {
         Ranger = enemy;
@@ -45,6 +46,8 @@ public class E_PlayerFarState : EnemyState
         IsDone = false;
 
         IsExiting = false;
+
+        Ranger.CheckIfShouldFlip();
     }
 
     public override void Exit()

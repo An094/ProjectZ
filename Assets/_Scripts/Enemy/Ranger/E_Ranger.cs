@@ -97,7 +97,7 @@ public class E_Ranger : Enemy
     //    transform.Rotate(0.0f, 180.0f, 0.0f);
     //}
 
-    private void CheckIfShouldFlip()
+    public void CheckIfShouldFlip()
     {
         if(FacingDirection > 0 && Player.transform.position.x < gameObject.transform.position.x
             || FacingDirection < 0 && Player.transform.position.x > gameObject.transform.position.x)
@@ -110,7 +110,7 @@ public class E_Ranger : Enemy
     {
         base.Update();
 
-        CheckIfShouldFlip();//TODO: Recheck
+        //CheckIfShouldFlip();//TODO: Recheck
     }
 
     public bool IsPlayerClose() => Physics2D.OverlapCircle(PlayerCheck.position, EnemyData.CloseActionDistance, EnemyData.WhatIsPlayer);

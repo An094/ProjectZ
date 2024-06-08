@@ -7,6 +7,7 @@ public class E_RangerSlideState : E_PlayerNearState
     private int SlideDirection;
     public E_RangerSlideState(EnemyStateMachine stateMachine, E_Ranger enemy, string animName, EnemyData enemyData) : base(stateMachine, enemy, animName, enemyData)
     {
+        CheckIfShouldFlip = false;
     }
 
     public override void AnimationFinishTrigger()

@@ -6,6 +6,7 @@ public class E_RangerDefendState : E_PlayerNearState
 {
     public E_RangerDefendState(EnemyStateMachine stateMachine, E_Ranger enemy, string animName, EnemyData enemyData) : base(stateMachine, enemy, animName, enemyData)
     {
+        CheckIfShouldFlip = true;
     }
 
     public override void AnimationFinishTrigger()

@@ -6,6 +6,7 @@ public class E_RangerDodgeState : E_PlayerNearState
 {
     public E_RangerDodgeState(EnemyStateMachine stateMachine, E_Ranger enemy, string animName, EnemyData enemyData) : base(stateMachine, enemy, animName, enemyData)
     {
+        CheckIfShouldFlip = false;
     }
 
     public override void AnimationFinishTrigger()
@@ -29,7 +30,6 @@ public class E_RangerDodgeState : E_PlayerNearState
 
         Ranger.SetVelocityX(Ranger.FacingDirection * 10.0f);
         Ranger.SetVelocityY(12.0f);
-        IsDone = true;
     }
 
     public override void Exit()
@@ -59,6 +59,11 @@ public class E_RangerDodgeState : E_PlayerNearState
         //    }
         //}
         
+        if(Ranger.CurrentVelocity.y < 1f)
+        {
+            IsDone = true;
+        }
+
     }
 
     public override void PhysicUpdate()

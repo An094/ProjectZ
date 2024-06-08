@@ -7,6 +7,7 @@ public class E_RangerRollState : E_PlayerNearState
     int RollingDirection;
     public E_RangerRollState(EnemyStateMachine stateMachine, E_Ranger enemy, string animName, EnemyData enemyData) : base(stateMachine, enemy, animName, enemyData)
     {
+        CheckIfShouldFlip = false;
     }
 
     public override void AnimationFinishTrigger()

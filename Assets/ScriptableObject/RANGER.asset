@@ -48,8 +48,8 @@ MonoBehaviour:
   CloseActionDistance: 2
   FallingStarCooldown: 20
   BeamAttackCooldown: 10
-  DodgeAndShootCooldown: 20
-  DodgeCooldown: 15
-  RollCooldown: 10
+  DodgeAndShootCooldown: 15
+  DodgeCooldown: 10
+  RollCooldown: 7
   SlideCooldown: 5
   DefendCooldown: 2.5
