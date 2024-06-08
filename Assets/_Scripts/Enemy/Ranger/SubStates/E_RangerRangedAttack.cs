@@ -21,7 +21,9 @@ public class E_RangerRangedAttack : E_PlayerFarState
     {
         base.AnimationTrigger();
 
-        ProjectileObj = GameObject.Instantiate(EnemyData.ProjectilePref, AttackPosition.position, AttackPosition.rotation);
+        GameObject Projectile = RandomlyPickProjectile();
+
+        ProjectileObj = GameObject.Instantiate(Projectile, AttackPosition.position, AttackPosition.rotation);
         if (ProjectileObj.TryGetComponent<Projectile>(out Projectile projectile))
         {
             projectile.FireProjectile(EnemyData.ProjectileSpeed, EnemyData.TravelDistance, EnemyData.ProjectileDamage);
@@ -51,5 +53,23 @@ public class E_RangerRangedAttack : E_PlayerFarState
     public override void PhysicUpdate()
     {
         base.PhysicUpdate();
+    }
+
+    private GameObject RandomlyPickProjectile()
+    {
+        int rand = Random.Range(0, 10);
+
+        if(rand < 2)
+        {
+            return EnemyData.EntangleProjectile;
+        }
+        else if(rand < 4)
+        {
+            return EnemyData.PoisonProjectile;
+        }
+        else
+        {
+            return EnemyData.ProjectilePref;
+        }
     }
 }

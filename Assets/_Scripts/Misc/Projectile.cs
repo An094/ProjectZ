@@ -13,11 +13,11 @@ public class Projectile : MonoBehaviour
     [SerializeField]
     private float damageRadius;
 
-    private Rigidbody2D rb;
+    protected Rigidbody2D rb;
 
     private bool isGravityOn;
     private bool hasHitGround;
-    private float Dmg;
+    protected float Dmg;
 
     [SerializeField]
     private LayerMask whatIsGround;
@@ -26,7 +26,7 @@ public class Projectile : MonoBehaviour
     [SerializeField]
     private Transform damagePosition;
 
-    private void Start()
+    public virtual void Start()
     {
         rb = GetComponent<Rigidbody2D>();
 
@@ -38,7 +38,7 @@ public class Projectile : MonoBehaviour
         xStartPos = transform.position.x;
     }
 
-    private void Update()
+    public virtual void Update()
     {
         if (!hasHitGround)
         {
@@ -52,7 +52,7 @@ public class Projectile : MonoBehaviour
         }
     }
 
-    private void FixedUpdate()
+    public virtual void FixedUpdate()
     {
         if (!hasHitGround)
         {
@@ -62,19 +62,12 @@ public class Projectile : MonoBehaviour
             if (damageHit)
             {
                 //damageHit.transform.SendMessage("Damage", attackDetails);
-                if(damageHit.TryGetComponent<IDamageable>(out IDamageable playerConbatController))
-                {
-                    playerConbatController.Damage(new DamgeDetails(Dmg, transform));
-                }
-                Destroy(gameObject);
+                OnHitPlayer(damageHit);
             }
 
             if (groundHit)
             {
-                hasHitGround = true;
-                rb.gravityScale = 0f;
-                rb.velocity = Vector2.zero;
-                Destroy(gameObject, 2f);
+                OnHitGround();
             }
 
 
@@ -91,6 +84,23 @@ public class Projectile : MonoBehaviour
         this.speed = speed;
         this.travelDistance = travelDistance;
         this.Dmg = damage;
+    }
+
+    protected virtual void OnHitPlayer(Collider2D player)
+    {
+        if (player.TryGetComponent<IDamageable>(out IDamageable playerConbatController))
+        {
+            playerConbatController.Damage(new DamgeDetails(Dmg, transform));
+        }
+        Destroy(gameObject);
+    }
+
+    protected virtual void OnHitGround()
+    {
+        hasHitGround = true;
+        rb.gravityScale = 0f;
+        rb.velocity = Vector2.zero;
+        Destroy(gameObject, 2f);
     }
 
     private void OnDrawGizmos()

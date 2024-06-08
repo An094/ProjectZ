@@ -20,6 +20,22 @@ public class Player : MonoBehaviour
 
     [SerializeField] PlayerData PlayerData;
 
+    private bool isEntangled;
+    public bool IsEntangled
+    {
+        get => isEntangled;
+        set
+        {
+            if(value)
+            {
+                SetVelocityX(0);
+                SetVelocityY(0);
+            }
+
+            isEntangled = value;
+        }
+    }
+
     #region Comps
 
     public Rigidbody2D Rb { get; private set; }
@@ -135,16 +151,22 @@ public class Player : MonoBehaviour
 
     public void SetVelocityX(float velocity)
     {
-        Workspace.Set(velocity, CurrentVelocity.y);
-        Rb.velocity = Workspace;
-        CurrentVelocity = Workspace;
+        if(!IsEntangled)
+        {
+            Workspace.Set(velocity, CurrentVelocity.y);
+            Rb.velocity = Workspace;
+            CurrentVelocity = Workspace;
+        }
     }
 
     public void SetVelocityY(float velocity)
     {
-        Workspace.Set(CurrentVelocity.x, velocity);
-        Rb.velocity = Workspace;
-        CurrentVelocity = Workspace;
+        if(!IsEntangled)
+        {
+            Workspace.Set(CurrentVelocity.x, velocity);
+            Rb.velocity = Workspace;
+            CurrentVelocity = Workspace;
+        }
     }
 
     public void SetColliderHeight(float height)

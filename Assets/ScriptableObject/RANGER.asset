@@ -27,7 +27,7 @@ MonoBehaviour:
   DodgeTime: 1
   AttackRadius: 0.5
   AttackDamage: 10
-  ProjectilePref: {fileID: 2931077573359834456, guid: e48ca82b1d25a6b4da813d4cee6d7dab, type: 3}
+  ProjectilePref: {fileID: 2931077573359834456, guid: b6d5019b34e0c8040ab8aa243703564c, type: 3}
   TravelDistance: 8
   ProjectileSpeed: 15
   ProjectileDamage: 10
@@ -53,3 +53,5 @@ MonoBehaviour:
   RollCooldown: 7
   SlideCooldown: 5
   DefendCooldown: 2.5
+  EntangleProjectile: {fileID: 5853707318720811199, guid: aea304a28a957e141a72cab4542af97e, type: 3}
+  PoisonProjectile: {fileID: 5853707318720811199, guid: 09e409bb9de610e46ad89330151c9e51, type: 3}

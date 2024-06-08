@@ -28,9 +28,10 @@ public class E_RangerShootInAirState : E_PlayerNearState
         float Angle = Vector2.Angle((Ranger.Player.transform.position - PorjectTilePosition.transform.position).normalized, Vector2.right * Ranger.FacingDirection);
 
         float FinalAngle = Ranger.FacingDirection > 0 ? -1 * Angle : Angle - 180;
-        //ProjectileObj = GameObject.Instantiate(EnemyData.ProjectilePref, PorjectTilePosition.position, 
-        //    Quaternion.FromToRotation(Vector2.right * Ranger.FacingDirection, (Ranger.Player.transform.position - PorjectTilePosition.transform.position).normalized));
-        ProjectileObj = GameObject.Instantiate(EnemyData.ProjectilePref, PorjectTilePosition.position, 
+
+        GameObject Projectile = RandomlyPickProjectile();
+        
+        ProjectileObj = GameObject.Instantiate(Projectile, PorjectTilePosition.position, 
             Quaternion.Euler(0f, 0f, FinalAngle));
         if (ProjectileObj.TryGetComponent<Projectile>(out Projectile projectile))
         {
@@ -83,5 +84,23 @@ public class E_RangerShootInAirState : E_PlayerNearState
             Ranger.transform.position = ShootingPosition;
         }
 
+    }
+
+    private GameObject RandomlyPickProjectile()
+    {
+        int rand = Random.Range(0, 10);
+
+        if (rand < 2)
+        {
+            return EnemyData.EntangleProjectile;
+        }
+        else if (rand < 4)
+        {
+            return EnemyData.PoisonProjectile;
+        }
+        else
+        {
+            return EnemyData.ProjectilePref;
+        }
     }
 }

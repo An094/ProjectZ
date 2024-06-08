@@ -70,4 +70,7 @@ public class EnemyData : ScriptableObject
     public float SlideCooldown = 5.0f;
     public float DefendCooldown = 2.5f;
 
+    public GameObject EntangleProjectile;
+    public GameObject PoisonProjectile;
+
 }
