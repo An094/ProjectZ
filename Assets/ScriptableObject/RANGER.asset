@@ -32,7 +32,7 @@ MonoBehaviour:
   ProjectileSpeed: 15
   ProjectileDamage: 10
   GroundCheckRadius: 0.2
-  WallCheckRadius: 0.5
+  WallCheckRadius: 1
   LedgeCheckRadius: 0.5
   CloseRangeActionDistance: 2
   WhatIsGround:

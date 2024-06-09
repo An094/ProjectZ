@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Collections.Specialized;
 using UnityEngine;
 
 public class RangerProjectile : Projectile
@@ -54,7 +55,7 @@ public class RangerProjectile : Projectile
         bool isHitOnWall = IsHitOnWall();
         if (projectileData.Type == ProjectileType.Thorn && isGravityOn && !isHitOnWall)
         {
-            if(transform.right.x > 0)
+            if (transform.right.x > 0)
             {
                 transform.rotation = Quaternion.identity;
             }
@@ -100,7 +101,7 @@ public class RangerProjectile : Projectile
                 {
                     animator.SetBool("Entangle", true);
 
-                    if(player.TryGetComponent<Player>(out PlayerScript))
+                    if (player.TryGetComponent<Player>(out PlayerScript))
                     {
                         PlayerScript.IsEntangled = true;
                     }
@@ -147,7 +148,7 @@ public class RangerProjectile : Projectile
     {
         yield return new WaitForSeconds(1f);
 
-        if(transform.right.x > 0f)
+        if (transform.right.x > 0f)
         {
             Instantiate(projectileData.ThornPref, transform.position, Quaternion.identity);
         }
@@ -159,5 +160,10 @@ public class RangerProjectile : Projectile
         gameObject.SetActive(false);
     }
 
-    private bool IsHitOnWall() =>  Physics2D.Raycast(transform.position, transform.right, 0.5f, whatIsGround);
+    private bool IsHitOnWall()
+    {
+        Vector3 right = (transform.right * Vector2.right).normalized;
+        return Physics2D.Raycast(transform.position, right, 0.6f, whatIsGround);
+    }
 }
+

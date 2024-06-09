@@ -114,4 +114,5 @@ public class E_Ranger : Enemy
     }
 
     public bool IsPlayerClose() => Physics2D.OverlapCircle(PlayerCheck.position, EnemyData.CloseActionDistance, EnemyData.WhatIsPlayer);
+    public bool WallInfront() => Physics2D.Raycast(WallCheck.position, Vector2.right * FacingDirection, EnemyData.WallCheckRadius, EnemyData.WhatIsGround);
 }

@@ -16,7 +16,7 @@ public class Enemy : MonoBehaviour, IDamageable, IKnockBackable
     [SerializeField]
     protected Transform GroundCheck;
     [SerializeField]
-    private Transform WallCheck;
+    protected Transform WallCheck;
     [SerializeField]
     private Transform LedgeCheck;
     [SerializeField]

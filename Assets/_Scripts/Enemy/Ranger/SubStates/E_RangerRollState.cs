@@ -5,6 +5,7 @@ using UnityEngine;
 public class E_RangerRollState : E_PlayerNearState
 {
     int RollingDirection;
+    bool WallInfront;
     public E_RangerRollState(EnemyStateMachine stateMachine, E_Ranger enemy, string animName, EnemyData enemyData) : base(stateMachine, enemy, animName, enemyData)
     {
         CheckIfShouldFlip = false;
@@ -25,6 +26,8 @@ public class E_RangerRollState : E_PlayerNearState
     public override void DoCheck()
     {
         base.DoCheck();
+
+        WallInfront = Ranger.WallInfront();
     }
 
     public override void Enter()
@@ -48,9 +51,16 @@ public class E_RangerRollState : E_PlayerNearState
     {
         base.LogicUpdate();
 
-        if(!IsExiting)
+        if (!IsExiting)
         {
-            Ranger.SetVelocityX(10.0f * RollingDirection);
+            if (!WallInfront)
+            {
+                Ranger.SetVelocityX(10.0f * RollingDirection);
+            }
+            else
+            {
+                StateMachine.ChangeState(Ranger.playerDetectedState);
+            }
         }
     }
 
