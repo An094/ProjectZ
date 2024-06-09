@@ -46,7 +46,7 @@ GameObject:
   - component: {fileID: 1953372248507929635}
   - component: {fileID: 93387328532552090}
   m_Layer: 11
-  m_Name: PoisonProjectile
+  m_Name: ThornProjectile
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -234,4 +234,4 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 256
   damagePosition: {fileID: 6996136878617684125}
-  projectileData: {fileID: 11400000, guid: 91dd2166b011b294fa7f1786709a8ee9, type: 2}
+  projectileData: {fileID: 11400000, guid: 05182b6e920681a4ebfe59bcf151fe48, type: 2}

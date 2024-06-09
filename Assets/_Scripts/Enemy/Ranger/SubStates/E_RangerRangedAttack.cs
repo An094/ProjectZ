@@ -21,13 +21,7 @@ public class E_RangerRangedAttack : E_PlayerFarState
     {
         base.AnimationTrigger();
 
-        GameObject Projectile = RandomlyPickProjectile();
-
-        ProjectileObj = GameObject.Instantiate(Projectile, AttackPosition.position, AttackPosition.rotation);
-        if (ProjectileObj.TryGetComponent<Projectile>(out Projectile projectile))
-        {
-            projectile.FireProjectile(EnemyData.ProjectileSpeed, EnemyData.TravelDistance, EnemyData.ProjectileDamage);
-        }
+        RandomlyFireProjectile();
     }
 
     public override void DoCheck()
@@ -55,21 +49,35 @@ public class E_RangerRangedAttack : E_PlayerFarState
         base.PhysicUpdate();
     }
 
-    private GameObject RandomlyPickProjectile()
+    private void RandomlyFireProjectile()
     {
-        int rand = Random.Range(0, 10);
+        int rand = Random.Range(0, 12);
+        float TravelDistance = EnemyData.TravelDistance;
+
+        GameObject Projectile;
 
         if(rand < 2)
         {
-            return EnemyData.EntangleProjectile;
+            Projectile =  EnemyData.EntangleProjectile;
         }
         else if(rand < 4)
         {
-            return EnemyData.PoisonProjectile;
+            Projectile =  EnemyData.PoisonProjectile;
+        }
+        else if(rand < 6)
+        {
+            TravelDistance = EnemyData.TravelDistance * 0.5f;
+            Projectile =  EnemyData.ThornProjectile;
         }
         else
         {
-            return EnemyData.ProjectilePref;
+            Projectile =  EnemyData.ProjectilePref;
+        }
+
+        ProjectileObj = GameObject.Instantiate(Projectile, AttackPosition.position, AttackPosition.rotation);
+        if (ProjectileObj.TryGetComponent<Projectile>(out Projectile projectile))
+        {
+            projectile.FireProjectile(EnemyData.ProjectileSpeed, TravelDistance, EnemyData.ProjectileDamage);
         }
     }
 }

@@ -15,14 +15,14 @@ public class Projectile : MonoBehaviour
 
     protected Rigidbody2D rb;
 
-    private bool isGravityOn;
-    private bool hasHitGround;
+    protected bool isGravityOn;
+    protected bool hasHitGround;
     protected float Dmg;
 
     [SerializeField]
-    private LayerMask whatIsGround;
+    protected LayerMask whatIsGround;
     [SerializeField]
-    private LayerMask whatIsPlayer;
+    protected LayerMask whatIsPlayer;
     [SerializeField]
     private Transform damagePosition;
 

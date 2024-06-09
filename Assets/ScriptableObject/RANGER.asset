@@ -55,3 +55,4 @@ MonoBehaviour:
   DefendCooldown: 2.5
   EntangleProjectile: {fileID: 5853707318720811199, guid: aea304a28a957e141a72cab4542af97e, type: 3}
   PoisonProjectile: {fileID: 5853707318720811199, guid: 09e409bb9de610e46ad89330151c9e51, type: 3}
+  ThornProjectile: {fileID: 5853707318720811199, guid: 563ddf85704fcea46bb052254d8935f6, type: 3}

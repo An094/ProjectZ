@@ -47,34 +47,31 @@ public class RangerProjectile : Projectile
 
     protected override void OnHitGround()
     {
-        base.OnHitGround();
+        hasHitGround = true;
+        rb.gravityScale = 0f;
+        rb.velocity = Vector2.zero;
 
-        switch(projectileData.Type)
+        bool isHitOnWall = IsHitOnWall();
+        if (projectileData.Type == ProjectileType.Thorn && isGravityOn && !isHitOnWall)
         {
-            case ProjectileType.Normal:
-                {
-                    break;
-                }
+            if(transform.right.x > 0)
+            {
+                transform.rotation = Quaternion.identity;
+            }
+            else
+            {
+                transform.rotation = Quaternion.Euler(0f, 180f, 0f);
+            }
 
-            case ProjectileType.Entangle:
-                {
-                    break;
-                }
+            animator.enabled = true;
+            animator.SetBool("Normal", false);
+            animator.SetBool("Thorn", true);
 
-            case ProjectileType.Poison:
-                {
-                    break;
-                }
-
-            case ProjectileType.Thorn:
-                { 
-                    break;
-                }
-
-            default:
-                {
-                    break;
-                }
+            StartCoroutine(CreateThornAfterDisable());
+        }
+        else
+        {
+            Destroy(gameObject, 2f);
         }
     }
 
@@ -122,6 +119,7 @@ public class RangerProjectile : Projectile
 
             case ProjectileType.Thorn:
                 {
+                    Destroy(gameObject);
                     break;
                 }
 
@@ -144,4 +142,22 @@ public class RangerProjectile : Projectile
         yield return new WaitForSeconds(0.5f);
         gameObject.SetActive(false);
     }
+
+    IEnumerator CreateThornAfterDisable()
+    {
+        yield return new WaitForSeconds(1f);
+
+        if(transform.right.x > 0f)
+        {
+            Instantiate(projectileData.ThornPref, transform.position, Quaternion.identity);
+        }
+        else
+        {
+            Instantiate(projectileData.ThornPref, transform.position, Quaternion.Euler(0f, 180f, 0f));
+        }
+
+        gameObject.SetActive(false);
+    }
+
+    private bool IsHitOnWall() =>  Physics2D.Raycast(transform.position, transform.right, 0.5f, whatIsGround);
 }

@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 3324762714211268352}
   - component: {fileID: 566305409312429509}
   - component: {fileID: 206161700262612515}
+  - component: {fileID: 441786935287949854}
   m_Layer: 11
   m_Name: RangerProjectile
   m_TagString: Untagged
@@ -74,9 +75,9 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: -114788129
-  m_SortingLayer: 5
-  m_SortingOrder: 0
+  m_SortingLayerID: -1636386209
+  m_SortingLayer: 4
+  m_SortingOrder: 1
   m_Sprite: {fileID: 21300000, guid: e9d7856a1dc5c2246a12c76314dfa9a5, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -181,6 +182,27 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.97891617, y: 0.09716654}
   m_EdgeRadius: 0
+--- !u!95 &441786935287949854
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2931077573359834456}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: e1f959e50a5a8024da7610405ef43122, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &8296678281160895103
 GameObject:
   m_ObjectHideFlags: 0

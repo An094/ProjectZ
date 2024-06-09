@@ -17,4 +17,5 @@ public class ProjectileData : ScriptableObject
 {
     public ProjectileType Type;
     public Sprite ProjectileSprite;
+    public GameObject ThornPref;
 }
