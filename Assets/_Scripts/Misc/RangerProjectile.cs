@@ -163,7 +163,7 @@ public class RangerProjectile : Projectile
     private bool IsHitOnWall()
     {
         Vector3 right = (transform.right * Vector2.right).normalized;
-        return Physics2D.Raycast(transform.position, right, 0.6f, whatIsGround);
+        return Physics2D.Raycast(transform.position, right, 0.7f, whatIsGround);
     }
 }
 

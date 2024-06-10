@@ -1,11 +1,15 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using Unity.IO.LowLevel.Unsafe;
+using Unity.VisualScripting;
 using UnityEditor.Tilemaps;
 using UnityEngine;
 
 public class E_Ranger : Enemy
 {
+    public event Action<float> OnDamaged;
+
     [SerializeField] EnemyData RangerData;
     //public Rigidbody2D rb2D {  get; private set; }
     public Collider2D Collider2D { get; private set; }
@@ -49,12 +53,37 @@ public class E_Ranger : Enemy
 
     public override bool Damage(DamgeDetails attackDetail)
     {
-        return base.Damage(attackDetail);
+        base.Damage(attackDetail);
+
+        OnDamaged?.Invoke(CurrentHp);
+
+        hurtState.DecreaseSR(attackDetail.Dmg);
+
+        if (CurrentHp <= 0)
+        {
+            StateMachine.ChangeState(dieState);
+            return true;
+        }
+        return false;
     }
 
     public override void KnockBack(KnockBackDetails details)
     {
         base.KnockBack(details);
+
+        if (IsAlive() && hurtState.CanStun() && StateMachine.CurrentState != hurtState)
+        {
+            //HurtState.SetFacingDirectionWhileHurt(-details.Direction);
+            StateMachine.ChangeState(hurtState);
+
+            //Vector2 force = new Vector2(details.Direction, 1f).normalized * details.Strength;
+            //Rb.AddForce(force, ForceMode2D.Impulse);
+        }
+    }
+
+    private bool IsAlive()
+    {
+        return CurrentHp > 0;
     }
 
     protected override void Awake()

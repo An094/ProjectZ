@@ -26,11 +26,13 @@ public class Enemy : MonoBehaviour, IDamageable, IKnockBackable
     public Vector2 CurrentVelocity { get; private set; }
     public int FacingDirection { get; set; }
 
-    protected float CurrentHp;
+    public float CurrentHp { get; private set; }
 
     protected virtual void Awake()
     {
         StateMachine = new EnemyStateMachine();
+
+        CurrentHp = EnemyData.MaxHp;
     }
 
     protected virtual void Start()
@@ -40,7 +42,6 @@ public class Enemy : MonoBehaviour, IDamageable, IKnockBackable
 
         FacingDirection = 1;
 
-        CurrentHp = EnemyData.MaxHp;
     }
 
     protected virtual void Update()
