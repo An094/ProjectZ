@@ -40,6 +40,10 @@ public class E_Ranger : Enemy
     private Transform AttackPostion;
     [SerializeField]
     private Transform ShootingInAirPostion;
+    [SerializeField]
+    private Transform MeleeAttackPostion;
+    [SerializeField]
+    private Transform BeamPosition;
 
     public override void AnimationFinishTrigger()
     {
@@ -98,10 +102,10 @@ public class E_Ranger : Enemy
         hurtState = new E_RangerHurtState(StateMachine, this, "Hurt", RangerData);
         inAirState = new E_RangerInAirState(StateMachine, this, "InAir", RangerData);
         landState = new E_RangerLandState(StateMachine, this, "Land", RangerData);
-        meleeAttack = new E_RangerMeleeAttack(StateMachine, this, "MeleeAttack", RangerData);
+        meleeAttack = new E_RangerMeleeAttack(StateMachine, this, "MeleeAttack", RangerData, MeleeAttackPostion);
         rangedAttack = new E_RangerRangedAttack(StateMachine, this, "RangedAttack", RangerData, AttackPostion);
         rollState = new E_RangerRollState(StateMachine, this, "Roll", RangerData);
-        beamAttack = new E_RangerSkillBeamAttack(StateMachine, this, "BeamAttack", RangerData);
+        beamAttack = new E_RangerSkillBeamAttack(StateMachine, this, "BeamAttack", RangerData, BeamPosition);
         fallingStarState = new E_RangerSkillFallingStarState(StateMachine, this, "FallingStar", RangerData);
         slideState = new E_RangerSlideState(StateMachine, this, "Slide", RangerData);
     }

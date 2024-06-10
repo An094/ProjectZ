@@ -90,6 +90,11 @@ public class RangerProjectile : Projectile
             playerConbatController.Damage(new DamgeDetails(Dmg, transform));
         }
 
+        if (player.TryGetComponent(out IKnockBackable playerKnockbackable))
+        {
+            playerKnockbackable.KnockBack(new KnockBackDetails(transform.right.x > 0 ? 1 : -1, Dmg));
+        }
+
         switch (projectileData.Type)
         {
             case ProjectileType.Normal:

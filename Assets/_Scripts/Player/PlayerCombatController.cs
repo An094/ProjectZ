@@ -20,6 +20,7 @@ public class PlayerCombatController : MonoBehaviour, IDamageable, IKnockBackable
 
     public void KnockBack(KnockBackDetails details)
     {
+        player.SetVelocity(details.Strength * 1.5f, new Vector2(2f, 1f), details.Direction);
     }
 
     private void Start()

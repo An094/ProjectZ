@@ -25,8 +25,8 @@ MonoBehaviour:
   DodgeSpeed: 5
   DodgeAngle: {x: 1, y: 1}
   DodgeTime: 1
-  AttackRadius: 0.5
-  AttackDamage: 10
+  AttackRadius: 1
+  AttackDamage: 20
   ProjectilePref: {fileID: 2931077573359834456, guid: b6d5019b34e0c8040ab8aa243703564c, type: 3}
   TravelDistance: 8
   ProjectileSpeed: 15
@@ -56,4 +56,5 @@ MonoBehaviour:
   EntangleProjectile: {fileID: 5853707318720811199, guid: aea304a28a957e141a72cab4542af97e, type: 3}
   PoisonProjectile: {fileID: 5853707318720811199, guid: 09e409bb9de610e46ad89330151c9e51, type: 3}
   ThornProjectile: {fileID: 5853707318720811199, guid: 563ddf85704fcea46bb052254d8935f6, type: 3}
+  BeamPref: {fileID: 1209618227752909095, guid: ffdff2060a3d918468cba0d22cf42e7c, type: 3}
   StunResistance: 150

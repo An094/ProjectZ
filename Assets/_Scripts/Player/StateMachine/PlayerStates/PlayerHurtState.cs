@@ -37,7 +37,7 @@ public class PlayerHurtState : PlayerState
     {
         base.LogicUpdate();
 
-        if(Time.time > StartTime + 0.3f)
+        if(Time.time > StartTime + 0.5f)
         {
             StateMachine.ChangeState(Player.IdleState);
         }

@@ -143,6 +143,15 @@ public class Player : MonoBehaviour
         StateMachine.CurrentState.PhysicUpdate();
     }
 
+    public void SetVelocity(float velocity, Vector2 angle, int direction)
+    {
+        if (IsEntangled) return;
+        angle.Normalize();
+        Workspace.Set(velocity * angle.x * direction, velocity * angle.y);
+        Rb.velocity = Workspace;
+        CurrentVelocity = Workspace;
+    }
+
     public void SetVelocityZero()
     {
         Rb.velocity = Vector2.zero;

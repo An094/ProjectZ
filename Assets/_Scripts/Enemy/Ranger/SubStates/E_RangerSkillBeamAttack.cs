@@ -4,8 +4,10 @@ using UnityEngine;
 
 public class E_RangerSkillBeamAttack : E_PlayerFarState
 {
-    public E_RangerSkillBeamAttack(EnemyStateMachine stateMachine, E_Ranger enemy, string animName, EnemyData enemyData) : base(stateMachine, enemy, animName, enemyData)
+    Transform BeamPosition;
+    public E_RangerSkillBeamAttack(EnemyStateMachine stateMachine, E_Ranger enemy, string animName, EnemyData enemyData, Transform beamPosition) : base(stateMachine, enemy, animName, enemyData)
     {
+        BeamPosition = beamPosition;
     }
 
     public override void AnimationFinishTrigger()
@@ -16,6 +18,8 @@ public class E_RangerSkillBeamAttack : E_PlayerFarState
     public override void AnimationTrigger()
     {
         base.AnimationTrigger();
+
+        GameObject.Instantiate(EnemyData.BeamPref, BeamPosition.position, Quaternion.identity);
     }
 
     public override void DoCheck()
