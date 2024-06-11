@@ -26,7 +26,7 @@ MonoBehaviour:
   DodgeAngle: {x: 1, y: 1}
   DodgeTime: 1
   AttackRadius: 1
-  AttackDamage: 20
+  AttackDamage: 15
   ProjectilePref: {fileID: 2931077573359834456, guid: b6d5019b34e0c8040ab8aa243703564c, type: 3}
   TravelDistance: 8
   ProjectileSpeed: 15

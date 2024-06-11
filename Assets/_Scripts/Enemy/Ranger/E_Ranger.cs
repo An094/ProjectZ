@@ -44,6 +44,10 @@ public class E_Ranger : Enemy
     private Transform MeleeAttackPostion;
     [SerializeField]
     private Transform BeamPosition;
+    [SerializeField]
+    private Transform DefendPostion;
+
+    public bool IsDefending { get; set; }
 
     public override void AnimationFinishTrigger()
     {
@@ -57,15 +61,18 @@ public class E_Ranger : Enemy
 
     public override bool Damage(DamgeDetails attackDetail)
     {
-        base.Damage(attackDetail);
-
-        OnDamaged?.Invoke(CurrentHp);
-
-        hurtState.DecreaseSR(attackDetail.Dmg);
-
-        if (CurrentHp <= 0)
+        if(!IsAttackBlocked(attackDetail.ObjectAttackPosition))
         {
-            StateMachine.ChangeState(dieState);
+            base.Damage(attackDetail);
+
+            OnDamaged?.Invoke(CurrentHp);
+
+            hurtState.DecreaseSR(attackDetail.Dmg);
+
+            if (CurrentHp <= 0)
+            {
+                StateMachine.ChangeState(dieState);
+            }
             return true;
         }
         return false;
@@ -83,6 +90,16 @@ public class E_Ranger : Enemy
             //Vector2 force = new Vector2(details.Direction, 1f).normalized * details.Strength;
             //Rb.AddForce(force, ForceMode2D.Impulse);
         }
+    }
+
+    private bool IsAttackBlocked(Transform attackSourcePosition)
+    {
+        if (!IsDefending) return false;
+
+        float PlayerToDefendPostionDistance = transform.position.x - DefendPostion.position.x;
+        float AttackSourceToDefendPostionDistance = attackSourcePosition.position.x - DefendPostion.position.x;
+
+        return PlayerToDefendPostionDistance * AttackSourceToDefendPostionDistance < 0;
     }
 
     private bool IsAlive()

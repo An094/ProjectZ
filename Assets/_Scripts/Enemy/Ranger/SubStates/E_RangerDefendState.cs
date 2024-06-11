@@ -20,6 +20,7 @@ public class E_RangerDefendState : E_PlayerNearState
     {
         base.AnimationTrigger();
 
+        Ranger.IsDefending = true;
     }
 
     public override void DoCheck()
@@ -30,11 +31,14 @@ public class E_RangerDefendState : E_PlayerNearState
     public override void Enter()
     {
         base.Enter();
+       
     }
 
     public override void Exit()
     {
         base.Exit();
+
+        Ranger.IsDefending = false;
     }
 
     public override bool IsOnCooldown()

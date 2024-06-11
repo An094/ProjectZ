@@ -29,7 +29,13 @@ public class PlayerAttackState : PlayerAbilityState
             {
                 if(hit.TryGetComponent<IDamageable>(out IDamageable damageable))
                 {
-                    damageable.Damage(new DamgeDetails(PlayerData.AttackDamage, Player.transform));
+                    if(!damageable.Damage(new DamgeDetails(PlayerData.AttackDamage, Player.transform)))
+                    {
+                        if(Player.gameObject.TryGetComponent<IKnockBackable>(out IKnockBackable PlayerKnockBackable))
+                        {
+                            PlayerKnockBackable.KnockBack(new KnockBackDetails(-Player.FacingDirection, 5f));
+                        }
+                    }
                 }
 
                 if(hit.TryGetComponent<IKnockBackable>(out IKnockBackable knockBackable))
@@ -78,7 +84,7 @@ public class PlayerAttackState : PlayerAbilityState
         Player.Animator.SetInteger("AttackCounter", AttackCounter);
         int attackDir = xInput != 0 ? xInput : Player.FacingDirection;
         Player.SetVelocityX(attackDir * 0.2f);
-        Player.SetVelocityY(2f);
+        Player.SetVelocityY(1f);
     }
 
     public override void Exit()
