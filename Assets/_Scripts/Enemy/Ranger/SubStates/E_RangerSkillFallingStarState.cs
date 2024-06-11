@@ -16,6 +16,9 @@ public class E_RangerSkillFallingStarState : E_PlayerFarState
     public override void AnimationTrigger()
     {
         base.AnimationTrigger();
+
+        Vector2 ArrowShowerPostion = new Vector2(Ranger.Player.transform.position.x, -2.3f);
+        GameObject.Instantiate(EnemyData.ArrowShower, ArrowShowerPostion, Quaternion.identity);
     }
 
     public override void DoCheck()
