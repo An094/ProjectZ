@@ -23,19 +23,25 @@ public class PlayerAttackState : PlayerAbilityState
         ///TODO: Handle attack 
         Collider2D[] hits = Physics2D.OverlapCircleAll(AttackPostion.position, PlayerData.MeleeAttackRadius, PlayerData.WhatIsEnemy);
 
-        if(hits.Length > 0 )
+        if (hits.Length > 0 )
         {
             foreach(Collider2D hit in hits )
             {
                 if(hit.TryGetComponent<IDamageable>(out IDamageable damageable))
                 {
+                   
                     if(!damageable.Damage(new DamgeDetails(PlayerData.AttackDamage, Player.transform)))
                     {
-                        if(Player.gameObject.TryGetComponent<IKnockBackable>(out IKnockBackable PlayerKnockBackable))
+                        if (Player.gameObject.TryGetComponent<IKnockBackable>(out IKnockBackable PlayerKnockBackable))
                         {
                             PlayerKnockBackable.KnockBack(new KnockBackDetails(-Player.FacingDirection, 5f));
                         }
                     }
+                    else
+                    {
+                        GameManager.Instance.PlayHitSFX();
+                    }
+
                 }
 
                 if(hit.TryGetComponent<IKnockBackable>(out IKnockBackable knockBackable))
@@ -68,6 +74,7 @@ public class PlayerAttackState : PlayerAbilityState
         //    return;
         //}
 
+
         IsAbilityDone = false;// use this for only attack state.
 
         if (Time.time > LastAttackedTime + 1.5f) 
@@ -79,6 +86,7 @@ public class PlayerAttackState : PlayerAbilityState
             AttackCounter = AttackCounter < 2 ? AttackCounter + 1 : 0;
         }
 
+        GameManager.Instance.PlayerAttackSFX(true, AttackCounter + 1);
         //Player.SetVelocityZero();
 
         Player.Animator.SetInteger("AttackCounter", AttackCounter);

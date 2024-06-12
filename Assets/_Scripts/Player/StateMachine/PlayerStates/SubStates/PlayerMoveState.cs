@@ -1,9 +1,13 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class PlayerMoveState : PlayerGroundedState
 {
+    int StepCounter = 1;
+    bool IsExiting = false;
     public PlayerMoveState(PlayerStateMachine stateMachine, Player player, string animName, PlayerData playerData) : base(stateMachine, player, animName, playerData)
     {
     }
@@ -16,11 +20,17 @@ public class PlayerMoveState : PlayerGroundedState
     public override void Enter()
     {
         base.Enter();
+
+        IsExiting = false;
+        Player.StartCoroutine(PlayerStepSound());
+
     }
 
     public override void Exit()
     {
         base.Exit();
+        IsExiting = true;
+        Player.StopAllCoroutines();
     }
 
     public override void LogicUpdate()
@@ -46,5 +56,16 @@ public class PlayerMoveState : PlayerGroundedState
     public override void PhysicUpdate()
     {
         base.PhysicUpdate();
+    }
+
+    IEnumerator PlayerStepSound()
+    {
+        while (!IsExiting)
+        {
+            StepCounter = StepCounter >= 6 ? 1 : StepCounter + 1;
+            GameManager.Instance.PlayerMoveSFX(StepCounter);
+            yield return new WaitForSeconds(0.5f);
+        }
+
     }
 }

@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
+    public static GameManager Instance;
+
     private Player player;
     private PlayerStats PlayerStats;
 
@@ -14,6 +16,16 @@ public class GameManager : MonoBehaviour
 
     private void Awake()
     {
+        if (Instance == null)
+        {
+            Instance = this;
+            DontDestroyOnLoad(gameObject);
+        }
+        else
+        {
+            Destroy(gameObject);
+        }
+
         player = FindObjectOfType<Player>();
         PlayerStats = player.PlayerStats;
 
@@ -34,8 +46,11 @@ public class GameManager : MonoBehaviour
 
     private void Start()
     {
+        AudioManager.Instance.PlayMusic("Village");
+
         PlayerHpBar.Init(PlayerStats.CurrentHp);
         RangerHpBar.Init(Ranger.CurrentHp);
+
     }
 
     private void OnPlayerDamaged(float CurrentHp)
@@ -47,4 +62,34 @@ public class GameManager : MonoBehaviour
     {
         RangerHpBar.SetCurrentValue(CurrentHp);
     }
+
+    public void PlayerAttackSFX(bool bIsAccurate, int AttackCounter)
+    {
+        string SFXName = "Sword_";
+        if (bIsAccurate)
+        {
+            SFXName += "Release";
+        }
+        else
+        {
+            SFXName += "Charge";
+        }
+
+        SFXName += AttackCounter;
+
+        AudioManager.Instance.PlaySFX(SFXName);
+        
+    }
+
+    public void PlayerMoveSFX(int StepCounter)
+    {
+        string SFXName = "Step" + StepCounter.ToString();
+        AudioManager.Instance.PlaySFX(SFXName);
+    }
+
+    public void PlayHitSFX()
+    {
+        AudioManager.Instance.PlaySFX("Hit");
+    }
+
 }
