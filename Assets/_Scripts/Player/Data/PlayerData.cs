@@ -42,6 +42,8 @@ public class PlayerData : ScriptableObject
     public float MeleeAttackRadius = 0.5f;
     public float AttackDamage = 50.0f;
     public float KnockBackStrength = 1f;
+    public GameObject HitAnimation;
+    public GameObject BloodParticle;
 
     [Header("Check Variables")]
     public float GroundCheckRadius = 0.2f;

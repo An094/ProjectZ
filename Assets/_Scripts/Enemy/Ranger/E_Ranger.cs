@@ -46,6 +46,8 @@ public class E_Ranger : Enemy
     private Transform BeamPosition;
     [SerializeField]
     private Transform DefendPostion;
+    [SerializeField]
+    private Transform BloodParticleEffPosition;
 
     public bool IsDefending { get; set; }
 
@@ -66,6 +68,8 @@ public class E_Ranger : Enemy
             base.Damage(attackDetail);
 
             OnDamaged?.Invoke(CurrentHp);
+
+            GameObject.Instantiate(EnemyData.BloodParticleEff, BloodParticleEffPosition.position, transform.rotation);
 
             hurtState.DecreaseSR(attackDetail.Dmg);
 

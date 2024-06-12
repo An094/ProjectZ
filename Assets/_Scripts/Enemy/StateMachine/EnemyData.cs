@@ -75,5 +75,6 @@ public class EnemyData : ScriptableObject
     public GameObject ThornProjectile;
     public GameObject BeamPref;
     public GameObject ArrowShower;
+    public GameObject BloodParticleEff;
     public float StunResistance = 100f;
 }

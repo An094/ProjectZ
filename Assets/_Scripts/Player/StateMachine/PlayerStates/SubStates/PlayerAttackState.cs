@@ -39,6 +39,14 @@ public class PlayerAttackState : PlayerAbilityState
                     }
                     else
                     {
+                        Quaternion quaternion = Quaternion.identity;
+
+                        if(Player.FacingDirection == 1)
+                        {
+                            quaternion.SetEulerRotation(0f, 180f, 0f);
+                        }
+                        GameObject.Instantiate(PlayerData.HitAnimation, AttackPostion.position, quaternion);
+                        //GameObject.Instantiate(PlayerData.BloodParticle, AttackPostion.position, quaternion);
                         GameManager.Instance.PlayHitSFX();
                     }
 
