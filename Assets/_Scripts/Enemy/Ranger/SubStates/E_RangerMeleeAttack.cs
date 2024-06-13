@@ -61,6 +61,11 @@ public class E_RangerMeleeAttack : E_PlayerNearState
         base.Exit();
     }
 
+    public override bool IsOnCooldown()
+    {
+        return Time.time < LastTimeFinish + EnemyData.MeleeAttackCooldown;
+    }
+
     public override void LogicUpdate()
     {
         base.LogicUpdate();

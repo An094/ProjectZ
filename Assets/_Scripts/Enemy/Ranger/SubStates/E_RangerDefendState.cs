@@ -43,7 +43,8 @@ public class E_RangerDefendState : E_PlayerNearState
 
     public override bool IsOnCooldown()
     {
-        return Time.time < LastTimeFinish + EnemyData.DefendCooldown;
+        return base.IsOnCooldown();
+        //return Time.time < LastTimeFinish + EnemyData.DefendCooldown;
     }
 
     public override void LogicUpdate()

@@ -6,6 +6,7 @@ public class E_RangerPlayerDetectedState : EnemyState
 {
     E_Ranger Ranger;
     private bool IsPlayerClose;
+    private bool IsFacingWall;
     public E_RangerPlayerDetectedState(EnemyStateMachine stateMachine, E_Ranger enemy, string animName, EnemyData enemyData) : base(stateMachine, enemy, animName, enemyData)
     {
         Ranger = enemy;
@@ -26,6 +27,7 @@ public class E_RangerPlayerDetectedState : EnemyState
         base.DoCheck();
 
         IsPlayerClose = Ranger.IsPlayerClose();
+        IsFacingWall = Ranger.IsTouchingWall();
     }
 
     public override void Enter()
@@ -44,13 +46,12 @@ public class E_RangerPlayerDetectedState : EnemyState
     {
         base.LogicUpdate();
 
-        if(IsPlayerClose)
+        if (IsFacingWall && IsPlayerClose)
         {
-            //if(!Ranger.dodgeNShootState.IsOnCooldown())
-            //{
-            //    StateMachine.ChangeState(Ranger.dodgeNShootState);
-            //}
-            //else
+            StateMachine.ChangeState(Ranger.dodgeState);
+        }
+        else if(IsPlayerClose)
+        {
             if(!Ranger.dodgeState.IsOnCooldown())
             {
                 StateMachine.ChangeState(Ranger.dodgeState);
@@ -63,13 +64,13 @@ public class E_RangerPlayerDetectedState : EnemyState
             {
                 StateMachine.ChangeState(Ranger.slideState);
             }
-            else if(!Ranger.defendState.IsOnCooldown())
+            else if(!Ranger.meleeAttack.IsOnCooldown())
             {
-                StateMachine.ChangeState(Ranger.defendState);
+                StateMachine.ChangeState(Ranger.meleeAttack);
             }
             else
             {
-                StateMachine.ChangeState(Ranger.meleeAttack);
+                StateMachine.ChangeState(Ranger.defendState);
             }
         }
         else
