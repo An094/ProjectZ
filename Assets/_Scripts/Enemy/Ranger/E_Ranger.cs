@@ -79,6 +79,7 @@ public class E_Ranger : Enemy
             }
             return true;
         }
+        GameManager.Instance.PlaySFX("Block");
         return false;
     }
 

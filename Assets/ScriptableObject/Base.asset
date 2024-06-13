@@ -28,7 +28,10 @@ MonoBehaviour:
   RollingCooldown: 1
   RollingColliderHeight: 0.6
   CrouchColliderHeight: 0.7
-  MeleeAttackRadius: 0.6
+  MeleeAttackRadius:
+  - 0.5
+  - 0.7
+  - 0.8
   AttackDamage: 30
   KnockBackStrength: 2
   HitAnimation: {fileID: 5126157486504374771, guid: 281e226e283ae6d488ec51077fc6a873, type: 3}

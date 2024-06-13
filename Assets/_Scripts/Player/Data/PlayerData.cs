@@ -39,8 +39,8 @@ public class PlayerData : ScriptableObject
     public float CrouchColliderHeight = 0.7f;
 
     [Header("Attack State")]
-    public float MeleeAttackRadius = 0.5f;
-    public float AttackDamage = 50.0f;
+    public List<float> MeleeAttackRadius;
+    public float AttackDamage = 50f;
     public float KnockBackStrength = 1f;
     public GameObject HitAnimation;
     public GameObject BloodParticle;

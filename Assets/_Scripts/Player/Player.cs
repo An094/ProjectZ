@@ -79,7 +79,7 @@ public class Player : MonoBehaviour
     public Transform CeilingCheck;
     #endregion
 
-    [SerializeField] private Transform AttackPostion;
+    [SerializeField] private List<Transform> AttackPostion;
 
     private Vector2 Workspace;
     public Vector2 CurrentVelocity { get; private set; }

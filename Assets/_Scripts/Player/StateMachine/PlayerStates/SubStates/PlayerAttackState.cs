@@ -8,9 +8,9 @@ public class PlayerAttackState : PlayerAbilityState
     private int AttackCounter;
     private float LastAttackedTime;
     int xInput;
-    private Transform AttackPostion;
+    private List<Transform> AttackPostion;
 
-    public PlayerAttackState(PlayerStateMachine stateMachine, Player player, string animName, PlayerData playerData, Transform attackPosition) : base(stateMachine, player, animName, playerData)
+    public PlayerAttackState(PlayerStateMachine stateMachine, Player player, string animName, PlayerData playerData, List<Transform> attackPosition) : base(stateMachine, player, animName, playerData)
     {
         AttackCounter = - 1;
         AttackPostion = attackPosition;
@@ -21,7 +21,7 @@ public class PlayerAttackState : PlayerAbilityState
         base.AniamtionTrigger();
 
         ///TODO: Handle attack 
-        Collider2D[] hits = Physics2D.OverlapCircleAll(AttackPostion.position, PlayerData.MeleeAttackRadius, PlayerData.WhatIsEnemy);
+        Collider2D[] hits = Physics2D.OverlapCircleAll(AttackPostion[AttackCounter].position, PlayerData.MeleeAttackRadius[AttackCounter], PlayerData.WhatIsEnemy);
 
         if (hits.Length > 0 )
         {
@@ -45,7 +45,7 @@ public class PlayerAttackState : PlayerAbilityState
                         {
                             quaternion.SetEulerRotation(0f, 180f, 0f);
                         }
-                        GameObject.Instantiate(PlayerData.HitAnimation, AttackPostion.position, quaternion);
+                        GameObject.Instantiate(PlayerData.HitAnimation, AttackPostion[AttackCounter].position, quaternion);
                         //GameObject.Instantiate(PlayerData.BloodParticle, AttackPostion.position, quaternion);
                         GameManager.Instance.PlayHitSFX();
                     }

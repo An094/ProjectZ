@@ -21,6 +21,7 @@ public class E_RangerRangedAttack : E_PlayerFarState
     {
         base.AnimationTrigger();
 
+        GameManager.Instance.PlaySFX("Shot");
         RandomlyFireProjectile();
     }
 

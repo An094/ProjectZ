@@ -17,6 +17,7 @@ public class E_RangerSkillFallingStarState : E_PlayerFarState
     {
         base.AnimationTrigger();
 
+        GameManager.Instance.PlaySFX("Shot");
         Vector2 ArrowShowerPostion = new Vector2(Ranger.Player.transform.position.x, -2.3f);
         GameObject.Instantiate(EnemyData.ArrowShower, ArrowShowerPostion, Quaternion.identity);
     }

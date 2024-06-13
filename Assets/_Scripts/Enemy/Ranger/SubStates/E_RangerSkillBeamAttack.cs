@@ -19,6 +19,7 @@ public class E_RangerSkillBeamAttack : E_PlayerFarState
     {
         base.AnimationTrigger();
 
+        GameManager.Instance.PlaySFX("Shot");
         GameObject.Instantiate(EnemyData.BeamPref, BeamPosition.position, Quaternion.identity);
     }
 

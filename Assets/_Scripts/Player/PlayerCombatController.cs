@@ -15,6 +15,8 @@ public class PlayerCombatController : MonoBehaviour, IDamageable, IKnockBackable
             player.PlayerStats.DecreaseHp(damageDetail.Dmg);
             return true;
         }
+
+        GameManager.Instance.PlaySFX("Block");
         return false;
     }
 

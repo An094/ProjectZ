@@ -29,7 +29,7 @@ public class ArrowShower : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if(collision.CompareTag("Player"))
+        if(collision.gameObject.layer.Equals(LayerMask.NameToLayer("Player")))
         {
             if(collision.TryGetComponent<IDamageable>(out IDamageable playerDamageale))
             {
