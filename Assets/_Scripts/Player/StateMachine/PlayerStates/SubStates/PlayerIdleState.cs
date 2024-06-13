@@ -33,7 +33,14 @@ public class PlayerIdleState : PlayerGroundedState
 
         if(xInput != 0)
         {
-            StateMachine.ChangeState(Player.MoveState);
+            if(xInput == Player.FacingDirection)
+            {
+                StateMachine.ChangeState(Player.MoveState);
+            }
+            else
+            {
+                StateMachine.ChangeState(Player.TurnAround);
+            }
         }
         else if(xInput == 0 && yInput == -1)
         {

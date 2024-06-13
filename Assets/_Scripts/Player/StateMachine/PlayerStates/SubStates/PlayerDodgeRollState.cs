@@ -43,6 +43,8 @@ public class PlayerDodgeRollState : PlayerAbilityState
     {
         base.Enter();
 
+        GameManager.Instance.PlaySFX("Roll");
+
         IsAbilityDone = false;
         xInput = Player.InputHandler.NormalInputX;
         Player.InputHandler.UseRollInput();

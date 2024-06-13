@@ -47,7 +47,14 @@ public class PlayerMoveState : PlayerGroundedState
             }
             else
             {
-                Player.SetVelocityX(PlayerData.MovementSpeed * xInput);
+                if(xInput == Player.FacingDirection)
+                {
+                    Player.SetVelocityX(PlayerData.MovementSpeed * xInput);
+                }
+                else
+                {
+                    StateMachine.ChangeState(Player.TurnAround);
+                }
             }
         }
        
@@ -64,7 +71,7 @@ public class PlayerMoveState : PlayerGroundedState
         {
             StepCounter = StepCounter >= 6 ? 1 : StepCounter + 1;
             GameManager.Instance.PlayerMoveSFX(StepCounter);
-            yield return new WaitForSeconds(0.5f);
+            yield return new WaitForSeconds(0.4f);
         }
 
     }

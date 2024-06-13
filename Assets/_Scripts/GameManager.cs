@@ -77,19 +77,23 @@ public class GameManager : MonoBehaviour
 
         SFXName += AttackCounter;
 
-        AudioManager.Instance.PlaySFX(SFXName);
+        PlaySFX(SFXName);
         
     }
 
     public void PlayerMoveSFX(int StepCounter)
     {
         string SFXName = "Step" + StepCounter.ToString();
-        AudioManager.Instance.PlaySFX(SFXName);
+        PlaySFX(SFXName);
     }
 
     public void PlayHitSFX()
     {
-        AudioManager.Instance.PlaySFX("Hit");
+        PlaySFX("Hit");
     }
 
+    public void PlaySFX(string  SFXName)
+    {
+        AudioManager.Instance.PlaySFX(SFXName);
+    }
 }

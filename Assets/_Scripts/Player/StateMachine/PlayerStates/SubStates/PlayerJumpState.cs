@@ -14,6 +14,8 @@ public class PlayerJumpState : PlayerAbilityState
     {
         base.Enter();
 
+        GameManager.Instance.PlaySFX("Jump");
+
         Player.SetVelocityY(PlayerData.JumpSpeed);
         AmoutOfJumpsLeft--;
         Player.InAirState.SetIsJumping();

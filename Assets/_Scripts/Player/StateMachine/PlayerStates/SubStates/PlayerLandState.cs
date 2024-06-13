@@ -11,6 +11,8 @@ public class PlayerLandState : PlayerGroundedState
     public override void Enter()
     {
         base.Enter();
+
+        GameManager.Instance.PlaySFX("Land");
     }
 
     public override void LogicUpdate()

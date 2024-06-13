@@ -55,6 +55,7 @@ public class Player : MonoBehaviour
     public PlayerIdleState IdleState { get; private set; }
     public PlayerMoveState MoveState { get; private set; }
     public PlayerJumpState JumpState { get; private set; }
+    public PlayerTurnAround TurnAround { get; private set; }
     public PlayerInAirState InAirState { get; private set; }
     public PlayerLandState LandState { get; private set; }
     public PlayerLedgeClimbState LedgeClimbState { get; private set; }
@@ -96,6 +97,7 @@ public class Player : MonoBehaviour
 
         IdleState = new PlayerIdleState(StateMachine, this, "Idle", PlayerData);
         MoveState = new PlayerMoveState(StateMachine, this, "Move", PlayerData);
+        TurnAround = new PlayerTurnAround(StateMachine, this, "TurnAround", PlayerData);
         JumpState = new PlayerJumpState(StateMachine, this, "InAir", PlayerData);
         InAirState = new PlayerInAirState(StateMachine, this, "InAir", PlayerData);
         LandState = new PlayerLandState(StateMachine, this, "Land", PlayerData);

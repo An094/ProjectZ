@@ -26,6 +26,8 @@ public class PlayerHurtState : PlayerState
     public override void Enter()
     {
         base.Enter();
+
+        GameManager.Instance.PlaySFX("HeroDmg");
     }
 
     public override void Exit()
