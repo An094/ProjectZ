@@ -43,36 +43,40 @@ public class PlayerTurnAround : PlayerGroundedState
     public override void LogicUpdate()
     {
         base.LogicUpdate();
-
-        Player.SetVelocityY(0);
-
-        if(!IsAnimationFinished)
+        
+        if(!IsExitingState)
         {
-            if (Time.time < StartTime + TimeTillZeroVelocity)
+            Player.SetVelocityY(0);
+
+            if (!IsAnimationFinished)
             {
-                Player.SetVelocityX(Mathf.Lerp(Player.CurrentVelocity.x, - PlayerData.MovementSpeed * Player.FacingDirection * 0.5f, TimeTillZeroVelocity));
+                if (Time.time < StartTime + TimeTillZeroVelocity)
+                {
+                    Player.SetVelocityX(Mathf.Lerp(Player.CurrentVelocity.x, -PlayerData.MovementSpeed * Player.FacingDirection * 0.5f, TimeTillZeroVelocity));
+                }
+                else
+                {
+                    //if(!HasRotated)
+                    //{
+                    //    HasRotated = true;
+                    //    Player.SetVelocityX(0);
+                    //}
+                    Player.SetVelocityX(Mathf.Lerp(Player.CurrentVelocity.x, -PlayerData.MovementSpeed * Player.FacingDirection, TimeTillZeroVelocity));
+                }
             }
             else
             {
-                //if(!HasRotated)
-                //{
-                //    HasRotated = true;
-                //    Player.SetVelocityX(0);
-                //}
-                Player.SetVelocityX(Mathf.Lerp(Player.CurrentVelocity.x, -PlayerData.MovementSpeed * Player.FacingDirection, TimeTillZeroVelocity));
+                if (xInput != 0)
+                {
+                    StateMachine.ChangeState(Player.MoveState);
+                }
+                else
+                {
+                    StateMachine.ChangeState(Player.IdleState);
+                }
             }
         }
-        else
-        {
-            if(xInput != 0)
-            {
-                StateMachine.ChangeState(Player.MoveState);
-            }
-            else
-            {
-                StateMachine.ChangeState(Player.IdleState);
-            }
-        }
+       
 
     }
 
