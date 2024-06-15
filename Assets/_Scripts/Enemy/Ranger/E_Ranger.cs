@@ -21,7 +21,7 @@ public class E_Ranger : Enemy
     public E_RangerDefendState              defendState         { get; private set; }
     public E_RangerDieState                 dieState            { get; private set; }
     public E_RangerDodgeState               dodgeState          { get; private set; }
-    public E_RangerShootInAirState          shootInAirState    { get; private set; }
+    public E_RangerShootInAirState          shootInAirState     { get; private set; }
     public E_RangerHurtState                hurtState           { get; private set; }
     public E_RangerInAirState               inAirState          { get; private set; }
     public E_RangerLandState                landState           { get; private set; }
@@ -31,7 +31,7 @@ public class E_Ranger : Enemy
     public E_RangerSkillBeamAttack          beamAttack          { get; private set; }
     public E_RangerSkillFallingStarState    fallingStarState    { get; private set; }
     public E_RangerSlideState               slideState          { get; private set; }
-
+    public E_RangerSpecialMove              specialMove         { get; private set; }
     //[SerializeField]
     //private Transform GroundCheck;
     //[SerializeField]
@@ -50,6 +50,8 @@ public class E_Ranger : Enemy
     private Transform BloodParticleEffPosition;
 
     public bool IsDefending { get; set; }
+
+    public Sequencer SpecialMoveSequencer { get; private set; }
 
     public override void AnimationFinishTrigger()
     {
@@ -77,6 +79,10 @@ public class E_Ranger : Enemy
             {
                 StateMachine.ChangeState(dieState);
             }
+            else if(CurrentHp < EnemyData.MaxHp * 0.25f && StateMachine.CurrentState != specialMove)
+            {
+                StateMachine.ChangeState(specialMove);
+            }
             return true;
         }
         GameManager.Instance.PlaySFX("Block");
@@ -87,7 +93,7 @@ public class E_Ranger : Enemy
     {
         base.KnockBack(details);
 
-        if (IsAlive() && hurtState.CanStun() && StateMachine.CurrentState != hurtState)
+        if (IsAlive() && hurtState.CanStun() && StateMachine.CurrentState != hurtState && StateMachine.CurrentState != specialMove)
         {
             //HurtState.SetFacingDirectionWhileHurt(-details.Direction);
             StateMachine.ChangeState(hurtState);
@@ -130,6 +136,7 @@ public class E_Ranger : Enemy
         beamAttack = new E_RangerSkillBeamAttack(StateMachine, this, "BeamAttack", RangerData, BeamPosition);
         fallingStarState = new E_RangerSkillFallingStarState(StateMachine, this, "FallingStar", RangerData);
         slideState = new E_RangerSlideState(StateMachine, this, "Slide", RangerData);
+        specialMove = new E_RangerSpecialMove(StateMachine, this, "PlayerDetected", RangerData);
     }
 
     protected override void FixedUpdate()
@@ -144,6 +151,8 @@ public class E_Ranger : Enemy
         Player = GameObject.FindGameObjectWithTag("Player");
 
         StateMachine.Initialize(playerDetectedState);
+
+        SpecialMoveSequencer = GetComponent<Sequencer>();
     }
 
     //private void Flip()
