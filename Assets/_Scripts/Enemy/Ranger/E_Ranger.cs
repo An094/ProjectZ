@@ -16,7 +16,7 @@ public class E_Ranger : Enemy
     public GameObject Player {  get; private set; }
 
     //private int FacingDirection;
-
+    public E_RangerIdleState                idleState           { get; private set; }
     public E_RangerPlayerDetectedState      playerDetectedState { get; private set; }
     public E_RangerDefendState              defendState         { get; private set; }
     public E_RangerDieState                 dieState            { get; private set; }
@@ -122,6 +122,7 @@ public class E_Ranger : Enemy
     {
         base.Awake();
 
+        idleState = new E_RangerIdleState(StateMachine, this, "PlayerDetected", RangerData);
         playerDetectedState = new E_RangerPlayerDetectedState(StateMachine, this, "PlayerDetected", RangerData);
         defendState = new E_RangerDefendState(StateMachine, this, "Defend", RangerData);
         dieState = new E_RangerDieState(StateMachine, this, "Die", RangerData);
@@ -150,11 +151,16 @@ public class E_Ranger : Enemy
 
         Player = GameObject.FindGameObjectWithTag("Player");
 
-        StateMachine.Initialize(playerDetectedState);
+        StateMachine.Initialize(idleState);
 
         SpecialMoveSequencer = GetComponent<Sequencer>();
     }
 
+
+    public void PlayerDetected()
+    {
+        StateMachine.ChangeState(playerDetectedState);
+    }
     //private void Flip()
     //{
     //    FacingDirection *= -1;
