@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class PlayerTurnAround : PlayerGroundedState
 {
-    const float TimeTillZeroVelocity = 0.15f;
+    const float TimeTillZeroVelocity = 0.08f;
     bool HasRotated = false;
     public PlayerTurnAround(PlayerStateMachine stateMachine, Player player, string animName, PlayerData playerData) : base(stateMachine, player, animName, playerData)
     {
@@ -47,6 +47,11 @@ public class PlayerTurnAround : PlayerGroundedState
         if(!IsExitingState)
         {
             Player.SetVelocityY(0);
+
+            if(xInput == Player.FacingDirection)
+            {
+                StateMachine.ChangeState(Player.MoveState);
+            }
 
             if (!IsAnimationFinished)
             {

@@ -55,7 +55,7 @@ public class E_RangerRollState : E_PlayerNearState
         {
             if (!WallInfront)
             {
-                Ranger.SetVelocityX(10.0f * RollingDirection);
+                Ranger.SetVelocityX(9.0f * RollingDirection);
             }
             else
             {

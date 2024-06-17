@@ -55,7 +55,7 @@ public class E_RangerSlideState : E_PlayerNearState
         {
             if(!WallInfront)
             {
-                Ranger.SetVelocityX(10.0f * SlideDirection);
+                Ranger.SetVelocityX(9.0f * SlideDirection);
             }
             else
             {

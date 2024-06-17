@@ -7,7 +7,7 @@ public class SwordsSummoner : MonoBehaviour
 {
     [SerializeField] private GameObject SwordAndPortalPref;
     [SerializeField] private List<Transform> swordsTransform;
-    [SerializeField] private List<PortalAndSword> portalAndSwords;
+    private List<PortalAndSword> portalAndSwords;
     // Start is called before the first frame update
     void Start()
     {

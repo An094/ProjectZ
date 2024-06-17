@@ -55,9 +55,8 @@ public class E_NormalEnemy : Enemy
         if (CurrentHp <= 0)
         {
             StateMachine.ChangeState(DieState);
-            return true;
         }
-        return false;
+        return true;
     }
 
     public override void KnockBack(KnockBackDetails details)

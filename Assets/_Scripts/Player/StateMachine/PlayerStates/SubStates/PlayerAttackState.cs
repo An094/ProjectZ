@@ -99,7 +99,7 @@ public class PlayerAttackState : PlayerAbilityState
 
         Player.Animator.SetInteger("AttackCounter", AttackCounter);
         int attackDir = xInput != 0 ? xInput : Player.FacingDirection;
-        Player.SetVelocityX(attackDir * 0.2f);
+        Player.SetVelocityX(attackDir * 0.1f);
         Player.SetVelocityY(1f);
     }
 

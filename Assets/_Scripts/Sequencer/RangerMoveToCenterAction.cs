@@ -52,13 +52,12 @@ public class RangerMoveToCenterAction : SequencerAction
         RangerAnimator.SetBool("CastSpell", true);
 
         SwordsSummoner.TriggerSummoner();
-        yield return new WaitForSeconds(3f);
+        yield return new WaitForSeconds(6f);
 
-        int i = 5;
-        while (i > 0)
+        List<int> NumberOfBeamToFire = new List<int>{ 1, 1, 2, 2, 3, 3, 4 };
+        for(int i = 0; i < NumberOfBeamToFire.Count; i++) 
         {
-            i--;
-            SwordsSummoner.Fire();
+            SwordsSummoner.Fire(NumberOfBeamToFire[i]);
             yield return new WaitForSeconds(2f);
         }
     }

@@ -22,8 +22,8 @@ MonoBehaviour:
   WallClimbVelocity: 2
   StartOffset: {x: 0.2, y: 0.2}
   StopOffset: {x: 0.4, y: 0.8}
-  GroundRollVelocity: 6
-  InAirRollVelocity: 4
+  GroundRollVelocity: 7
+  InAirRollVelocity: 5.5
   RollVelocityY: 6
   RollingCooldown: 1
   RollingColliderHeight: 0.6

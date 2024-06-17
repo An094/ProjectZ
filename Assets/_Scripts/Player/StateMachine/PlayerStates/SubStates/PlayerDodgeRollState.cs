@@ -7,6 +7,10 @@ public class PlayerDodgeRollState : PlayerAbilityState
     private int xInput;
     private bool IsGrounded;
     private bool CeilingCheck;
+    private bool AttackInput;
+    private bool DefendInput;
+    private bool JumpInput;
+
     public PlayerDodgeRollState(PlayerStateMachine stateMachine, Player player, string animName, PlayerData playerData) : base(stateMachine, player, animName, playerData)
     {
     }
@@ -67,17 +71,38 @@ public class PlayerDodgeRollState : PlayerAbilityState
 
         if(!IsExitingState)
         {
-            int RollingDirection = xInput != 0 ? xInput : Player.FacingDirection;
-            if(IsGrounded)
+            AttackInput = Player.InputHandler.PrimaryAttack;
+            DefendInput = Player.InputHandler.DefendInput;
+            JumpInput = Player.InputHandler.JumpInput;
+
+            if (AttackInput)
             {
-                Player.SetVelocityX(RollingDirection * PlayerData.GroundRollVelocity);
-                Player.SetVelocityY(0.0f);
+                StateMachine.ChangeState(Player.PrimaryAttackState);
+            }
+            else if (DefendInput)
+            {
+                StateMachine.ChangeState(Player.DefendState);
+            }
+            else if (JumpInput && IsGrounded)
+            {
+                StateMachine.ChangeState(Player.JumpState);
             }
             else
             {
-                Player.SetVelocityX(RollingDirection * PlayerData.InAirRollVelocity);
-                Player.SetVelocityY(-PlayerData.RollVelocityY);
+                int RollingDirection = xInput != 0 ? xInput : Player.FacingDirection;
+                if (IsGrounded)
+                {
+                    Player.SetVelocityX(RollingDirection * PlayerData.GroundRollVelocity);
+                    Player.SetVelocityY(0.0f);
+                }
+                else
+                {
+                    Player.SetVelocityX(RollingDirection * PlayerData.InAirRollVelocity);
+                    Player.SetVelocityY(-PlayerData.RollVelocityY);
+                }
             }
+
+            
         }
     }
 

@@ -54,7 +54,7 @@ MonoBehaviour:
   PortalAnimator: {fileID: 2529957728053085182}
   DefaultSwordPosition: {fileID: 1541872415688746897}
   BeamPosition: {fileID: 3038308610261505504}
-  BeamAttack: {fileID: 1209618227752909095, guid: ffdff2060a3d918468cba0d22cf42e7c, type: 3}
+  BeamAttack: {fileID: 1953818518421847066, guid: d2ee50c2b22ced54e926be43612971bf, type: 3}
 --- !u!1 &4276179393393221259
 GameObject:
   m_ObjectHideFlags: 0
