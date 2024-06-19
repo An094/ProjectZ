@@ -30,4 +30,10 @@ public class PortalAndSword : MonoBehaviour
     {
         Instantiate(BeamAttack, BeamPosition.transform.position, transform.rotation);
     }
+
+    public void FinalMove()
+    {
+        PortalAnimator.Play("Close");
+
+    }
 }

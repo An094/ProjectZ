@@ -2,6 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using Unity.Mathematics;
 using UnityEngine;
+using static UnityEngine.InputSystem.LowLevel.InputStateHistory;
+using static UnityEngine.ParticleSystem;
 
 public class SwordsSummoner : MonoBehaviour
 {
@@ -17,6 +19,15 @@ public class SwordsSummoner : MonoBehaviour
     public void TriggerSummoner()
     {
         StartCoroutine(SummonSwords());
+    }
+
+    public IEnumerator FinalMove()
+    {
+        for(int i = 0; i< portalAndSwords.Count; ++i)
+        {
+            portalAndSwords[i].FinalMove();
+            yield return new WaitForSeconds(1f);
+        }
     }
 
     IEnumerator SummonSwords()

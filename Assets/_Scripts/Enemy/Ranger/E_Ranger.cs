@@ -52,6 +52,7 @@ public class E_Ranger : Enemy
     public bool IsDefending { get; set; }
 
     public Sequencer SpecialMoveSequencer { get; private set; }
+    private bool CanUseSpecialMove = true;
 
     public override void AnimationFinishTrigger()
     {
@@ -79,8 +80,9 @@ public class E_Ranger : Enemy
             {
                 StateMachine.ChangeState(dieState);
             }
-            else if(CurrentHp < EnemyData.MaxHp * 0.25f && StateMachine.CurrentState != specialMove)
+            else if(CurrentHp < EnemyData.MaxHp * 0.25f && StateMachine.CurrentState != specialMove && CanUseSpecialMove)
             {
+                CanUseSpecialMove = false;
                 StateMachine.ChangeState(specialMove);
             }
             return true;

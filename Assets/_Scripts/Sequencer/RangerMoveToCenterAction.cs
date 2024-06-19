@@ -9,6 +9,7 @@ public class RangerMoveToCenterAction : SequencerAction
     private GameObject Ranger;
     private Animator RangerAnimator;
     private Rigidbody2D RangerRigidbody2D;
+    private E_Ranger RangerScript;
 
     private float TimeToMove = 1f;
     private float StartTime;
@@ -24,6 +25,7 @@ public class RangerMoveToCenterAction : SequencerAction
 
         RangerAnimator = obj.GetComponent<Animator>();
         RangerRigidbody2D = obj.GetComponent<Rigidbody2D>();
+        RangerScript = obj.GetComponent<E_Ranger>();
 
         SwordsSummoner = FindObjectOfType<SwordsSummoner>().GetComponent<SwordsSummoner>();
 
@@ -35,6 +37,7 @@ public class RangerMoveToCenterAction : SequencerAction
         StartTime = Time.time;
         StartPosition = Ranger.transform.position;
 
+        float DefaultGravityScale = RangerRigidbody2D.gravityScale;
         RangerRigidbody2D.gravityScale = 0f;
 
         //RangerAnimator.SetBool("PlayerDetected", false);
@@ -60,5 +63,12 @@ public class RangerMoveToCenterAction : SequencerAction
             SwordsSummoner.Fire(NumberOfBeamToFire[i]);
             yield return new WaitForSeconds(2f);
         }
+
+
+        yield return RangerScript.StartCoroutine(SwordsSummoner.FinalMove());
+
+        RangerAnimator.SetBool("CastSpell", false);
+        RangerRigidbody2D.gravityScale = DefaultGravityScale;
+        RangerScript.StateMachine.ChangeState(RangerScript.inAirState);
     }
 }
