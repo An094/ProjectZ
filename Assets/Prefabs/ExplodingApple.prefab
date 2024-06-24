@@ -70,6 +70,7 @@ Transform:
   - {fileID: 2150204554909716466}
   - {fileID: 3506400516346546377}
   - {fileID: 1667703561384808160}
+  - {fileID: 8901428907539313819}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
 --- !u!212 &7439672183656901168
@@ -163,6 +164,7 @@ MonoBehaviour:
   LedgeCheck: {fileID: 443754770336463476}
   PlayerCheck: {fileID: 3506400516346546377}
   AttackPostion: {fileID: 1667703561384808160}
+  BloodParticleEffPosition: {fileID: 8901428907539313819}
 --- !u!50 &5782710871302670422
 Rigidbody2D:
   serializedVersion: 4
@@ -225,6 +227,37 @@ CircleCollider2D:
   m_Offset: {x: 0.010057886, y: -0.76441824}
   serializedVersion: 2
   m_Radius: 1.2339903
+--- !u!1 &3100924319647105604
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 8901428907539313819}
+  m_Layer: 9
+  m_Name: BloodParticleEffPosition
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &8901428907539313819
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3100924319647105604}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -0.23, y: -0.19, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 3141170148121658321}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &3135385505434090771
 GameObject:
   m_ObjectHideFlags: 0

@@ -45,3 +45,18 @@ MonoBehaviour:
   IsTriggerExplositionAfterDead: 0
   Explosion: {fileID: 0}
   ExplosionRadius: 1
+  CloseActionDistance: 2
+  FallingStarCooldown: 20
+  BeamAttackCooldown: 10
+  DodgeAndShootCooldown: 20
+  DodgeCooldown: 15
+  RollCooldown: 10
+  SlideCooldown: 5
+  MeleeAttackCooldown: 2.5
+  EntangleProjectile: {fileID: 0}
+  PoisonProjectile: {fileID: 0}
+  ThornProjectile: {fileID: 0}
+  BeamPref: {fileID: 0}
+  ArrowShower: {fileID: 0}
+  BloodParticleEff: {fileID: 6467149452238860405, guid: 64d7e15450ecb9248afebd5d3b8a6409, type: 3}
+  StunResistance: 100

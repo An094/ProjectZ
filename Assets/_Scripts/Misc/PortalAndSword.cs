@@ -7,6 +7,7 @@ public class PortalAndSword : MonoBehaviour
 {
     [SerializeField] private GameObject Portal;
     [SerializeField] private GameObject Sword;
+    [SerializeField] private GameObject Mask;
     [SerializeField] private Animator PortalAnimator;
     [SerializeField] private Transform DefaultSwordPosition;
     [SerializeField] private Transform BeamPosition;
@@ -31,9 +32,11 @@ public class PortalAndSword : MonoBehaviour
         Instantiate(BeamAttack, BeamPosition.transform.position, transform.rotation);
     }
 
-    public void FinalMove()
+    public IEnumerator FinalMove()
     {
         PortalAnimator.Play("Close");
-
+        yield return new WaitForSeconds(0.5f);
+        Portal.SetActive(false);
+        Mask.SetActive(false);
     }
 }

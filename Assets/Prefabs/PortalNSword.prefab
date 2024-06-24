@@ -51,6 +51,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Portal: {fileID: 5094509039300540755}
   Sword: {fileID: 7599716709403793100}
+  Mask: {fileID: 4276179393393221259}
   PortalAnimator: {fileID: 2529957728053085182}
   DefaultSwordPosition: {fileID: 1541872415688746897}
   BeamPosition: {fileID: 3038308610261505504}

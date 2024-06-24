@@ -14,6 +14,7 @@ public class E_NormalEnemy : Enemy
     public E_NormalEnemyDieState DieState { get; private set; }
 
     [SerializeField] private Transform AttackPostion;
+    [SerializeField] private Transform BloodParticleEffPosition;
 
     protected override void Awake()
     {
@@ -51,6 +52,8 @@ public class E_NormalEnemy : Enemy
     public override bool Damage(DamgeDetails attackDetail)
     {
         base.Damage(attackDetail);
+
+        GameObject.Instantiate(EnemyData.BloodParticleEff, BloodParticleEffPosition.position, transform.rotation);
 
         if (CurrentHp <= 0)
         {

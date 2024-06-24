@@ -25,8 +25,8 @@ public class SwordsSummoner : MonoBehaviour
     {
         for(int i = 0; i< portalAndSwords.Count; ++i)
         {
-            portalAndSwords[i].FinalMove();
-            yield return new WaitForSeconds(1f);
+            yield return StartCoroutine(portalAndSwords[i].FinalMove());
+            //yield return new WaitForSeconds(1f);
         }
     }
 
@@ -49,13 +49,14 @@ public class SwordsSummoner : MonoBehaviour
         yield return new WaitForSeconds(1f);
     }
 
-    public void Fire(int NumberOfBeam = 3)
+    public IEnumerator Fire(int NumberOfBeam = 3)
     {
         List<int> SNPindices = GenerateUniqueRandomNumbers(0, swordsTransform.Count - 1, NumberOfBeam);
 
         foreach(var index in SNPindices)
         {
             portalAndSwords[index].Fire();
+            yield return new WaitForSeconds(0.75f);
         }
     }
 

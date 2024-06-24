@@ -69,6 +69,7 @@ Transform:
   - {fileID: 3409480105405987061}
   - {fileID: 4640312352712462358}
   - {fileID: 2927581744834834426}
+  - {fileID: 4778426518152034422}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
 --- !u!212 &4494879446963717584
@@ -224,6 +225,7 @@ MonoBehaviour:
   LedgeCheck: {fileID: 3409480105405987061}
   PlayerCheck: {fileID: 4640312352712462358}
   AttackPostion: {fileID: 2927581744834834426}
+  BloodParticleEffPosition: {fileID: 4778426518152034422}
 --- !u!1 &3450496592776748860
 GameObject:
   m_ObjectHideFlags: 0
@@ -281,6 +283,37 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -0.154, y: -0.657, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 2320368092736384971}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &5834019021847882304
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4778426518152034422}
+  m_Layer: 9
+  m_Name: BloodParticleEffPosition
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4778426518152034422
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5834019021847882304}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: -0.243, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []

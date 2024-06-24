@@ -57,10 +57,10 @@ public class RangerMoveToCenterAction : SequencerAction
         SwordsSummoner.TriggerSummoner();
         yield return new WaitForSeconds(6f);
 
-        List<int> NumberOfBeamToFire = new List<int>{ 1, 1, 2, 2, 3, 3, 4 };
+        List<int> NumberOfBeamToFire = new List<int>{ 2, 3, 4 };
         for(int i = 0; i < NumberOfBeamToFire.Count; i++) 
         {
-            SwordsSummoner.Fire(NumberOfBeamToFire[i]);
+            yield return RangerScript.StartCoroutine(SwordsSummoner.Fire(NumberOfBeamToFire[i]));
             yield return new WaitForSeconds(2f);
         }
 
