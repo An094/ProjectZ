@@ -83,7 +83,7 @@ public class PlayerAttackState : PlayerAbilityState
         //}
 
 
-        IsAbilityDone = false;// use this for only attack state.
+        IsAbilityDone = false;
 
         if (Time.time > LastAttackedTime + 1.5f) 
         {
@@ -95,9 +95,11 @@ public class PlayerAttackState : PlayerAbilityState
         }
 
         GameManager.Instance.PlayerAttackSFX(true, AttackCounter + 1);
-        //Player.SetVelocityZero();
 
         Player.Animator.SetInteger("AttackCounter", AttackCounter);
+        xInput = Player.InputHandler.NormalInputX;
+        Player.CheckIfShouldFlip(xInput);
+
         int attackDir = xInput != 0 ? xInput : Player.FacingDirection;
         Player.SetVelocityX(attackDir * 0.1f);
         Player.SetVelocityY(1f);
@@ -106,17 +108,11 @@ public class PlayerAttackState : PlayerAbilityState
     public override void Exit()
     {
         base.Exit();
-       // Player.SetVelocityZero();
     }
 
     public override void LogicUpdate()
     {
-        base.LogicUpdate();
-
-        xInput = Player.InputHandler.NormalInputX;
-
-        //Player.CheckIfShouldFlip(xInput);
-        
+        base.LogicUpdate();    
     }
 
     public override void PhysicUpdate()
