@@ -25,8 +25,13 @@ public class SwordsSummoner : MonoBehaviour
     {
         for(int i = 0; i< portalAndSwords.Count; ++i)
         {
-            yield return StartCoroutine(portalAndSwords[i].FinalMove());
-            //yield return new WaitForSeconds(1f);
+            StartCoroutine(portalAndSwords[i].FinalForm());
+        }
+
+        for (int i = 0; i < portalAndSwords.Count; ++i)
+        {
+            portalAndSwords[i].FinalMove();
+            yield return new WaitForSeconds(1f);
         }
     }
 

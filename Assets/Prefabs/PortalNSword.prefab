@@ -56,6 +56,7 @@ MonoBehaviour:
   DefaultSwordPosition: {fileID: 1541872415688746897}
   BeamPosition: {fileID: 3038308610261505504}
   BeamAttack: {fileID: 1953818518421847066, guid: d2ee50c2b22ced54e926be43612971bf, type: 3}
+  SwordPref: {fileID: 5317243141118559840, guid: 0c1faecfe0b94ab4b849f3a182a6c453, type: 3}
 --- !u!1 &4276179393393221259
 GameObject:
   m_ObjectHideFlags: 0
@@ -301,7 +302,7 @@ Transform:
   m_GameObject: {fileID: 7599716709403793100}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: -0.7071068, w: 0.7071068}
-  m_LocalPosition: {x: -0.839, y: 0.347, z: 0.053820904}
+  m_LocalPosition: {x: -0.839, y: 0.347, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
