@@ -30,6 +30,7 @@ public class E_RangerSkillFallingStarState : E_PlayerFarState
     public override void Enter()
     {
         base.Enter();
+        GameManager.Instance.PlaySFX("Draw");
     }
 
     public override void Exit()

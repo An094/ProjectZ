@@ -1770,7 +1770,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 1
-  m_Volume: 0.25
+  m_Volume: 0.35
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -4645,6 +4645,12 @@ MonoBehaviour:
     m_clip: {fileID: 8300000, guid: 071bb28c6bb4d10488734e59a021c768, type: 3}
   - m_name: Shot
     m_clip: {fileID: 8300000, guid: dc39fabf279c7ec4183ab2ab8462eb80, type: 3}
+  - m_name: Draw
+    m_clip: {fileID: 8300000, guid: 56ecc23c9b885244883f2d654c62ff9c, type: 3}
+  - m_name: Bankai
+    m_clip: {fileID: 8300000, guid: 6c3810bdaffcf094d998f01d234fd95e, type: 3}
+  - m_name: Shot2
+    m_clip: {fileID: 8300000, guid: 18c0f3cc81996204cbd96df4675f1fe1, type: 3}
   musicSource: {fileID: 1072210173}
   sfxSource: {fileID: 343496100}
 --- !u!4 &980048410
@@ -5153,7 +5159,6 @@ Transform:
   - {fileID: 2088676444}
   - {fileID: 468281895}
   - {fileID: 1292938414}
-  - {fileID: 1116713155}
   - {fileID: 673687457}
   - {fileID: 1478319375}
   - {fileID: 742981593}
@@ -5631,11 +5636,6 @@ MonoBehaviour:
     m_DissipationDistance: 100
     m_PropagationSpeed: 343
   m_DefaultVelocity: {x: 0.4, y: 0.4, z: 0}
---- !u!4 &1116713155 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 5683728050364584122, guid: 121d1eb06e09a814691e2e90bec6cbae, type: 3}
-  m_PrefabInstance: {fileID: 8709891439683838291}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1125454004
 GameObject:
   m_ObjectHideFlags: 0
@@ -66756,63 +66756,6 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: caa52cfe401df17489d683f50fb013c2, type: 3}
---- !u!1001 &8709891439683838291
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    serializedVersion: 3
-    m_TransformParent: {fileID: 1058004626}
-    m_Modifications:
-    - target: {fileID: 1582186328667803317, guid: 121d1eb06e09a814691e2e90bec6cbae, type: 3}
-      propertyPath: m_Name
-      value: Enemy_Eagle
-      objectReference: {fileID: 0}
-    - target: {fileID: 5683728050364584122, guid: 121d1eb06e09a814691e2e90bec6cbae, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 7.47
-      objectReference: {fileID: 0}
-    - target: {fileID: 5683728050364584122, guid: 121d1eb06e09a814691e2e90bec6cbae, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 2.38
-      objectReference: {fileID: 0}
-    - target: {fileID: 5683728050364584122, guid: 121d1eb06e09a814691e2e90bec6cbae, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0.023061398
-      objectReference: {fileID: 0}
-    - target: {fileID: 5683728050364584122, guid: 121d1eb06e09a814691e2e90bec6cbae, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5683728050364584122, guid: 121d1eb06e09a814691e2e90bec6cbae, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5683728050364584122, guid: 121d1eb06e09a814691e2e90bec6cbae, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5683728050364584122, guid: 121d1eb06e09a814691e2e90bec6cbae, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5683728050364584122, guid: 121d1eb06e09a814691e2e90bec6cbae, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5683728050364584122, guid: 121d1eb06e09a814691e2e90bec6cbae, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5683728050364584122, guid: 121d1eb06e09a814691e2e90bec6cbae, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-    m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 121d1eb06e09a814691e2e90bec6cbae, type: 3}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0

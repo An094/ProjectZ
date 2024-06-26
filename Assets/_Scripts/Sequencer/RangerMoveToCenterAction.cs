@@ -54,18 +54,21 @@ public class RangerMoveToCenterAction : SequencerAction
         RangerAnimator.SetBool("InAir", false);
         RangerAnimator.SetBool("CastSpell", true);
 
+        GameManager.Instance.PlaySFX("Bankai");
+
         SwordsSummoner.TriggerSummoner();
         yield return new WaitForSeconds(6f);
 
-        List<int> NumberOfBeamToFire = new List<int>{ 3, 4, 5 };
-        for(int i = 0; i < NumberOfBeamToFire.Count; i++) 
+        List<int> NumberOfBeamToFire = new List<int> { 3, 4, 5 };
+        for (int i = 0; i < NumberOfBeamToFire.Count; i++)
         {
+            GameManager.Instance.PlaySFX("Draw");
             yield return RangerScript.StartCoroutine(SwordsSummoner.Fire(NumberOfBeamToFire[i]));
             yield return new WaitForSeconds(1.5f);
         }
+        //yield return RangerScript.StartCoroutine(SwordsSummoner.FireByQueue());//TODO
 
-
-        yield return RangerScript.StartCoroutine(SwordsSummoner.FinalMove());
+        RangerScript.StartCoroutine(SwordsSummoner.FinalMove());
 
         RangerAnimator.SetBool("CastSpell", false);
         RangerRigidbody2D.gravityScale = DefaultGravityScale;

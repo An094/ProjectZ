@@ -1,5 +1,7 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using Unity.Mathematics;
 using UnityEngine;
 using static UnityEngine.InputSystem.LowLevel.InputStateHistory;
@@ -10,6 +12,9 @@ public class SwordsSummoner : MonoBehaviour
     [SerializeField] private GameObject SwordAndPortalPref;
     [SerializeField] private List<Transform> swordsTransform;
     private List<PortalAndSword> portalAndSwords;
+    public Queue<int> waitingPNSQueue = new();
+
+    public event Action OnFire;
     // Start is called before the first frame update
     void Start()
     {
@@ -46,10 +51,14 @@ public class SwordsSummoner : MonoBehaviour
     IEnumerator SummonSword(int Index)
     {
         GameObject SwordNPortalObj = Instantiate(SwordAndPortalPref, swordsTransform[Index].position, swordsTransform[Index].rotation);
-        portalAndSwords.Add(SwordNPortalObj.GetComponent<PortalAndSword>());
+        PortalAndSword portalAndSword = SwordNPortalObj.GetComponent<PortalAndSword>();
+        portalAndSword.Index = Index * 2;
+        portalAndSwords.Add(portalAndSword);
 
         SwordNPortalObj = Instantiate(SwordAndPortalPref, swordsTransform[swordsTransform.Count - 1 - Index].position, swordsTransform[swordsTransform.Count - 1 - Index].rotation);
-        portalAndSwords.Add(SwordNPortalObj.GetComponent<PortalAndSword>());
+        portalAndSword = SwordNPortalObj.GetComponent<PortalAndSword>();
+        portalAndSword.Index = Index * 2 + 1;
+        portalAndSwords.Add(portalAndSword);
 
         yield return new WaitForSeconds(1f);
     }
@@ -64,6 +73,29 @@ public class SwordsSummoner : MonoBehaviour
             yield return new WaitForSeconds(0.75f);
         }
     }
+
+    ////TODO
+    //public IEnumerator FireByQueue()
+    //{
+    //    //OnFire?.Invoke();
+
+    //    float StartTime = Time.time;
+    //    {
+    //        int swordIndex;
+    //        //if (waitingPNSQueue.Count() == 0)
+    //        {
+    //            swordIndex = GenerateUniqueRandomNumbers(0, swordsTransform.Count - 1, 1).First();
+    //        }
+    //        //else 
+    //        //{
+    //        //    swordIndex = waitingPNSQueue.Dequeue();
+    //        //}
+    //        portalAndSwords[swordIndex].Fire();
+
+    //        yield return new WaitForSeconds(0.5f);
+    //    }
+    //    while (Time.time <= StartTime + 10f) ;
+    //}
 
     public List<int> GenerateUniqueRandomNumbers(int min, int max, int count)
     {

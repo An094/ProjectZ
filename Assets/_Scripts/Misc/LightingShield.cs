@@ -27,12 +27,20 @@ public class LightingShield : MonoBehaviour
         {
             HittedPlayer = true;
 
-            Collider2D damageHit = Physics2D.OverlapCircle(transform.position, BaseRadius * transform.localScale.x, WhatIsPlayer);
+            Collider2D[] damageHit = Physics2D.OverlapCircleAll(transform.position, BaseRadius * transform.localScale.x, WhatIsPlayer);
 
-            if (damageHit.TryGetComponent<IKnockBackable>(out IKnockBackable playerConbatController))
+            foreach(Collider2D col in damageHit)
             {
-                playerConbatController.KnockBack();
+                if(col.tag.Equals("Player"))
+                {
+                    if (col.TryGetComponent<IKnockBackable>(out IKnockBackable playerConbatController))
+                    {
+                        playerConbatController.KnockBack();
+                    }
+                }
+                
             }
+            
         }
         
     }

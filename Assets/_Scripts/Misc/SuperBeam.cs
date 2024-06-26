@@ -41,6 +41,7 @@ public class SuperBeam : MonoBehaviour
     public void EnableCollider()
     {
         collider.enabled = true;
+        GameManager.Instance.PlaySFX("Shot2");
     }
 
     public void DisableCollider()

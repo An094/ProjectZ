@@ -75,7 +75,7 @@ public class E_Ranger : Enemy
             {
                 StateMachine.ChangeState(dieState);
             }
-            else if(CurrentHp < EnemyData.MaxHp * 0.5f && StateMachine.CurrentState != specialMove && CanUseSpecialMove)
+            else if(CurrentHp < EnemyData.MaxHp * 0.25f && StateMachine.CurrentState != specialMove && CanUseSpecialMove)
             {
                 CanUseSpecialMove = false;
                 StateMachine.ChangeState(specialMove);
@@ -104,10 +104,29 @@ public class E_Ranger : Enemy
     {
         if (!IsDefending) return false;
 
-        float PlayerToDefendPostionDistance = transform.position.x - DefendPostion.position.x;
+        float ObjectToDefendPostionDistance = transform.position.x - DefendPostion.position.x;
         float AttackSourceToDefendPostionDistance = attackSourcePosition.position.x - DefendPostion.position.x;
 
-        return PlayerToDefendPostionDistance * AttackSourceToDefendPostionDistance < 0;
+        //return PlayerToDefendPostionDistance * AttackSourceToDefendPostionDistance < 0;
+
+        if(ObjectToDefendPostionDistance * AttackSourceToDefendPostionDistance < 0)
+        {
+            return true;
+        }
+        else
+        {
+            Player playerScript = Player.GetComponent<Player>();
+            int PlayerFactionDir = playerScript.FacingDirection;
+
+            if (ObjectToDefendPostionDistance * PlayerFactionDir > 0)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
     }
 
     private bool IsAlive()

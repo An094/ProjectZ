@@ -16,18 +16,51 @@ public class PortalAndSword : MonoBehaviour
     [SerializeField] private Transform BeamPosition;
     [SerializeField] private GameObject BeamAttack;
     [SerializeField] private GameObject SwordPref;
+    //private SwordsSummoner swordsSummoner;
     private Transform SwordTransform;
     private Transform PlayerTransform;
+    //private bool CanRegister = false;//TODO
+    public int Index;
 
+    private void Awake()
+    {
+        PlayerTransform = GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>();
+        //swordsSummoner = FindObjectOfType<SwordsSummoner>().GetComponent<SwordsSummoner>();
+    }
     // Start is called before the first frame update
     void Start()
     {
         SwordTransform = Sword.GetComponent<Transform>();
-
-        PlayerTransform = GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>();
-
         StartCoroutine(SummonSword());
     }
+
+    //private void OnEnable()
+    //{
+    //    swordsSummoner.OnFire += OnFire;
+    //}
+
+    //private void OnDisable()
+    //{
+    //    swordsSummoner.OnFire -= OnFire;
+    //}
+
+    //private void OnFire()
+    //{
+    //    CanRegister = true;
+    //}
+
+//    private void OnTriggerEnter2D(Collider2D collision)
+//    {
+//        if(CanRegister)
+//        {
+//            CanRegister = false;
+//            if (collision.CompareTag("Player"))
+//            {
+////                swordsSummoner.waitingPNSQueue.Enqueue(Index);
+//            }
+//        }
+
+//    }
 
     private IEnumerator SummonSword()
     {
@@ -40,6 +73,7 @@ public class PortalAndSword : MonoBehaviour
     public void Fire()
     {
         Instantiate(BeamAttack, BeamPosition.transform.position, transform.rotation);
+       // CanRegister = true;
     }
 
     public IEnumerator FinalForm()
@@ -52,19 +86,19 @@ public class PortalAndSword : MonoBehaviour
 
     public void FinalMove()
     {
-        Vector2 direction = PlayerTransform.position - SwordTransform.position;
-        float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
-
         Sequence FinalMoveSq = DOTween.Sequence().
                                 Append(SwordTransform.DORotate(SwordTransform.rotation.eulerAngles, 1f, RotateMode.FastBeyond360))
-                                .Append(SwordTransform.DORotate(new Vector3(0f, 0f, angle - 90), 0.5f, RotateMode.FastBeyond360))
-                                //.Append(SwordTransform.DOMove(PlayerTransform.position, 1.5f).SetEase(Ease.InOutQuad));
                                 .AppendCallback(() =>
                                 {
-                                    GameObject SwordObject = Instantiate(SwordPref, SwordTransform.position, SwordTransform.rotation);
-                                    Sword SwordScript = SwordObject.GetComponent<Sword>();
-                                    SwordScript.FireProjectile(20f, 20f);
-                                    Sword.SetActive(false);
+                                    Vector2 direction = PlayerTransform.position - SwordTransform.position;
+                                    float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
+                                    SwordTransform.DORotate(new Vector3(0f, 0f, angle - 90), 0.5f, RotateMode.FastBeyond360).OnComplete(() =>
+                                    {
+                                        GameObject SwordObject = Instantiate(SwordPref, SwordTransform.position, SwordTransform.rotation);
+                                        Sword SwordScript = SwordObject.GetComponent<Sword>();
+                                        SwordScript.FireProjectile(30f, 20f);
+                                        Sword.SetActive(false);
+                                    });
                                 });
     }
 }

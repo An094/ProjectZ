@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4483501975626174456}
   - component: {fileID: 916682193240041449}
+  - component: {fileID: 1465998670859571580}
   m_Layer: 0
   m_Name: PortalNSword
   m_TagString: Untagged
@@ -57,6 +58,51 @@ MonoBehaviour:
   BeamPosition: {fileID: 3038308610261505504}
   BeamAttack: {fileID: 1953818518421847066, guid: d2ee50c2b22ced54e926be43612971bf, type: 3}
   SwordPref: {fileID: 5317243141118559840, guid: 0c1faecfe0b94ab4b849f3a182a6c453, type: 3}
+--- !u!61 &1465998670859571580
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 984587183149103932}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 9.487162, y: 0.38969475}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 19.974323, y: 1.0967675}
+  m_EdgeRadius: 0
 --- !u!1 &4276179393393221259
 GameObject:
   m_ObjectHideFlags: 0
