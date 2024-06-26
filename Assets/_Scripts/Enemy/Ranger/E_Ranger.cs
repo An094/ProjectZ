@@ -75,7 +75,7 @@ public class E_Ranger : Enemy
             {
                 StateMachine.ChangeState(dieState);
             }
-            else if(CurrentHp < EnemyData.MaxHp * 0.25f && StateMachine.CurrentState != specialMove && CanUseSpecialMove)
+            else if(CurrentHp < EnemyData.MaxHp * 0.5f && StateMachine.CurrentState != specialMove && CanUseSpecialMove)
             {
                 CanUseSpecialMove = false;
                 StateMachine.ChangeState(specialMove);

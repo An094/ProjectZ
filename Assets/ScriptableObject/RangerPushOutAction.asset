@@ -12,3 +12,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: abe7f0ba018239646b6491d9537277d0, type: 3}
   m_Name: RangerPushOutAction
   m_EditorClassIdentifier: 
+  LightingShield: {fileID: 6764155941298801712, guid: 4088bd5868e965a448e6ae6c057104fe, type: 3}

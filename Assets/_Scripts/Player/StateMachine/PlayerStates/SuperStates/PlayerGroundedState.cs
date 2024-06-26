@@ -27,6 +27,11 @@ public class PlayerGroundedState : PlayerState
         base.Enter();
 
         Player.JumpState.ResetAmountOfJumpsLeft();
+
+        if(!Player.IsAllowChangeVelocity)
+        {
+            Player.IsAllowChangeVelocity = true;///Stupid logic
+        }
     }
 
     public override void Exit()

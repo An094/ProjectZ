@@ -37,6 +37,8 @@ public class Player : MonoBehaviour
         }
     }
 
+    public bool IsAllowChangeVelocity { get; set; }
+
     #region Comps
 
     public Rigidbody2D Rb { get; private set; }
@@ -92,6 +94,7 @@ public class Player : MonoBehaviour
         {
             playerStats = new PlayerStats(PlayerData.MaxHp);
         }
+        IsAllowChangeVelocity = true;
 
         StateMachine = new PlayerStateMachine();
 
@@ -149,22 +152,28 @@ public class Player : MonoBehaviour
 
     public void SetVelocity(float velocity, Vector2 angle, int direction)
     {
-        if (IsEntangled) return;
-        angle.Normalize();
-        Workspace.Set(velocity * angle.x * direction, velocity * angle.y);
-        Rb.velocity = Workspace;
-        CurrentVelocity = Workspace;
+        if (!IsEntangled && IsAllowChangeVelocity)
+        {
+            angle.Normalize();
+            Workspace.Set(velocity * angle.x * direction, velocity * angle.y);
+            Rb.velocity = Workspace;
+            CurrentVelocity = Workspace;
+        }
+        
     }
 
     public void SetVelocityZero()
     {
-        Rb.velocity = Vector2.zero;
-        CurrentVelocity = Vector2.zero;
+        if(IsAllowChangeVelocity)
+        {
+            Rb.velocity = Vector2.zero;
+            CurrentVelocity = Vector2.zero;
+        }
     }
 
     public void SetVelocityX(float velocity)
     {
-        if(!IsEntangled)
+        if(!IsEntangled && IsAllowChangeVelocity)
         {
             Workspace.Set(velocity, CurrentVelocity.y);
             Rb.velocity = Workspace;
@@ -174,7 +183,7 @@ public class Player : MonoBehaviour
 
     public void SetVelocityY(float velocity)
     {
-        if(!IsEntangled)
+        if(!IsEntangled && IsAllowChangeVelocity)
         {
             Workspace.Set(CurrentVelocity.x, velocity);
             Rb.velocity = Workspace;

@@ -40,4 +40,11 @@ public class PlayerCombatController : MonoBehaviour, IDamageable, IKnockBackable
 
         return PlayerToDefendPostionDistance * AttackSourceToDefendPostionDistance < 0;
     }
+
+    public void KnockBack()
+    {
+        player.SetVelocity(20f, new Vector2(2f, 1f), - player.FacingDirection);
+        player.IsAllowChangeVelocity = false;
+        player.StateMachine.ChangeState(player.HurtState);
+    }
 }

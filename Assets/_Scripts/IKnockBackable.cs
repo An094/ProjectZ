@@ -19,4 +19,5 @@ public class KnockBackDetails
 public interface IKnockBackable
 {
     void KnockBack(KnockBackDetails details);
+    void KnockBack();
 }

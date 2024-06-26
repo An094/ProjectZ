@@ -20,7 +20,7 @@ public class Enemy : MonoBehaviour, IDamageable, IKnockBackable
     [SerializeField]
     private Transform LedgeCheck;
     [SerializeField]
-    protected Transform PlayerCheck;
+    public Transform PlayerCheck;
 
     private Vector2 Workspace;
     public Vector2 CurrentVelocity { get; private set; }
@@ -114,6 +114,11 @@ public class Enemy : MonoBehaviour, IDamageable, IKnockBackable
     }
 
     public virtual void KnockBack(KnockBackDetails details)
+    {
+        
+    }
+
+    public virtual void KnockBack()
     {
         
     }

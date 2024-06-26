@@ -41,7 +41,7 @@ MonoBehaviour:
   WhatIsPlayer:
     serializedVersion: 2
     m_Bits: 256
-  MaxHp: 1500
+  MaxHp: 2000
   IsTriggerExplositionAfterDead: 0
   Explosion: {fileID: 0}
   ExplosionRadius: 1
