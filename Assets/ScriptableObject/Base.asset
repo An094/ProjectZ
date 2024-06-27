@@ -36,7 +36,7 @@ MonoBehaviour:
   KnockBackStrength: 2
   HitAnimation: {fileID: 5126157486504374771, guid: 281e226e283ae6d488ec51077fc6a873, type: 3}
   BloodParticle: {fileID: 6467149452238860405, guid: 38812292e3c2dc248b36cbb8412bc887, type: 3}
-  GroundCheckRadius: 0.2
+  GroundCheckRadius: 0.1
   WallCheckRadius: 0.3
   LedgeCheckRadius: 0.3
   CeilingRadius: 0.3
@@ -55,4 +55,4 @@ MonoBehaviour:
   DefaultLayer:
     serializedVersion: 2
     m_Bits: 0
-  MaxHp: 100
+  MaxHp: 130

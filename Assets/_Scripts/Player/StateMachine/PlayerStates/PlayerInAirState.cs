@@ -54,7 +54,7 @@ public class PlayerInAirState : PlayerState
         {
             StateMachine.ChangeState(Player.LandState);
         }
-        else if(JumpInput && Player.JumpState.CanJump())
+        else if(JumpInput && Player.JumpState.CanJump() && Player.CurrentVelocity.y < 0f)
         {
             StateMachine.ChangeState(Player.JumpState);
         }
@@ -110,4 +110,18 @@ public class PlayerInAirState : PlayerState
 
     public void StartCoyoteTime() => CoyoteTime = true;
     public void SetIsJumping() => IsJumping = true;
+
+    public override void Enter()
+    {
+        base.Enter();
+
+        Player.Trail.enabled = true;
+    }
+
+    public override void Exit()
+    {
+        base.Exit();
+
+        Player.Trail.enabled = false;
+    }
 }

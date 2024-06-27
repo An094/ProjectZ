@@ -29,7 +29,7 @@ public class RangerMoveToCenterAction : SequencerAction
 
         SwordsSummoner = FindObjectOfType<SwordsSummoner>().GetComponent<SwordsSummoner>();
 
-        TargetPosition.Set(23.5f, 1f, 0f);
+        TargetPosition.Set(23f, 0f, 0f);
     }
 
     public override IEnumerator StartSequence(Sequencer context)

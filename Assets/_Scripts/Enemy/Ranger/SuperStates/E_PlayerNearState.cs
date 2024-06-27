@@ -12,10 +12,13 @@ public class E_PlayerNearState : EnemyState
     protected bool IsExiting;
 
     protected bool CheckIfShouldFlip;
+
+    protected bool IsAllowCheckFlip;
     public E_PlayerNearState(EnemyStateMachine stateMachine, E_Ranger enemy, string animName, EnemyData enemyData) : base(stateMachine, enemy, animName, enemyData)
     {
         Ranger = enemy;
         LastTimeFinish = Time.time;
+        IsAllowCheckFlip = true;
     }
 
     public override void AnimationFinishTrigger()
@@ -43,7 +46,10 @@ public class E_PlayerNearState : EnemyState
         IsDone = false;
         IsExiting = false;
 
-        Ranger.CheckIfShouldFlip();
+        if(IsAllowCheckFlip)
+        {
+            Ranger.CheckIfShouldFlip();
+        }
     }
 
     public override void Exit()

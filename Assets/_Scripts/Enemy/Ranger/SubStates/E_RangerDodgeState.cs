@@ -26,6 +26,7 @@ public class E_RangerDodgeState : E_PlayerNearState
 
     public override void Enter()
     {
+        IsAllowCheckFlip = false;
         base.Enter();
 
         Ranger.SetVelocityX(Ranger.FacingDirection * 10.0f);

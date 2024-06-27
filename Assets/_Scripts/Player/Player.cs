@@ -45,6 +45,7 @@ public class Player : MonoBehaviour
     public Animator Animator { get; private set; }
 
     public BoxCollider2D Collider { get; private set; }
+    public TrailRenderer Trail { get; private set; }
     public PlayerInputHandler InputHandler { get; private set; }
 
     public PlayerCombatController CombatController { get; private set; }
@@ -133,6 +134,9 @@ public class Player : MonoBehaviour
         Collider = GetComponent<BoxCollider2D>();
         InputHandler = GetComponent<PlayerInputHandler>();
         CombatController = GetComponent<PlayerCombatController>();
+        Trail = GetComponent<TrailRenderer>();
+
+        Trail.enabled = false;
 
         StateMachine.Initialize(IdleState);
 
