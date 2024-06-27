@@ -1942,7 +1942,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 1
-  m_Volume: 0.35
+  m_Volume: 0.5
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -4881,6 +4881,8 @@ MonoBehaviour:
     m_clip: {fileID: 8300000, guid: f21fceeb9cfc1ce4984ebd8573f10830, type: 3}
   - m_name: Jump
     m_clip: {fileID: 8300000, guid: ee93233d72c1fab4ca7243305b4a40c6, type: 3}
+  - m_name: Draw
+    m_clip: {fileID: 8300000, guid: 56ecc23c9b885244883f2d654c62ff9c, type: 3}
   - m_name: Land
     m_clip: {fileID: 8300000, guid: 893dac393122e55418e83d194e430af7, type: 3}
   - m_name: Roll
@@ -4891,12 +4893,12 @@ MonoBehaviour:
     m_clip: {fileID: 8300000, guid: 071bb28c6bb4d10488734e59a021c768, type: 3}
   - m_name: Shot
     m_clip: {fileID: 8300000, guid: dc39fabf279c7ec4183ab2ab8462eb80, type: 3}
-  - m_name: Draw
-    m_clip: {fileID: 8300000, guid: 56ecc23c9b885244883f2d654c62ff9c, type: 3}
   - m_name: Bankai
     m_clip: {fileID: 8300000, guid: 6c3810bdaffcf094d998f01d234fd95e, type: 3}
   - m_name: Shot2
     m_clip: {fileID: 8300000, guid: 18c0f3cc81996204cbd96df4675f1fe1, type: 3}
+  - m_name: Land2
+    m_clip: {fileID: 8300000, guid: 2521db8ecc9c881418e3f9aa8661c5f0, type: 3}
   musicSource: {fileID: 1072210173}
   sfxSource: {fileID: 343496100}
 --- !u!4 &980048410
@@ -5328,7 +5330,7 @@ Transform:
   m_GameObject: {fileID: 1027962667}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.062, y: -0.681, z: 0}
+  m_LocalPosition: {x: -0.197, y: -0.635, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []

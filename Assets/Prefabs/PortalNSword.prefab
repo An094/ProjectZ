@@ -58,6 +58,7 @@ MonoBehaviour:
   BeamPosition: {fileID: 3038308610261505504}
   BeamAttack: {fileID: 1953818518421847066, guid: d2ee50c2b22ced54e926be43612971bf, type: 3}
   SwordPref: {fileID: 5317243141118559840, guid: 0c1faecfe0b94ab4b849f3a182a6c453, type: 3}
+  Index: 0
 --- !u!61 &1465998670859571580
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -65,7 +66,7 @@ BoxCollider2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 984587183149103932}
-  m_Enabled: 1
+  m_Enabled: 0
   m_Density: 1
   m_Material: {fileID: 0}
   m_IncludeLayers:

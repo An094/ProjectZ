@@ -6,6 +6,7 @@ using UnityEngine;
 public class PlayerInAirState : PlayerState
 {
     private int xInput;
+    private int yInput;
     private bool JumpInput;
     private bool RollInput;
     private bool IsGrounded;
@@ -43,6 +44,7 @@ public class PlayerInAirState : PlayerState
         CheckCoyoteTime();
 
         xInput = Player.InputHandler.NormalInputX;
+        yInput = Player.InputHandler.NormalInputY;
         JumpInput = Player.InputHandler.JumpInput;
         RollInput = Player.InputHandler.RollInput;
         PrimaryAttack = Player.InputHandler.PrimaryAttack;
@@ -74,6 +76,13 @@ public class PlayerInAirState : PlayerState
         {
             Player.InputHandler.UsePrimaryAttackInput();
             StateMachine.ChangeState(Player.PrimaryAttackState);
+        }
+        else if(yInput == -1 && JumpInput)
+        {
+            Player.SetVelocityX(0);
+            Player.SetVelocityY(-30f);
+            Player.Animator.SetFloat("yVelocity", Player.CurrentVelocity.y);
+            Player.LandState.NextTimeIsStrong = true;
         }
         else
         {

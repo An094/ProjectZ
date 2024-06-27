@@ -4,15 +4,26 @@ using UnityEngine;
 
 public class PlayerLandState : PlayerGroundedState
 {
+    public bool NextTimeIsStrong;
     public PlayerLandState(PlayerStateMachine stateMachine, Player player, string animName, PlayerData playerData) : base(stateMachine, player, animName, playerData)
     {
+        NextTimeIsStrong = false;
     }
 
     public override void Enter()
     {
         base.Enter();
 
-        GameManager.Instance.PlaySFX("Land");
+        if(NextTimeIsStrong)
+        {
+            GameManager.Instance.PlaySFX("Land2");
+        }
+        else
+        {
+            GameManager.Instance.PlaySFX("Land");
+        }
+
+        NextTimeIsStrong = false;
     }
 
     public override void LogicUpdate()
