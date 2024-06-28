@@ -2,11 +2,11 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class E_RangerSpecialMove : EnemyState
+public class E_RangerBankaiState : EnemyState
 {
     E_Ranger Ranger;
 
-    public E_RangerSpecialMove(EnemyStateMachine stateMachine, E_Ranger enemy, string animName, EnemyData enemyData) : base(stateMachine, enemy, animName, enemyData)
+    public E_RangerBankaiState(EnemyStateMachine stateMachine, E_Ranger enemy, string animName, EnemyData enemyData) : base(stateMachine, enemy, animName, enemyData)
     {
         Ranger = enemy;
     }

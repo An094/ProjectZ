@@ -49,7 +49,14 @@ public class E_RangerPlayerDetectedState : EnemyState
         if (IsFacingWall && IsPlayerClose)
         {
             Ranger.Flip();
-            StateMachine.ChangeState(Ranger.dodgeState);
+            if(!Ranger.arrowShowerState.IsOnCooldown())
+            {
+                StateMachine.ChangeState(Ranger.arrowShowerState);
+            }
+            else
+            {
+                StateMachine.ChangeState(Ranger.dodgeState);
+            }
         }
         else if(IsPlayerClose)
         {

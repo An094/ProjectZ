@@ -68,7 +68,7 @@ public class E_RangerRangedAttack : E_PlayerFarState
         }
         else if(rand < 6)
         {
-            TravelDistance = EnemyData.TravelDistance * 0.5f;
+            TravelDistance = EnemyData.TravelDistance * 0.3f;
             Projectile =  EnemyData.ThornProjectile;
         }
         else

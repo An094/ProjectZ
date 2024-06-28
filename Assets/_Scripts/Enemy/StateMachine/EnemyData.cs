@@ -63,6 +63,7 @@ public class EnemyData : ScriptableObject
 
     public float FallingStarCooldown = 20.0f;
     public float BeamAttackCooldown = 10.0f;
+    public float ArrowShowerCooldown = 10f;
 
     public float DodgeAndShootCooldown = 20.0f;
     public float DodgeCooldown = 15.0f;

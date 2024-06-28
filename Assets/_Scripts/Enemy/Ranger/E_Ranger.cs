@@ -26,7 +26,8 @@ public class E_Ranger : Enemy
     public E_RangerSkillBeamAttack          beamAttack          { get; private set; }
     public E_RangerSkillFallingStarState    fallingStarState    { get; private set; }
     public E_RangerSlideState               slideState          { get; private set; }
-    public E_RangerSpecialMove              specialMove         { get; private set; }
+    public E_RangerBankaiState              specialMove         { get; private set; }
+    public E_RangerArrowShowerState         arrowShowerState    { get; private set; }
     //[SerializeField]
     //private Transform GroundCheck;
     //[SerializeField]
@@ -153,7 +154,8 @@ public class E_Ranger : Enemy
         beamAttack = new E_RangerSkillBeamAttack(StateMachine, this, "BeamAttack", RangerData, BeamPosition);
         fallingStarState = new E_RangerSkillFallingStarState(StateMachine, this, "FallingStar", RangerData);
         slideState = new E_RangerSlideState(StateMachine, this, "Slide", RangerData);
-        specialMove = new E_RangerSpecialMove(StateMachine, this, "PlayerDetected", RangerData);
+        specialMove = new E_RangerBankaiState(StateMachine, this, "PlayerDetected", RangerData);
+        arrowShowerState = new E_RangerArrowShowerState(StateMachine, this, "InAir", RangerData, ShootingInAirPostion);
     }
 
     protected override void FixedUpdate()
