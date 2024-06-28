@@ -32,7 +32,7 @@ public class RangerPushOutAction : SequencerAction
         RangerAnimator.SetBool("CastSpell", false);
         RangerAnimator.SetBool("CastSpell", true);
         Vector3 RangerShieldPosition = ranger.PlayerCheck.position;
-        Instantiate(LightingShield, RangerShieldPosition, Quaternion.identity);
+        ObjectPoolManager.SpawnObject(LightingShield, RangerShieldPosition, Quaternion.identity);
         yield return new WaitForSeconds(1f);
         RangerAnimator.SetBool("CastSpell", false);
     }

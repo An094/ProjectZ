@@ -6,9 +6,13 @@ public class ArrowShower : MonoBehaviour
 {
     private Collider2D Collider;
     // Start is called before the first frame update
-    void Start()
+    void Awake()
     {
         Collider = GetComponent<BoxCollider2D>();
+    }
+
+    private void OnEnable()
+    {
         Collider.enabled = false;
     }
 
@@ -24,7 +28,8 @@ public class ArrowShower : MonoBehaviour
 
     public void DisableObject()
     {
-        gameObject.SetActive(false);
+        //gameObject.SetActive(false);
+        ObjectPoolManager.ReturnObjectToPool(gameObject);
     }
 
     private void OnTriggerEnter2D(Collider2D collision)

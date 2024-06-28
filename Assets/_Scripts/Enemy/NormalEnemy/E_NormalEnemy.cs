@@ -53,7 +53,8 @@ public class E_NormalEnemy : Enemy
     {
         base.Damage(attackDetail);
 
-        GameObject.Instantiate(EnemyData.BloodParticleEff, BloodParticleEffPosition.position, transform.rotation);
+        //GameObject.Instantiate(EnemyData.BloodParticleEff, BloodParticleEffPosition.position, transform.rotation);
+        ObjectPoolManager.SpawnObject(EnemyData.BloodParticleEff, BloodParticleEffPosition.position, transform.rotation, ObjectPoolManager.PoolType.ParticleSystem);
 
         if (CurrentHp <= 0)
         {

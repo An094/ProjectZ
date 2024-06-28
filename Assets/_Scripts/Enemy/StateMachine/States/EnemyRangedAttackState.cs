@@ -20,7 +20,7 @@ public class EnemyRangedAttackState : EnemyAttackState
     {
         base.AnimationTrigger();
 
-        ProjectileObj = GameObject.Instantiate(EnemyData.ProjectilePref, AttackPosition.position, AttackPosition.rotation);
+        ProjectileObj = ObjectPoolManager.SpawnObject(EnemyData.ProjectilePref, AttackPosition.position, AttackPosition.rotation);
         if (ProjectileObj.TryGetComponent<Projectile>(out Projectile projectile))
         {
             projectile.FireProjectile(EnemyData.ProjectileSpeed, EnemyData.TravelDistance, EnemyData.ProjectileDamage);

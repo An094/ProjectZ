@@ -139,7 +139,8 @@ public class E_RangerArrowShowerState : E_PlayerNearState
 
         float Angle = Ranger.FacingDirection > 0 ? -75f : -105f;
 
-        ProjectileObj = GameObject.Instantiate(Projectile, ProjectTilePosition.position, Quaternion.Euler(0f, 0f, Angle));
+        //ProjectileObj = GameObject.Instantiate(Projectile, ProjectTilePosition.position, Quaternion.Euler(0f, 0f, Angle));
+        ProjectileObj = ObjectPoolManager.SpawnObject(Projectile, ProjectTilePosition.position, Quaternion.Euler(0f, 0f, Angle));
         if (ProjectileObj.TryGetComponent<Projectile>(out Projectile projectile))
         {
             projectile.FireProjectile(EnemyData.ProjectileSpeed, TravelDistance, EnemyData.ProjectileDamage);

@@ -26,15 +26,16 @@ public class Projectile : MonoBehaviour
     [SerializeField]
     private Transform damagePosition;
 
-    public virtual void Start()
+    public virtual void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
+    }
 
+    protected virtual void OnEnable()
+    {
         rb.gravityScale = 0.0f;
-        rb.velocity = transform.right * speed;
-
         isGravityOn = false;
-
+        hasHitGround = false;
         xStartPos = transform.position.x;
     }
 
@@ -84,6 +85,7 @@ public class Projectile : MonoBehaviour
         this.speed = speed;
         this.travelDistance = travelDistance;
         this.Dmg = damage;
+        rb.velocity = transform.right * speed;//TODO: Recheck
     }
 
     protected virtual void OnHitPlayer(Collider2D player)
@@ -92,7 +94,8 @@ public class Projectile : MonoBehaviour
         {
             playerConbatController.Damage(new DamgeDetails(Dmg, transform));
         }
-        Destroy(gameObject);
+        //Destroy(gameObject);
+        ObjectPoolManager.ReturnObjectToPool(gameObject);
     }
 
     protected virtual void OnHitGround()
@@ -100,7 +103,18 @@ public class Projectile : MonoBehaviour
         hasHitGround = true;
         rb.gravityScale = 0f;
         rb.velocity = Vector2.zero;
-        Destroy(gameObject, 2f);
+        StartCoroutine(ReturnToPoolAfterTime());
+    }
+
+    private IEnumerator ReturnToPoolAfterTime()
+    {
+        float elapsedTime = 0f;
+        while (elapsedTime < 2f)
+        {
+            elapsedTime += Time.deltaTime;
+            yield return null;
+        }
+        ObjectPoolManager.ReturnObjectToPool(gameObject);
     }
 
     private void OnDrawGizmos()

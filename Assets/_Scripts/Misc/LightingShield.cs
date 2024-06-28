@@ -11,12 +11,12 @@ public class LightingShield : MonoBehaviour
 
     private bool HittedPlayer;
     // Start is called before the first frame update
-    void Start()
+    void OnEnable()
     {
         HittedPlayer = false;
         transform.DOScale(1.5f, 1f).OnComplete(() =>
         {
-            gameObject.SetActive(false);
+            ObjectPoolManager.ReturnObjectToPool(gameObject);
         }).startValue.Set(0f, 0f, 0f);
     }
 

@@ -31,7 +31,7 @@ public class E_RangerShootInAirState : E_PlayerNearState
 
         GameObject Projectile = RandomlyPickProjectile();
         
-        ProjectileObj = GameObject.Instantiate(Projectile, PorjectTilePosition.position, 
+        ProjectileObj = ObjectPoolManager.SpawnObject(Projectile, PorjectTilePosition.position, 
             Quaternion.Euler(0f, 0f, FinalAngle));
         if (ProjectileObj.TryGetComponent<Projectile>(out Projectile projectile))
         {

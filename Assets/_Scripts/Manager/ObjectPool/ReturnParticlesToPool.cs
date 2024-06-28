@@ -2,9 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class HitParticles : MonoBehaviour
+public class ReturnParticlesToPool : MonoBehaviour
 {
-   public void FinishAnimation()
+    private void OnParticleSystemStopped()
     {
         ObjectPoolManager.ReturnObjectToPool(gameObject);
     }

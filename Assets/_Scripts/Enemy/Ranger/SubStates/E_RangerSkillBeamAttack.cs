@@ -20,7 +20,7 @@ public class E_RangerSkillBeamAttack : E_PlayerFarState
         base.AnimationTrigger();
 
         GameManager.Instance.PlaySFX("Shot");
-        GameObject.Instantiate(EnemyData.BeamPref, BeamPosition.position, Quaternion.identity);
+        ObjectPoolManager.SpawnObject(EnemyData.BeamPref, BeamPosition.position, Quaternion.identity);
     }
 
     public override void DoCheck()

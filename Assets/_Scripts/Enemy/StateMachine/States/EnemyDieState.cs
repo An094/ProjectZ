@@ -41,7 +41,7 @@ public class EnemyDieState : EnemyState
         {
             if(EnemyData.IsTriggerExplositionAfterDead)
             {
-                GameObject Explosion = GameObject.Instantiate(EnemyData.Explosion, Enemy.transform.position, Enemy.transform.rotation);
+                GameObject Explosion = ObjectPoolManager.SpawnObject(EnemyData.Explosion, Enemy.transform.position, Enemy.transform.rotation);
 
                 if(Explosion.TryGetComponent<Explostion>(out Explostion explostionScript))
                 {

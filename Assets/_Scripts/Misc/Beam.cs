@@ -7,9 +7,11 @@ public class Beam : MonoBehaviour
     [SerializeField] private Transform TopLeft;
     [SerializeField] private Transform BottomRight;
     [SerializeField] private LayerMask WhatIsPlayer;
+
     public void DisableBeam()
     {
-        gameObject.SetActive(false);
+        //gameObject.SetActive(false);
+        ObjectPoolManager.ReturnObjectToPool(gameObject);
     }
 
     public void TriggerBeam()
@@ -23,11 +25,6 @@ public class Beam : MonoBehaviour
                 {
                     playerDamageable.Damage(new DamgeDetails(20f, transform));//TODO
                 }
-
-                //if (collider.TryGetComponent(out IKnockBackable playerKnockbackable))
-                //{
-                //    playerKnockbackable.KnockBack(new KnockBackDetails(Enemy.FacingDirection, EnemyData.AttackDamage));//TODO
-                //}
         }
     }
 }

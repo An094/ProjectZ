@@ -50,12 +50,12 @@ public class SwordsSummoner : MonoBehaviour
 
     IEnumerator SummonSword(int Index)
     {
-        GameObject SwordNPortalObj = Instantiate(SwordAndPortalPref, swordsTransform[Index].position, swordsTransform[Index].rotation);
+        GameObject SwordNPortalObj = ObjectPoolManager.SpawnObject(SwordAndPortalPref, swordsTransform[Index].position, swordsTransform[Index].rotation);
         PortalAndSword portalAndSword = SwordNPortalObj.GetComponent<PortalAndSword>();
         portalAndSword.Index = Index * 2;
         portalAndSwords.Add(portalAndSword);
 
-        SwordNPortalObj = Instantiate(SwordAndPortalPref, swordsTransform[swordsTransform.Count - 1 - Index].position, swordsTransform[swordsTransform.Count - 1 - Index].rotation);
+        SwordNPortalObj = ObjectPoolManager.SpawnObject(SwordAndPortalPref, swordsTransform[swordsTransform.Count - 1 - Index].position, swordsTransform[swordsTransform.Count - 1 - Index].rotation);
         portalAndSword = SwordNPortalObj.GetComponent<PortalAndSword>();
         portalAndSword.Index = Index * 2 + 1;
         portalAndSwords.Add(portalAndSword);

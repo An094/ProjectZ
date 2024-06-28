@@ -10,19 +10,25 @@ public class RangerProjectile : Projectile
     private Animator animator;
     private SpriteRenderer spriteRenderer;
 
-    private bool HitPlayer = false;
+    private bool HitPlayer;
     private Vector2 hitPosition;
 
     private Player PlayerScript;
-    public override void Start()
+    public override void Awake()
     {
-        base.Start();
+        base.Awake();
         animator = GetComponent<Animator>();
-        animator.enabled = false;
-
         spriteRenderer = GetComponent<SpriteRenderer>();
+    }
 
+    protected override void OnEnable()
+    {
+        base.OnEnable();
+
+        HitPlayer = false;
+        animator.enabled = false;
         spriteRenderer.sprite = projectileData.ProjectileSprite;
+        hitPosition = Vector2.zero;
     }
 
     public override void Update()
@@ -68,14 +74,25 @@ public class RangerProjectile : Projectile
             animator.SetBool("Normal", false);
             animator.SetBool("Thorn", true);
 
-            StartCoroutine(CreateThornAfterDisable());
+            StartCoroutine(CreateThornBeforeInactive());
         }
         else
         {
-            Destroy(gameObject, 2f);
+            StartCoroutine(ReturnObjectToPoolAfterTime());
         }
     }
 
+    private IEnumerator ReturnObjectToPoolAfterTime()
+    {
+        float ElapsedTime = 0f;
+        while(ElapsedTime < 2f)
+        {
+            ElapsedTime += Time.deltaTime;
+            yield return null;
+        }
+
+        ObjectPoolManager.ReturnObjectToPool(gameObject);
+    }
     protected override void OnHitPlayer(Collider2D player)
     {
         animator.enabled = true;
@@ -125,7 +142,8 @@ public class RangerProjectile : Projectile
 
             case ProjectileType.Thorn:
                 {
-                    Destroy(gameObject);
+                    //Destroy(gameObject);
+                    ObjectPoolManager.ReturnObjectToPool(gameObject);
                     break;
                 }
 
@@ -140,29 +158,33 @@ public class RangerProjectile : Projectile
     {
         yield return new WaitForSeconds(2f);
         PlayerScript.IsEntangled = false;
-        gameObject.SetActive(false);
+        //gameObject.SetActive(false);
+        ObjectPoolManager.ReturnObjectToPool(gameObject);
     }
 
     IEnumerator DisableAfterPoison()
     {
         yield return new WaitForSeconds(0.5f);
-        gameObject.SetActive(false);
+        ///gameObject.SetActive(false);
+        ObjectPoolManager.ReturnObjectToPool(gameObject);
     }
 
-    IEnumerator CreateThornAfterDisable()
+    IEnumerator CreateThornBeforeInactive()
     {
         yield return new WaitForSeconds(1f);
 
         if (transform.right.x > 0f)
         {
-            Instantiate(projectileData.ThornPref, transform.position, Quaternion.identity);
+            //Instantiate(projectileData.ThornPref, transform.position, Quaternion.identity);
+            ObjectPoolManager.SpawnObject(projectileData.ThornPref, transform.position, Quaternion.identity);
         }
         else
         {
-            Instantiate(projectileData.ThornPref, transform.position, Quaternion.Euler(0f, 180f, 0f));
+            //Instantiate(projectileData.ThornPref, transform.position, Quaternion.Euler(0f, 180f, 0f));
+            ObjectPoolManager.SpawnObject(projectileData.ThornPref, transform.position, Quaternion.Euler(0f, 180f, 0f));
         }
-
-        gameObject.SetActive(false);
+        //gameObject.SetActive(false);
+        ObjectPoolManager.ReturnObjectToPool(gameObject);
     }
 
     private bool IsHitOnWall()

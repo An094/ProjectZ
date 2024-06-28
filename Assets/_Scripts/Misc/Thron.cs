@@ -7,7 +7,7 @@ public class Thron : MonoBehaviour
 
     private Player player;
 
-    private void Start()
+    private void OnEnable()
     {
         StartCoroutine(DisableThorn(5f));
     }
@@ -33,6 +33,7 @@ public class Thron : MonoBehaviour
         {
             player.IsEntangled = false;
         }
-        gameObject.SetActive(false);
+        //gameObject.SetActive(false);
+        ObjectPoolManager.ReturnObjectToPool(gameObject);
     }
 }

@@ -76,7 +76,9 @@ public class E_RangerRangedAttack : E_PlayerFarState
             Projectile =  EnemyData.ProjectilePref;
         }
 
-        ProjectileObj = GameObject.Instantiate(Projectile, AttackPosition.position, AttackPosition.rotation);
+        ///ProjectileObj = GameObject.Instantiate(Projectile, AttackPosition.position, AttackPosition.rotation);
+        ProjectileObj = ObjectPoolManager.SpawnObject(Projectile, AttackPosition.position, AttackPosition.rotation);
+        
         if (ProjectileObj.TryGetComponent<Projectile>(out Projectile projectile))
         {
             projectile.FireProjectile(EnemyData.ProjectileSpeed, TravelDistance, EnemyData.ProjectileDamage);

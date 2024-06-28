@@ -1,6 +1,7 @@
 using DG.Tweening;
 using System.Collections;
 using System.Collections.Generic;
+using System.Runtime.Serialization;
 using TMPro;
 
 //using System.Numerics;
@@ -72,7 +73,7 @@ public class PortalAndSword : MonoBehaviour
 
     public void Fire()
     {
-        Instantiate(BeamAttack, BeamPosition.transform.position, transform.rotation);
+        ObjectPoolManager.SpawnObject(BeamAttack, BeamPosition.transform.position, transform.rotation);
        // CanRegister = true;
     }
 
@@ -94,10 +95,11 @@ public class PortalAndSword : MonoBehaviour
                                     float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
                                     SwordTransform.DORotate(new Vector3(0f, 0f, angle - 90), 0.5f, RotateMode.FastBeyond360).OnComplete(() =>
                                     {
-                                        GameObject SwordObject = Instantiate(SwordPref, SwordTransform.position, SwordTransform.rotation);
+                                        GameObject SwordObject = ObjectPoolManager.SpawnObject(SwordPref, SwordTransform.position, SwordTransform.rotation);
                                         Sword SwordScript = SwordObject.GetComponent<Sword>();
                                         SwordScript.FireProjectile(30f, 20f);
                                         Sword.SetActive(false);
+                                        ObjectPoolManager.ReturnObjectToPool(gameObject);
                                     });
                                 });
     }

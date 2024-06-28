@@ -26,14 +26,18 @@ public class Sword : MonoBehaviour
 
     private Vector3 TouchGroundPosition;
 
-    public virtual void Start()
+    public virtual void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
+    }
 
+    public virtual void OnEnable()
+    {
         rb.gravityScale = 0.0f;
-        rb.velocity = transform.up * speed;
 
         isGravityOn = false;
+        hasHitGround = false;
+        TouchGroundPosition = Vector3.zero;
     }
 
     public virtual void Update()
@@ -82,6 +86,8 @@ public class Sword : MonoBehaviour
     {
         this.speed = speed;
         this.Dmg = damage;
+
+        rb.velocity = transform.up * speed;
     }
 
     protected virtual void OnHitPlayer(Collider2D player)
@@ -90,7 +96,8 @@ public class Sword : MonoBehaviour
         {
             playerConbatController.Damage(new DamgeDetails(Dmg, transform));
         }
-        Destroy(gameObject);
+        //Destroy(gameObject);
+        ObjectPoolManager.ReturnObjectToPool(gameObject);
     }
 
     protected virtual void OnHitGround()
@@ -99,6 +106,17 @@ public class Sword : MonoBehaviour
         hasHitGround = true;
         rb.gravityScale = 0f;
         rb.velocity = Vector2.zero;
-        Destroy(gameObject, 10f);
+        StartCoroutine(ReturnToPoolAfterTime());
+    }
+
+    private IEnumerator ReturnToPoolAfterTime()
+    {
+        float ElapsedTime = 0f;
+        while(ElapsedTime < 10f)
+        {
+            ElapsedTime += Time.deltaTime;
+            yield return null;
+        }
+        ObjectPoolManager.ReturnObjectToPool(gameObject);
     }
 }

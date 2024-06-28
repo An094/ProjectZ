@@ -26,6 +26,7 @@ public class Explostion : MonoBehaviour
 
     private void TriggerFinishAnimation()
     {
-        this.gameObject.SetActive(false);
+        //this.gameObject.SetActive(false);
+        ObjectPoolManager.ReturnObjectToPool(gameObject);
     }
 }

@@ -45,7 +45,8 @@ public class PlayerAttackState : PlayerAbilityState
                         {
                             quaternion.SetEulerRotation(0f, 180f, 0f);
                         }
-                        GameObject.Instantiate(PlayerData.HitAnimation, AttackPostion[AttackCounter].position, quaternion);
+
+                        ObjectPoolManager.SpawnObject(PlayerData.HitAnimation, AttackPostion[AttackCounter].position, quaternion);
                         //GameObject.Instantiate(PlayerData.BloodParticle, AttackPostion.position, quaternion);
                         GameManager.Instance.PlayHitSFX();
                     }

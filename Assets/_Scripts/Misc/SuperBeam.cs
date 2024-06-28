@@ -7,34 +7,23 @@ public class SuperBeam : MonoBehaviour
     [SerializeField] private LayerMask WhatIsPlayer;
     private BoxCollider2D collider;
 
-    private void Start()
+    private void Awake()
     {
         collider = GetComponent<BoxCollider2D>();
+    }
+
+    private void OnEnable()
+    {
         collider.enabled = false;
     }
+
     public void DisableBeam()
     {
-        gameObject.SetActive(false);
+        ObjectPoolManager.ReturnObjectToPool(gameObject);
     }
 
     public void TriggerBeam()
     {
-        //collider.bounds
-        //Collider2D[] hits = Physics2D.OverlapAreaAll(TopLeft.position, BottomRight.position, WhatIsPlayer);
-
-        //foreach (Collider2D collider in hits)
-        //{
-
-        //    if (collider.TryGetComponent(out IDamageable playerDamageable))
-        //    {
-        //        playerDamageable.Damage(new DamgeDetails(20f, transform));//TODO
-        //    }
-
-        //    //if (collider.TryGetComponent(out IKnockBackable playerKnockbackable))
-        //    //{
-        //    //    playerKnockbackable.KnockBack(new KnockBackDetails(Enemy.FacingDirection, EnemyData.AttackDamage));//TODO
-        //    //}
-        //}
         collider.enabled = true;
     }
 

@@ -68,7 +68,8 @@ public class E_Ranger : Enemy
 
             OnDamaged?.Invoke(CurrentHp);
 
-            GameObject.Instantiate(EnemyData.BloodParticleEff, BloodParticleEffPosition.position, transform.rotation);
+            //GameObject.Instantiate(EnemyData.BloodParticleEff, BloodParticleEffPosition.position, transform.rotation);
+            ObjectPoolManager.SpawnObject(EnemyData.BloodParticleEff, BloodParticleEffPosition.position, transform.rotation, ObjectPoolManager.PoolType.ParticleSystem);
 
             hurtState.DecreaseSR(attackDetail.Dmg);
 

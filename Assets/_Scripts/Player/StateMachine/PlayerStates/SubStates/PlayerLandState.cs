@@ -17,6 +17,7 @@ public class PlayerLandState : PlayerGroundedState
         if(NextTimeIsStrong)
         {
             GameManager.Instance.PlaySFX("Land2");
+            CameraManager.Instance.SlightShakeCamera();
         }
         else
         {
