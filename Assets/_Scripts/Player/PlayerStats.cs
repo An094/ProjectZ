@@ -1,11 +1,13 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class PlayerStats
 {
     public event Action<float> OnDamaged;
+    public event Action OnDead;
 
     public float MaxHp;
     public float CurrentHp;
@@ -24,6 +26,8 @@ public class PlayerStats
 
         if(CurrentHp <= 0)
         {
+            OnDead?.Invoke();
+            OnDead = null;
             OnDamaged = null;
         }
     }

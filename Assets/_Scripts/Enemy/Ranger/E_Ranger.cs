@@ -1,3 +1,4 @@
+using DG.Tweening;
 using System;
 using UnityEngine;
 
@@ -9,6 +10,8 @@ public class E_Ranger : Enemy
     //public Rigidbody2D rb2D {  get; private set; }
     public Collider2D Collider2D { get; private set; }
     public GameObject Player {  get; private set; }
+
+    public Player playerScript { get; private set; }
 
     //private int FacingDirection;
     public E_RangerIdleState                idleState           { get; private set; }
@@ -44,6 +47,8 @@ public class E_Ranger : Enemy
     private Transform DefendPostion;
     [SerializeField]
     private Transform BloodParticleEffPosition;
+    [SerializeField]
+    private Transform EmotePosition;
 
     public bool IsDefending { get; set; }
 
@@ -117,7 +122,7 @@ public class E_Ranger : Enemy
         }
         else
         {
-            Player playerScript = Player.GetComponent<Player>();
+            //playerScript = Player.GetComponent<Player>();
             int PlayerFactionDir = playerScript.FacingDirection;
 
             if (ObjectToDefendPostionDistance * PlayerFactionDir > 0)
@@ -169,10 +174,27 @@ public class E_Ranger : Enemy
         base.Start();
 
         Player = GameObject.FindGameObjectWithTag("Player");
+        playerScript = Player.GetComponent<Player>();
+        playerScript.PlayerStats.OnDead += OnPlayerDead;
+
 
         StateMachine.Initialize(idleState);
 
         SpecialMoveSequencer = GetComponent<Sequencer>();
+
+    }
+
+    private void OnDisable()
+    {
+        playerScript.PlayerStats.OnDead -= OnPlayerDead;
+    }
+
+    private void OnPlayerDead()
+    {
+        StateMachine.ChangeState(idleState);
+        GameObject Emote = Instantiate(RangerData.VictoryEmote, EmotePosition);
+        Emote.transform.localScale = Vector3.zero;
+        Emote.transform.DOScale(0.5f, 0.5f);
     }
 
 

@@ -25,7 +25,7 @@ MonoBehaviour:
   GroundRollVelocity: 8
   InAirRollVelocity: 6
   RollVelocityY: 5
-  RollingCooldown: 1
+  RollingCooldown: 0.85
   RollingColliderHeight: 0.6
   CrouchColliderHeight: 0.7
   LandingEff: {fileID: 6467149452238860405, guid: 6ce356486abf132418ee909a286f2ac6, type: 3}

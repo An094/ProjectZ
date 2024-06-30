@@ -12,13 +12,14 @@ public class PlayerDieState : PlayerState
     {
         base.LogicUpdate();
 
-        if(IsAnimationFinished)
-        {
-            Player.gameObject.SetActive(false);
-        }
-        else
-        {
-            Player.SetVelocityZero();
-        }
+        //if(IsAnimationFinished)
+        //{
+        //    ///Player.gameObject.SetActive(false);
+        //}
+        //else
+        //{
+        //    Player.SetVelocityZero();
+        //}
+        Player.SetVelocityZero();
     }
 }

@@ -60,4 +60,5 @@ MonoBehaviour:
   BeamPref: {fileID: 1209618227752909095, guid: ffdff2060a3d918468cba0d22cf42e7c, type: 3}
   ArrowShower: {fileID: 8636299144777031371, guid: 2a455f7095d50584b873c0d3cfab6884, type: 3}
   BloodParticleEff: {fileID: 6467149452238860405, guid: 38812292e3c2dc248b36cbb8412bc887, type: 3}
+  VictoryEmote: {fileID: 3116506387097096991, guid: 69eaaac4eb8d65b4689a6c4b519826d5, type: 3}
   StunResistance: 200
