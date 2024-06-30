@@ -1350,7 +1350,7 @@ RectTransform:
   m_GameObject: {fileID: 205350942}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1.5, y: 1.5, z: 1.5}
+  m_LocalScale: {x: 2, y: 2, z: 2}
   m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 14598174}
@@ -5382,7 +5382,7 @@ MonoBehaviour:
           m_CallState: 2
         - m_Target: {fileID: 1605881629}
           m_TargetAssemblyTypeName: GameManager, Assembly-CSharp
-          m_MethodName: ShowRangerHpBar
+          m_MethodName: OnCutsceneEnded
           m_Mode: 1
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
@@ -5688,7 +5688,7 @@ Transform:
   m_GameObject: {fileID: 1027962667}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.197, y: -0.635, z: 0}
+  m_LocalPosition: {x: 0.001, y: -0.635, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -5722,7 +5722,7 @@ RectTransform:
   m_GameObject: {fileID: 1030129770}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1.5, y: 1.5, z: 1.5}
+  m_LocalScale: {x: 2, y: 2, z: 2}
   m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 502069836}
@@ -6097,7 +6097,7 @@ AudioSource:
   m_PlayOnAwake: 1
   m_Volume: 0.5
   m_Pitch: 1
-  Loop: 0
+  Loop: 1
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
@@ -68634,6 +68634,26 @@ PrefabInstance:
       propertyPath: musicSource
       value: 
       objectReference: {fileID: 1072210173}
+    - target: {fileID: 4147282991105929860, guid: f06cc63ed79229e499c3787a9ecd45cb, type: 3}
+      propertyPath: musicSounds.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4147282991105929860, guid: f06cc63ed79229e499c3787a9ecd45cb, type: 3}
+      propertyPath: musicSounds.Array.data[0].m_clip
+      value: 
+      objectReference: {fileID: 8300000, guid: f0800ec09adb9c048824d54ad5aacc4e, type: 3}
+    - target: {fileID: 4147282991105929860, guid: f06cc63ed79229e499c3787a9ecd45cb, type: 3}
+      propertyPath: musicSounds.Array.data[0].m_name
+      value: HallOfTheKing
+      objectReference: {fileID: 0}
+    - target: {fileID: 4147282991105929860, guid: f06cc63ed79229e499c3787a9ecd45cb, type: 3}
+      propertyPath: musicSounds.Array.data[1].m_clip
+      value: 
+      objectReference: {fileID: 8300000, guid: 8678e723d01c1244193f748ccf490eb5, type: 3}
+    - target: {fileID: 4147282991105929860, guid: f06cc63ed79229e499c3787a9ecd45cb, type: 3}
+      propertyPath: musicSounds.Array.data[1].m_name
+      value: Storm
+      objectReference: {fileID: 0}
     - target: {fileID: 4985231958031331788, guid: f06cc63ed79229e499c3787a9ecd45cb, type: 3}
       propertyPath: m_Name
       value: AudioManager

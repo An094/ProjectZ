@@ -47,7 +47,7 @@ public class GameManager : MonoBehaviour
 
     private void Start()
     {
-        AudioManager.Instance.PlayMusic("Village");
+        AudioManager.Instance.PlayMusic("HallOfTheKing");
 
         PlayerHpBar.Init(PlayerStats.MaxHp, PlayerStats.CurrentHp);
 
@@ -95,6 +95,12 @@ public class GameManager : MonoBehaviour
     public void PlaySFX(string  SFXName)
     {
         AudioManager.Instance.PlaySFX(SFXName);
+    }
+
+    public void OnCutsceneEnded()
+    {
+        AudioManager.Instance.PlayMusic("Storm");
+        ShowRangerHpBar();
     }
 
     public void ShowRangerHpBar()

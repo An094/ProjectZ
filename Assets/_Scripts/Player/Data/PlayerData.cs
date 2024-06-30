@@ -38,6 +38,9 @@ public class PlayerData : ScriptableObject
     [Header("Crouch State")]
     public float CrouchColliderHeight = 0.7f;
 
+    [Header("Land State")]
+    public GameObject LandingEff;
+
     [Header("Attack State")]
     public List<float> MeleeAttackRadius;
     public float AttackDamage = 50f;

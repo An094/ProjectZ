@@ -18,6 +18,7 @@ public class PlayerLandState : PlayerGroundedState
         {
             GameManager.Instance.PlaySFX("Land2");
             CameraManager.Instance.SlightShakeCamera();
+            ObjectPoolManager.SpawnObject(PlayerData.LandingEff, Player.GroundCheck.position, Quaternion.identity, ObjectPoolManager.PoolType.ParticleSystem);
         }
         else
         {

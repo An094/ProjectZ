@@ -28,6 +28,7 @@ MonoBehaviour:
   RollingCooldown: 1
   RollingColliderHeight: 0.6
   CrouchColliderHeight: 0.7
+  LandingEff: {fileID: 6467149452238860405, guid: 6ce356486abf132418ee909a286f2ac6, type: 3}
   MeleeAttackRadius:
   - 0.5
   - 0.7
