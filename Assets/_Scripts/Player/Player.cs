@@ -5,7 +5,7 @@ using UnityEditor;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-public class Player : MonoBehaviour
+public class Player : MonoBehaviour, IDataPersistence
 {
     private PlayerStats playerStats;
     public PlayerStats PlayerStats { 
@@ -13,7 +13,7 @@ public class Player : MonoBehaviour
         {
             if(playerStats == null)
             {
-                playerStats = new PlayerStats(PlayerData.MaxHp);
+                playerStats = new PlayerStats(PlayerData.MaxHp, PlayerData.MaxHp);
             }
             return playerStats;
         }       
@@ -91,10 +91,6 @@ public class Player : MonoBehaviour
     private int StepCounter = 1;
     private void Awake()
     {
-        if(playerStats == null)
-        {
-            playerStats = new PlayerStats(PlayerData.MaxHp);
-        }
         IsAllowChangeVelocity = true;
 
         StateMachine = new PlayerStateMachine();
@@ -116,6 +112,8 @@ public class Player : MonoBehaviour
         DefendState = new PlayerDefendState(StateMachine, this, "Defend", PlayerData);
         HurtState = new PlayerHurtState(StateMachine, this, "Hurt", PlayerData);
         DieState = new PlayerDieState(StateMachine, this, "Die", PlayerData);
+
+        playerStats = new PlayerStats(PlayerData.MaxHp, PlayerData.MaxHp);
     }
 
     private void OnEnable()
@@ -141,6 +139,7 @@ public class Player : MonoBehaviour
         StateMachine.Initialize(IdleState);
 
         FacingDirection = 1;
+
     }
 
     private void Update()
@@ -259,5 +258,21 @@ public class Player : MonoBehaviour
     private void OnDrawGizmos()
     {
         Gizmos.DrawSphere(DetermineCornerPostion(), 0.1f);
+    }
+
+    public void LoadData(GameData data)
+    {
+        transform.position = data.PlayerPosition;
+        playerStats.CurrentHp = data.CurrentHp;
+    }
+
+    public void SaveData(GameData data)
+    {
+        //if(gameObject.activeInHierarchy)
+        {
+            data.PlayerPosition = transform.position;
+            data.CurrentHp = playerStats.CurrentHp;
+        }
+
     }
 }

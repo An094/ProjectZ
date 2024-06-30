@@ -1,0 +1,98 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &4985231958031331788
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7599967337844610574}
+  - component: {fileID: 4147282991105929860}
+  m_Layer: 0
+  m_Name: AudioManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &7599967337844610574
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4985231958031331788}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 12.235395, y: -1.8188369, z: -0.053532194}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &4147282991105929860
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4985231958031331788}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2a09424feb25a3d40b4b86f25141aebe, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  musicSounds:
+  - m_name: Village
+    m_clip: {fileID: 8300000, guid: fc75ff6814cea394dbc5c48dbec54433, type: 3}
+  sfxSounds:
+  - m_name: Sword_Charge1
+    m_clip: {fileID: 8300000, guid: 49457423582db3f4aad32c352816cdbd, type: 3}
+  - m_name: Sword_Charge2
+    m_clip: {fileID: 8300000, guid: e65b8dd64544b8247abb98b41d4d7293, type: 3}
+  - m_name: Sword_Charge3
+    m_clip: {fileID: 8300000, guid: aa95aecc190a78c4aa996a0002984d68, type: 3}
+  - m_name: Sword_Release1
+    m_clip: {fileID: 8300000, guid: 03c5da49044488347be79817958c47b1, type: 3}
+  - m_name: Sword_Release2
+    m_clip: {fileID: 8300000, guid: f827c5ab6e07f3e4cb0d9778ed6b3bdf, type: 3}
+  - m_name: Sword_Release3
+    m_clip: {fileID: 8300000, guid: 66a7dddaf07ba4d43b73c715e1661d99, type: 3}
+  - m_name: Step1
+    m_clip: {fileID: 8300000, guid: fcc63e64eba64b1468bffa55464a4838, type: 3}
+  - m_name: Step2
+    m_clip: {fileID: 8300000, guid: 4f084996dceb49445b28d024e4622caa, type: 3}
+  - m_name: Step3
+    m_clip: {fileID: 8300000, guid: 3fcd8742c104802428527bcc1b16d75b, type: 3}
+  - m_name: Step4
+    m_clip: {fileID: 8300000, guid: c804b2a4705bf9646a2d10cf62143497, type: 3}
+  - m_name: Step5
+    m_clip: {fileID: 8300000, guid: ef22db073ad7db74490d07de4ab5e646, type: 3}
+  - m_name: Step6
+    m_clip: {fileID: 8300000, guid: 79475cc93e8109542ae7b2d6a79b3775, type: 3}
+  - m_name: Hit
+    m_clip: {fileID: 8300000, guid: f21fceeb9cfc1ce4984ebd8573f10830, type: 3}
+  - m_name: Jump
+    m_clip: {fileID: 8300000, guid: ee93233d72c1fab4ca7243305b4a40c6, type: 3}
+  - m_name: Draw
+    m_clip: {fileID: 8300000, guid: 56ecc23c9b885244883f2d654c62ff9c, type: 3}
+  - m_name: Land
+    m_clip: {fileID: 8300000, guid: 893dac393122e55418e83d194e430af7, type: 3}
+  - m_name: Roll
+    m_clip: {fileID: 8300000, guid: 2412e8d62ed12ed4ca7b602dcc645385, type: 3}
+  - m_name: HeroDmg
+    m_clip: {fileID: 8300000, guid: dda2e6eb3ba3a994a91226aa6e17c41c, type: 3}
+  - m_name: Block
+    m_clip: {fileID: 8300000, guid: 071bb28c6bb4d10488734e59a021c768, type: 3}
+  - m_name: Shot
+    m_clip: {fileID: 8300000, guid: dc39fabf279c7ec4183ab2ab8462eb80, type: 3}
+  - m_name: Bankai
+    m_clip: {fileID: 8300000, guid: 6c3810bdaffcf094d998f01d234fd95e, type: 3}
+  - m_name: Shot2
+    m_clip: {fileID: 8300000, guid: 18c0f3cc81996204cbd96df4675f1fe1, type: 3}
+  - m_name: Land2
+    m_clip: {fileID: 8300000, guid: 2521db8ecc9c881418e3f9aa8661c5f0, type: 3}
+  musicSource: {fileID: 0}
+  sfxSource: {fileID: 0}

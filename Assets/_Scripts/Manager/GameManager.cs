@@ -20,7 +20,7 @@ public class GameManager : MonoBehaviour
         if (Instance == null)
         {
             Instance = this;
-            DontDestroyOnLoad(gameObject);
+            //DontDestroyOnLoad(gameObject);
         }
         else
         {
@@ -49,7 +49,7 @@ public class GameManager : MonoBehaviour
     {
         AudioManager.Instance.PlayMusic("Village");
 
-        PlayerHpBar.Init(PlayerStats.CurrentHp);
+        PlayerHpBar.Init(PlayerStats.MaxHp, PlayerStats.CurrentHp);
 
     }
 
@@ -99,7 +99,7 @@ public class GameManager : MonoBehaviour
 
     public void ShowRangerHpBar()
     {
-        RangerHpBar.Init(Ranger.CurrentHp);
+        RangerHpBar.Init(Ranger.CurrentHp, Ranger.CurrentHp);
         GameObject HpBarObj = RangerHpBar.gameObject.transform.parent.gameObject;
         HpBarObj.gameObject.SetActive(true);
         HpBarObj.gameObject.transform.localScale = Vector3.up;

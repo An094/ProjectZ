@@ -55,4 +55,4 @@ MonoBehaviour:
   DefaultLayer:
     serializedVersion: 2
     m_Bits: 0
-  MaxHp: 130
+  MaxHp: 150

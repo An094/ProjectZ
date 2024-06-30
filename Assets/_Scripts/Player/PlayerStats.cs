@@ -7,10 +7,12 @@ public class PlayerStats
 {
     public event Action<float> OnDamaged;
 
+    public float MaxHp;
     public float CurrentHp;
 
-    public PlayerStats(float currentHp)
+    public PlayerStats(float maxHp, float currentHp)
     {
+        this.MaxHp = maxHp;
         this.CurrentHp = currentHp;
     }
 

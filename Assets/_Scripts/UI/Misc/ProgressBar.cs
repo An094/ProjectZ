@@ -13,10 +13,10 @@ public class ProgressBar : MonoBehaviour
 
     [SerializeField] private Image Mask;
 
-    public void Init(float InMaxValue)
+    public void Init(float InMaxValue, float InCurrentValue)
     {
         MaxValue = InMaxValue;
-        CurrentValue = InMaxValue;
+        CurrentValue = InCurrentValue;
 
         UpdateProgressBar();
     }
