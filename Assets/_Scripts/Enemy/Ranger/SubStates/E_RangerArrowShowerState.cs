@@ -48,7 +48,7 @@ public class E_RangerArrowShowerState : E_PlayerNearState
         IsAllowCheckFlip = false;
         base.Enter();
 
-        Ranger.SetVelocityX(0);
+        Ranger.SetVelocityX(7f * Ranger.FacingDirection);
         Ranger.SetVelocityY(15.0f);
 
         FireTween =  DOVirtual.DelayedCall(0.5f, () =>
@@ -88,18 +88,18 @@ public class E_RangerArrowShowerState : E_PlayerNearState
         float defaultGS = Ranger.Rb.gravityScale;
         Ranger.Rb.gravityScale = 0;
 
-        for (int i = 0; i < 6; i++)
+        for (int i = 0; i < 7; i++)
         {
             Ranger.transform.position = new Vector2(Ranger.transform.position.x, FireYPos);
             Ranger.SetVelocityY(0f);
-            Ranger.SetVelocityX(-6f * Ranger.FacingDirection);
+            Ranger.SetVelocityX(-5f * Ranger.FacingDirection);
             Ranger.Animator.SetBool("QuickShot", true);
-            yield return new WaitForSeconds(0.25f);
+            yield return new WaitForSeconds(0.2f);
             Ranger.Animator.SetBool("QuickShot", false);
         }
 
+        Ranger.SetVelocityX(10f * Ranger.FacingDirection);
         Ranger.Rb.gravityScale = defaultGS;
-        Ranger.SetVelocityX(5f * Ranger.FacingDirection);
         Ranger.Animator.SetBool("InAir", true);
 
         if (!IsGrounded)
@@ -114,32 +114,27 @@ public class E_RangerArrowShowerState : E_PlayerNearState
 
     private void RandomlyFireProjectile()
     {
-        int rand = Random.Range(0, 8);
+        int rand = Random.Range(0, 10);
         float TravelDistance = EnemyData.TravelDistance;
 
         GameObject Projectile;
 
-        if (rand < 2)
+        if (rand < 4)
         {
             Projectile = EnemyData.EntangleProjectile;
         }
-        else if (rand < 4)
+        else if (rand < 8)
         {
             Projectile = EnemyData.PoisonProjectile;
         }
-        //else if (rand < 6)
-        //{
-        //    TravelDistance = EnemyData.TravelDistance * 0.1f;
-        //    Projectile = EnemyData.ThornProjectile;
-        //}
         else
         {
-            Projectile = EnemyData.ProjectilePref;
+            TravelDistance = EnemyData.TravelDistance * 0.1f;
+            Projectile = EnemyData.ThornProjectile;
         }
 
-        float Angle = Ranger.FacingDirection > 0 ? -75f : -105f;
+        float Angle = Ranger.FacingDirection > 0 ? -45f : -135f;
 
-        //ProjectileObj = GameObject.Instantiate(Projectile, ProjectTilePosition.position, Quaternion.Euler(0f, 0f, Angle));
         ProjectileObj = ObjectPoolManager.SpawnObject(Projectile, ProjectTilePosition.position, Quaternion.Euler(0f, 0f, Angle));
         if (ProjectileObj.TryGetComponent<Projectile>(out Projectile projectile))
         {

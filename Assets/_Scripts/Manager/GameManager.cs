@@ -1,3 +1,4 @@
+using DG.Tweening;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -49,7 +50,6 @@ public class GameManager : MonoBehaviour
         AudioManager.Instance.PlayMusic("Village");
 
         PlayerHpBar.Init(PlayerStats.CurrentHp);
-        RangerHpBar.Init(Ranger.CurrentHp);
 
     }
 
@@ -95,5 +95,14 @@ public class GameManager : MonoBehaviour
     public void PlaySFX(string  SFXName)
     {
         AudioManager.Instance.PlaySFX(SFXName);
+    }
+
+    public void ShowRangerHpBar()
+    {
+        RangerHpBar.Init(Ranger.CurrentHp);
+        GameObject HpBarObj = RangerHpBar.gameObject.transform.parent.gameObject;
+        HpBarObj.gameObject.SetActive(true);
+        HpBarObj.gameObject.transform.localScale = Vector3.up;
+        HpBarObj.gameObject.transform.DOScaleX(1f, 0.5f);
     }
 }

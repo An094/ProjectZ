@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: ThornProjectile
   m_EditorClassIdentifier: 
   Type: 3
-  ProjectileSprite: {fileID: 21300000, guid: e9d7856a1dc5c2246a12c76314dfa9a5, type: 3}
+  ProjectileSprite: {fileID: 21300000, guid: b314b192829777f40935c31b102b3bd3, type: 3}
   ThornPref: {fileID: 2985472211212097170, guid: 88705f0c7ad57144ca245316e798485f, type: 3}

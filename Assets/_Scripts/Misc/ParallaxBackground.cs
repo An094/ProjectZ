@@ -12,12 +12,16 @@ public class ParallaxBackground : MonoBehaviour
     [SerializeField] float BackgroundVelocity;
     [SerializeField] Transform Middleground;
     [SerializeField] float MiddlegroundVelocity;
+    [SerializeField] Transform Middleground1;
+    [SerializeField] float Middleground1Velocity;
     private PlayerInputHandler playerInput;
 
     private float CurrentBackgroundXPos;
     private float CurrentMiddlegroundXPos;
+    private float CurrentMiddleground1XPos;
     private float TargetBackgroundXPos;
     private float TargetMiddlegroundXPos;
+    private float TargetMiddleground1XPos;
 
     private Camera camera;
 
@@ -27,7 +31,8 @@ public class ParallaxBackground : MonoBehaviour
         camera = Camera.main;
         playerInput = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerInputHandler>();
         CurrentBackgroundXPos = Background.position.x;
-        CurrentBackgroundXPos = Middleground.position.x;
+        CurrentMiddlegroundXPos = Middleground.position.x;
+        CurrentMiddleground1XPos = Middleground1.position.x;
     }
 
     // Update is called once per frame
@@ -45,8 +50,13 @@ public class ParallaxBackground : MonoBehaviour
             CurrentMiddlegroundXPos = Middleground.position.x;
             TargetMiddlegroundXPos = CurrentMiddlegroundXPos + direction * MiddlegroundVelocity * Time.deltaTime;
 
+            CurrentMiddleground1XPos = Middleground1.position.x;
+            TargetMiddleground1XPos = CurrentMiddleground1XPos + direction * Middleground1Velocity * Time.deltaTime;
+
+
             Background.position = new Vector2(TargetBackgroundXPos, Background.position.y);
             Middleground.position = new Vector2(TargetMiddlegroundXPos, Middleground.position.y);
+            Middleground1.position = new Vector2(TargetMiddleground1XPos, Middleground1.position.y);
         }
 
     }
